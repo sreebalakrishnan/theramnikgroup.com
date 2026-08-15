@@ -22,14 +22,19 @@ editing. A missing file degrades to a dark graphite placeholder rather than brea
 | `control-room.jpg` | Ferro Alloys — quality section (4:3) | Process control room |
 | `pollution-control.jpg` | Sustainability — environment (16:9) | Pollution control plant and stack |
 | `safety.jpg` | Sustainability — health & safety (3:4) | Team in protective equipment |
+| `solar.jpg` | Sustainability — full-bleed hero | Solar array on worked-out ground |
 | `og-card.jpg` | *(in `assets/img/`)* social preview | Typographic brand card |
 
 ## Still wanted
 
 | Filename | Where it would appear | What it needs to show |
 |---|---|---|
-| `solar.jpg` | **Sustainability — full-bleed hero** | The solar farm on former dump / vacant mine land. This is the most visible gap on the site: the sustainability page leads on solar (5 MW today, 15–25 MW planned) and its hero is currently a plain gradient. Wants a wide landscape frame, 2000px+, left third free of busy detail. |
 | `product.jpg` | Ferro Alloys | Finished alloy sized, bagged and packed for dispatch. The raw-material slot currently carries an ore photograph instead, which is accurate but is not the product. |
+
+A **higher-resolution solar frame** would also be welcome. The one supplied is 1032×774
+before its decorative border is trimmed, leaving 994px to fill a full-bleed hero. The
+dark scrim hides most of the softness, but anything 2000px+ would sharpen it on large
+displays.
 
 ## Preparing replacements
 
@@ -55,6 +60,9 @@ editing. A missing file degrades to a dark graphite placeholder rather than brea
 - One frame (plantation beside water) carries a "GPS Map Camera" watermark burned into
   the middle of the image and was not used for that reason. If a clean copy exists it
   would suit the sustainability page well.
+- The solar frame arrived with a decorative rounded border baked in by a photo app. It
+  was detected by walking in from each edge until the rows and columns stopped being
+  uniformly light — 16px on all four sides — and trimmed before cropping.
 - Several frames show identifiable staff. Only those where people appear at a working
   distance were used; a close portrait of an individual worker was left out. Confirm
   consent for anyone recognisable before launch — this applies to `underground.jpg`,

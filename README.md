@@ -103,11 +103,11 @@ publish directory `.`. `.htaccess` is Apache/LiteSpeed only and is ignored by th
 
 These are the outstanding items, each marked with an HTML comment in the source:
 
-1. **Two photographs still missing.** Everything else is in. The gaps are
-   `solar.jpg` — the sustainability page leads on solar generation and its full-bleed
-   hero is still a plain gradient — and `product.jpg`, finished alloy packed for
-   dispatch. Both are described in `assets/img/photos/README.md`; drop the files in
-   under those names and they appear with no HTML editing.
+1. **One photograph still missing:** `product.jpg`, finished alloy packed for dispatch.
+   The raw-material slot carries an ore photograph instead — accurate, but not the
+   product. See `assets/img/photos/README.md`; drop the file in under that name and it
+   appears with no HTML editing. A higher-resolution solar frame would also help; the
+   one in use is 994px wide against a full-bleed hero.
 
    Also outstanding: confirm consent for staff who are recognisable in
    `underground.jpg`, `safety.jpg` and `control-room.jpg`.
