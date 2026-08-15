@@ -86,7 +86,10 @@ ErrorDocument 404 /404.html
 # --- Housekeeping -----------------------------------------------------------
 # The repository is deployed as-is, so keep repo files out of the web root.
 
-<FilesMatch "^(README\.md|\.gitignore|\.git.*)$">
+# Build scripts (tools/) are committed for reproducibility but are not content.
+RedirectMatch 404 ^/tools/
+
+<FilesMatch "^(README\.md|\.gitignore|\.git.*|.*\.source\.html)$">
   <IfModule mod_authz_core.c>
     Require all denied
   </IfModule>
