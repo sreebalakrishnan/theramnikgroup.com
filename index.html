@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <script>document.documentElement.classList.add("js");</script>
@@ -30,20 +30,169 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "The Ramnik Group",
-  "url": "https://theramnikgroup.com/",
-  "logo": "https://theramnikgroup.com/assets/img/mark.png",
-  "description": "Manganese ore mining, ferro alloys manufacturing and solar power generation in Balaghat, Madhya Pradesh, India.",
-  "email": "rpaplpower@gmail.com",
-  "telephone": "+91-99773-02683",
-  "hasMap": "https://maps.app.goo.gl/e23PAdRBhg2BL4LF7",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Balaghat",
-    "addressRegion": "Madhya Pradesh",
-    "addressCountry": "IN"
-  }
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://theramnikgroup.com/#organization",
+      "name": "The Ramnik Group",
+      "alternateName": "Ramnik Group",
+      "url": "https://theramnikgroup.com/",
+      "logo": "https://theramnikgroup.com/assets/img/mark.png",
+      "image": "https://theramnikgroup.com/assets/img/og-card.jpg",
+      "description": "Manganese ore mining, ferro alloys manufacturing and solar power generation in Balaghat, Madhya Pradesh, India. Four generations, over a hundred years.",
+      "email": "rpaplpower@gmail.com",
+      "telephone": "+91-99773-02683",
+      "hasMap": "https://maps.app.goo.gl/e23PAdRBhg2BL4LF7",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Plot No. 1-11, Industrial Area, Waraseoni-Katangi Road, Sarandi",
+        "addressLocality": "Balaghat",
+        "addressRegion": "Madhya Pradesh",
+        "postalCode": "481331",
+        "addressCountry": "IN"
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "India" },
+        { "@type": "Country", "name": "Japan" },
+        { "@type": "Country", "name": "United Kingdom" },
+        { "@type": "Country", "name": "Germany" }
+      ],
+      "knowsAbout": [
+        "Silico manganese",
+        "Ferro manganese",
+        "Manganese ore",
+        "Ferro alloy production",
+        "Manganese mining",
+        "Solar power generation"
+      ],
+      "award": [
+        "Five-star rating, Ramrama manganese mine, 2017-18 — Indian Bureau of Mines, Ministry of Mines",
+        "Madhya Pradesh state environment award 2016-17, working-mines category",
+        "Mine Safety Week 2019 — Directorate of Mines Safety, Western Zone, Nagpur",
+        "Outstanding Achievement Award 2014 — Federation of Madhya Pradesh Chambers of Commerce and Industry"
+      ],
+      "subOrganization": [
+        {
+          "@type": "Organization",
+          "name": "Ramnik Power and Alloys Pvt. Ltd.",
+          "description": "Power generation and ferro alloys production. Holder of the group's ISO 9001:2015 certificate."
+        },
+        {
+          "@type": "Organization",
+          "name": "A. P. Trivedi & Sons",
+          "description": "Manganese mining at the Ramrama mine, Balaghat district."
+        }
+      ],
+      "employee": [
+        { "@type": "Person", "name": "Nischal Trivedi", "jobTitle": "Director" },
+        { "@type": "Person", "name": "Harsh Trivedi", "jobTitle": "Director" }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "email": "rpaplpower@gmail.com",
+        "telephone": "+91-99773-02683",
+        "availableLanguage": ["English", "Hindi"]
+      },
+      "hasCertification": {
+        "@type": "Certification",
+        "name": "ISO 9001:2015",
+        "identifier": "250528012",
+        "issuedBy": { "@type": "Organization", "name": "LMS Assessment Services Private Limited" },
+        "datePublished": "2025-05-28",
+        "expires": "2028-05-27",
+        "about": "Quality management, covering mining, renewable energy, and the production, export and import of silico manganese, ferro manganese and manganese ore.",
+        "url": "https://theramnikgroup.com/assets/docs/iso-9001-certificate.pdf"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Ferro alloys and manganese ore",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Silico manganese",
+              "description": "Silico manganese in the full commercial range, grades 60/15 to 70/15, sized and graded to the buyer's requirement.",
+              "material": "Manganese, silicon",
+              "category": "Ferro alloy"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Ferro manganese",
+              "description": "Ferro manganese grades 70, 72 and 75, supplied to domestic mills and export buyers.",
+              "material": "Manganese, iron",
+              "category": "Ferro alloy"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Low-carbon silico manganese",
+              "description": "Silico manganese for applications where carbon content is constrained. Produced to specification.",
+              "category": "Ferro alloy"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Low-impurity special grades",
+              "description": "Low boron, low phosphorus and low sulphur material for specialised steel manufacturing.",
+              "category": "Ferro alloy"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Manganese ore",
+              "description": "Manganese ore from the Ramrama mine, crushed, sized and stacked by grade.",
+              "category": "Mineral"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://theramnikgroup.com/#website",
+      "url": "https://theramnikgroup.com/",
+      "name": "The Ramnik Group",
+      "publisher": { "@id": "https://theramnikgroup.com/#organization" },
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": "Place",
+      "@id": "https://theramnikgroup.com/#plant",
+      "name": "Ramnik ferro alloys works, Sarandi",
+      "description": "Ferro alloys plant with five furnaces and 34.5 MVA of installed capacity.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Plot No. 1-11, Industrial Area, Waraseoni-Katangi Road, Sarandi",
+        "addressLocality": "Balaghat",
+        "addressRegion": "Madhya Pradesh",
+        "postalCode": "481331",
+        "addressCountry": "IN"
+      }
+    },
+    {
+      "@type": "Place",
+      "@id": "https://theramnikgroup.com/#mine",
+      "name": "Ramrama manganese mine",
+      "description": "Manganese mine worked both open cast and underground, holder of a Ministry of Mines five-star rating for 2017-18.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ramrama, Balaghat district",
+        "addressRegion": "Madhya Pradesh",
+        "addressCountry": "IN"
+      }
+    }
+  ]
 }
 </script>
 </head>
