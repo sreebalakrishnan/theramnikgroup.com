@@ -13,7 +13,8 @@ pattern = re.compile(
 )
 
 failures = 0
-for page in sorted(glob.glob("*.html")):
+pages = sorted(glob.glob("*.html")) + sorted(glob.glob("*/index.html"))
+for page in pages:
     blocks = pattern.findall(open(page).read())
     if not blocks:
         print(f"{page:24} (no structured data)")
