@@ -145,22 +145,39 @@ extended, the footer language row extended, and two lines in `sitemap.xml`.
 
 ## Video
 
-`assets/video/tapping.mp4` is 21 seconds of the furnace being tapped, on the ferro alloys
-page. It was shot on a phone, so it is **portrait and only 478px wide** — which is why it
-sits in one column of a split rather than as a full-bleed band. Stretched across the page
-it would be visibly upscaled.
+`assets/video/furnace-tap.mp4` is 21 seconds of the furnace being tapped, on the ferro
+alloys page. Shot on a phone at **478x416** — small, so it sits in one column of a split
+rather than as a full-bleed band. Stretched across the page it would be visibly upscaled.
+`.video` caps it at its own native width, which is the part that matters; nothing in the
+CSS assumes a particular aspect, because the clip in this slot has already changed shape
+once.
 
 It is served with `controls`, `preload="metadata"` and no autoplay: the clip carries
-sound, and 2MB should not download itself on a metered connection. A poster frame is set
+sound, and it should not download itself on a metered connection. A poster frame is set
 so the block is not a black rectangle before play.
 
-The supplied file was 4.0MB; re-encoding at CRF 26 with mono 96kbps audio brought it to
-2.1MB with no visible difference on a still comparison. If it is ever replaced, keep
-`-movflags +faststart` so it begins playing before the whole file arrives.
+**Replacing the clip means renaming the file.** `.htaccess` caches `video/mp4` for 30
+days and there is no version query on media the way there is on CSS and JS, so reusing a
+filename leaves returning visitors on the old clip for up to a month. Name the new file
+for its content and update the three references in `ferro-alloys.html` (the `poster`, the
+`<source>` and the fallback download link). The same applies to photographs, cached 30
+days on the same rule.
 
-**The audio has not been reviewed.** If it contains speech rather than plant noise it
-needs a captions track to be accessible; the page does not depend on the audio for
-meaning, so this is a should-fix rather than a blocker.
+The supplied file was 11.3MB of HEVC; re-encoding to H.264 at CRF 26 with mono 96kbps
+audio brought it to 1.5MB with no visible difference on a still comparison against the
+source. Keep `-movflags +faststart` so playback begins before the whole file arrives.
+
+**On the audio:** the waveform was analysed rather than listened to — 3.2 dB standard
+deviation across 100ms frames and only one frame of 207 dropping more than 20 dB below
+peak, which is the signature of continuous plant noise rather than speech. Speech shows
+pauses and much higher variance. That is evidence, not proof: it cannot rule out talking
+buried under the roar of the tap. If speech is confirmed the clip needs a captions track;
+the page does not depend on the audio for meaning, so this is a should-fix.
+
+**This container cannot play the clip back.** Its Chromium has no H.264, so it aborts the
+request rather than decoding. What can be verified here — and was — is that the file is
+correctly formed for progressive playback: h264/High/yuv420p, AAC mono, moov before mdat,
+and the poster, dimensions, controls and no-autoplay all correct on the rendered page.
 
 ## Search and answer engines
 
