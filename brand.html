@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<!--
+  Brand page for designers and agencies working on Ramnik marketing material.
+
+  Deliberately NOT in the site navigation and marked noindex: it is shared by
+  link with whoever is making a banner or a post, not offered to customers and
+  not competing with the real pages in search. It is on the live site rather
+  than in a document because a URL is always the current version, needs no
+  permissions, and shows the design system by being built out of it.
+
+  Everything here is taken from the running site — the swatches are the actual
+  :root tokens, the type samples use the real stacks. If style.css changes,
+  this page changes with it. Do not hard-code values into this page.
+-->
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.classList.add("js");</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brand basics — The Ramnik Group</title>
+<meta name="description" content="Logo files, colour, type, photography and naming rules for anyone producing marketing material for The Ramnik Group.">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="/assets/img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/css/style.css?v=7">
+
+<style>
+  /* Page-scoped: these patterns exist only here, so they stay out of the
+     stylesheet the whole site downloads. */
+  .swatches { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); list-style: none; padding: 0; margin: 0; }
+  .swatch { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+  .swatch__chip { height: 84px; }
+  .swatch__body { padding: 0.7rem 0.85rem 0.9rem; }
+  .swatch__name { display: block; font-family: var(--sans); font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); }
+  .swatch__hex { display: block; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 0.95rem; margin-top: 0.15rem; }
+  .swatch__use { display: block; font-family: var(--sans); font-size: 0.8rem; line-height: 1.5; color: var(--ink-3); margin-top: 0.4rem; }
+
+  .asset-grid { display: grid; gap: 1.75rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .asset { border: 1px solid var(--line); border-radius: var(--radius); padding: 1.5rem; text-align: center; }
+  .asset--dark { background: var(--ink); border-color: var(--line-dark); }
+  .asset img { max-width: 100%; height: auto; }
+  .asset figcaption { font-family: var(--sans); font-size: 0.8rem; line-height: 1.55; color: var(--ink-3); margin-top: 1.1rem; text-align: left; }
+  .asset--dark figcaption { color: rgba(250, 249, 247, 0.62); }
+
+  .type-sample { border-left: 2px solid var(--ember); padding-left: 1.25rem; margin: 1.5rem 0; }
+  .type-sample p { margin: 0.2rem 0; }
+  .type-sample .label { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--ember-text); }
+
+  .rules { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.9rem; }
+  .rules li { padding-left: 1.9rem; position: relative; }
+  .rules li::before { position: absolute; left: 0; top: 0; font-family: var(--sans); font-weight: 700; }
+  .rules--do li::before { content: "✓"; color: var(--green-text); }
+  .rules--dont li::before { content: "✕"; color: var(--ember-text); }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="/">
+      <img class="brand__mark" src="/assets/img/mark.png" alt="" width="34" height="34">
+      <span class="brand__text">
+        <span class="brand__name">The Ramnik Group</span>
+        <span class="brand__sub">Mining &middot; Ferro Alloys &middot; Power</span>
+      </span>
+    </a>
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <a href="/">Back to the site</a>
+      <a class="btn btn--ghost" href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero page-hero--plain">
+    <div class="hero__scrim"></div>
+    <div class="wrap hero__inner">
+      <span class="eyebrow">For designers</span>
+      <h1>Brand basics.</h1>
+      <p class="lede">
+        Everything needed to make a banner, a post or a brochure that looks like it came
+        from the same company as this website. Share this page rather than a document &mdash;
+        it is always the current version.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">The mark</span>
+        <h2>Files, and how large they go.</h2>
+        <p class="lede">
+          A hexagon holding three things the group does: the sun above, an ingot across the
+          middle, ore below.
+        </p>
+      </div>
+
+      <div class="asset-grid reveal">
+        <figure class="asset">
+          <img src="/assets/img/logo-lockup.png" alt="The Ramnik mark above the RAMNIK wordmark" width="900" height="663">
+          <figcaption>Primary lockup. Use this wherever there is room.</figcaption>
+        </figure>
+        <figure class="asset">
+          <img src="/assets/img/logo-mark.png" alt="The Ramnik hexagon mark on its own" width="615" height="711" style="max-height:260px;width:auto">
+          <figcaption>Mark alone. Use where the name already appears beside or above it.</figcaption>
+        </figure>
+        <figure class="asset asset--dark">
+          <img src="/assets/img/logo-mark.png" alt="The Ramnik hexagon mark on a dark ground" width="615" height="711" style="max-height:260px;width:auto">
+          <figcaption>
+            On dark, use the mark alone. The wordmark is near-black and disappears &mdash;
+            set the name in white type beside the mark instead.
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="split reveal" style="margin-top:clamp(2.5rem,5vw,3.5rem);">
+        <div>
+          <h3>Downloads</h3>
+          <p><a class="arrow-link" href="/assets/docs/ramnik-logo.pdf" target="_blank" rel="noopener">Logo PDF</a></p>
+          <p><a class="arrow-link" href="/assets/img/logo-lockup.png">Lockup PNG</a></p>
+          <p><a class="arrow-link" href="/assets/img/logo-mark.png">Mark PNG</a></p>
+          <p class="note" style="margin-top:1rem;">
+            All transparent-background PNG, plus a four-page PDF with the same artwork and
+            a colour reference.
+          </p>
+        </div>
+        <div>
+          <h3>Size limits &mdash; please read</h3>
+          <p>
+            <strong>These are bitmaps, not vector artwork.</strong> The mark is 615 pixels
+            wide at source, which sets a hard ceiling on how large it can be reproduced:
+          </p>
+          <div class="table-scroll">
+            <table>
+              <caption>Maximum reproduction width</caption>
+              <thead>
+                <tr><th scope="col">Use</th><th scope="col">Mark</th><th scope="col">Lockup</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Print, 300 dpi</th><td class="num">52 mm</td><td class="num">74 mm</td></tr>
+                <tr><th scope="row">Read at about a metre, 150 dpi</th><td class="num">104 mm</td><td class="num">149 mm</td></tr>
+                <tr><th scope="row">Banner, read at 2&ndash;3 m, 100 dpi</th><td class="num">156 mm</td><td class="num">223 mm</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            Anything larger &mdash; a stage backdrop, a roll-up banner, vehicle livery &mdash;
+            needs the original vector file. Ask the group for it rather than scaling these up.
+          </p>
+          <h3 style="margin-top:2rem;">Clear space and minimum size</h3>
+          <p>
+            Keep clear space of at least the height of the hexagon on all four sides. Do not
+            reproduce the mark below 15&nbsp;mm; under that the ingot and rock detail closes up.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Colour</span>
+        <h2>Four neutrals and one accent.</h2>
+        <p class="lede">
+          The palette is deliberately quiet so the photographs carry the colour. The accent
+          is split into three values, and which one you use depends on what it is for.
+        </p>
+      </div>
+
+      <ul class="swatches reveal">
+        <li class="swatch">
+          <div class="swatch__chip" style="background:#15181c"></div>
+          <div class="swatch__body">
+            <span class="swatch__name">Ink</span>
+            <span class="swatch__hex">#15181C</span>
+            <span class="swatch__use">Body text, dark grounds, the wordmark.</span>
+          </div>
+        </li>
+        <li class="swatch">
+          <div class="swatch__chip" style="background:#5b656f"></div>
+          <div class="swatch__body">
+            <span class="swatch__name">Ink 3</span>
+            <span class="swatch__hex">#5B656F</span>
+            <span class="swatch__use">Captions and secondary text on light grounds.</span>
+          </div>
+        </li>
+        <li class="swatch">
+          <div class="swatch__chip" style="background:#faf9f7"></div>
+          <div class="swatch__body">
+            <span class="swatch__name">Paper</span>
+            <span class="swatch__hex">#FAF9F7</span>
+            <span class="swatch__use">The default ground. Warmer than white on purpose.</span>
+          </div>
+        </li>
+        <li class="swatch">
+          <div class="swatch__chip" style="background:#e6e3dd"></div>
+          <div class="swatch__body">
+            <span class="swatch__name">Paper 3</span>
+            <span class="swatch__hex">#E6E3DD</span>
+            <span class="swatch__use">Panels and alternating bands.</span>
+          </div>
+        </li>
+        <li class="swatch">
+          <div class="swatch__chip" style="background:#b4611f"></div>
+          <div class="swatch__body">
+            <span class="swatch__name">Ember</span>
+            <span class="swatch__hex">#B4611F</span>
+            <span class="swatch__use">Decoration only &mdash; rules, fills, underlines. Not for small text.</span>
+          </div>
+        </li>
+        <li class="swatch">
+          <div class="swatch__chip" style="background:#964f18"></div>
+          <div class="swatch__body">
+            <span class="swatch__name">Ember, text</span>
+            <span class="swatch__hex">#964F18</span>
+            <span class="swatch__use">Small type on light grounds. Darker so it stays readable.</span>
+          </div>
+        </li>
+        <li class="swatch">
+          <div class="swatch__chip" style="background:#e0a04f"></div>
+          <div class="swatch__body">
+            <span class="swatch__name">Ember, lit</span>
+            <span class="swatch__hex">#E0A04F</span>
+            <span class="swatch__use">The accent on dark grounds only.</span>
+          </div>
+        </li>
+        <li class="swatch">
+          <div class="swatch__chip" style="background:#2f6b45"></div>
+          <div class="swatch__body">
+            <span class="swatch__name">Green</span>
+            <span class="swatch__hex">#2F6B45</span>
+            <span class="swatch__use">Sustainability material only. Never as a second brand colour.</span>
+          </div>
+        </li>
+      </ul>
+
+      <p class="note reveal" style="margin-top:1.75rem;max-width:60ch;">
+        The three ember values are not interchangeable. #B4611F is bright enough to catch the
+        eye as a rule or a fill but too light for small text on paper; #964F18 is the text
+        version; #E0A04F is the only one that works on the dark ground. Swapping them makes
+        text hard to read for anyone with low vision.
+      </p>
+      <p class="note reveal">
+        These are RGB screen values. For print, ask the printer to convert on their own
+        profile rather than converting them here.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Type</span>
+        <h2>A serif that reads as old, a sans that reads as plain.</h2>
+        <p class="lede">
+          Headings are set in a serif because the business is a century old and the type
+          should say so. Everything functional is a plain system sans.
+        </p>
+      </div>
+
+      <div class="reveal" style="max-width:70ch;">
+        <div class="type-sample">
+          <span class="label">Headings &mdash; serif</span>
+          <p style="font-family:var(--serif);font-size:var(--step-3);line-height:1.15;margin-top:0.5rem;">
+            Four generations of manganese.
+          </p>
+          <p class="note" style="margin-top:0.75rem;">
+            Iowan Old Style, Palatino, Book Antiqua, Georgia. Any of these is right. Set
+            headings tight &mdash; around 1.1 to 1.2 line height &mdash; and do not letter-space them.
+          </p>
+        </div>
+
+        <div class="type-sample">
+          <span class="label">Body &mdash; serif</span>
+          <p style="font-family:var(--serif);font-size:var(--step-0);line-height:1.7;margin-top:0.5rem;">
+            The mine at Ramrama produces manganese ore, which is crushed, sized and graded
+            before it is smelted at Sarandi into ferro manganese and silico manganese for
+            the steel industry.
+          </p>
+        </div>
+
+        <div class="type-sample">
+          <span class="label">Labels and data &mdash; sans</span>
+          <p style="font-family:var(--sans);font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;margin-top:0.6rem;">
+            Installed capacity &middot; 34.5 MVA
+          </p>
+          <p class="note" style="margin-top:0.75rem;">
+            Small caps with wide tracking, used for eyebrows, captions and figures. This is
+            the only place letter-spacing is used.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--ink">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Photography</span>
+        <h2>Working photographs, not stock.</h2>
+        <p class="lede">
+          Every photograph on the site was taken on site. None of it is bought, and nothing
+          should be.
+        </p>
+      </div>
+
+      <div class="split reveal">
+        <div>
+          <h3>Do</h3>
+          <ul class="rules rules--do">
+            <li>Shoot the work happening &mdash; the tap, the haul road, ore stacked by grade.</li>
+            <li>Let it be dusty, wet and lit by whatever light is there.</li>
+            <li>Keep people at a working distance, doing their job.</li>
+            <li>Use the full gallery at <a href="/gallery.html">theramnikgroup.com/gallery.html</a> as the source.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Don't</h3>
+          <ul class="rules rules--dont">
+            <li>Use stock photography of other people's plants or mines.</li>
+            <li>Add heavy filters, teal-and-orange grading or lens flare.</li>
+            <li>Make an individual worker the subject of a photograph without their consent.</li>
+            <li>Composite or generate imagery and present it as the operation.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Words</span>
+        <h2>Names that are easy to get wrong.</h2>
+        <p class="lede">
+          These have all been got wrong before. Please copy them exactly.
+        </p>
+      </div>
+
+      <div class="table-scroll reveal">
+        <table>
+          <caption>Correct usage</caption>
+          <thead>
+            <tr><th scope="col">Write</th><th scope="col">Not</th><th scope="col">What it is</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Ramrama</th><td>Ram Rama, Ramma, Ramra</td><td>The place, and the mine.</td></tr>
+            <tr><th scope="row">Sarandi</th><td>&mdash;</td><td>The place the ferro alloys plant sits in.</td></tr>
+            <tr><th scope="row">Balaghat</th><td>&mdash;</td><td>The district. Not the plant, not the mine.</td></tr>
+            <tr><th scope="row">Nischal Trivedi</th><td>Nishal, Nishel</td><td>Director.</td></tr>
+            <tr><th scope="row">The Ramnik Group</th><td>Ramnik Group</td><td>Keep the definite article.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="split reveal" style="margin-top:clamp(2.5rem,5vw,3.5rem);">
+        <div>
+          <h3>How it should sound</h3>
+          <p>
+            Plain, specific and unhurried. The site says what the operation does and at what
+            scale, and lets that be impressive on its own. No superlatives that cannot be
+            evidenced, no "world-class", no "leading provider of solutions".
+          </p>
+          <p>
+            Where something is not confirmed, the site says so rather than rounding it up.
+            Please keep that habit &mdash; it is the reason the rest of it is credible.
+          </p>
+        </div>
+        <div>
+          <h3>Figures you may quote</h3>
+          <p>
+            Take them from the live site, which is the current version, and nowhere else.
+            The pages carry mine and alloy capacity, installed MVA, solar capacity, product
+            grades, certifications and export destinations.
+          </p>
+          <p><strong>Do not invent or round figures</strong>, and do not take them from a
+            search result &mdash; there is material online about other companies with similar
+            names.</p>
+          <p><a class="arrow-link" href="/ferro-alloys.html">Product grades and certifications</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Questions.</h2>
+        <p class="lede">
+          If something you need is not here &mdash; a file at a size that is not covered, a fact
+          you cannot find on the site, permission to use a photograph of someone &mdash; ask
+          before improvising.
+        </p>
+        <p><a class="arrow-link" href="/contact.html">Get in touch</a></p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <!-- Plain <p>, not .note: .note sets --ink-3, which is a light-ground colour
+         and fails contrast on the footer's dark background. The footer's own
+         colour is inherited and passes. -->
+    <p style="max-width:62ch;">
+      The Ramnik Group &mdash; manganese mining, ferro alloys and solar generation, Balaghat,
+      Madhya Pradesh. This page is for people producing material on the group's behalf.
+    </p>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js?v=7" defer></script>
+</body>
+</html>
