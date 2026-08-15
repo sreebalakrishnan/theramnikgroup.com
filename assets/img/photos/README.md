@@ -179,9 +179,8 @@ displays.
   which is theirs to choose. The caption names the company because that is what carries
   weight with the audience. Removing the photograph is a one-block change in
   `ja/index.html` plus deleting the file.
-- The caption says "the mine" rather than naming Ramrama. The group operates one mine and
-  the page names it elsewhere, so the inference is safe, but it is still an inference from
-  a photograph — name it once the client confirms.
+- The caption names Ramrama. It said only "the mine" until the client confirmed that
+  Ramrama is the place name and that the mine itself is called Ramrama.
 - The solar frame arrived with a decorative rounded border baked in by a photo app. It
   was detected by walking in from each edge until the rows and columns stopped being
   uniformly light — 16px on all four sides — and trimmed before cropping.
