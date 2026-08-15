@@ -23,6 +23,7 @@ editing. A missing file degrades to a dark graphite placeholder rather than brea
 | `pollution-control.jpg` | Sustainability — environment (16:9) | Pollution control plant and stack |
 | `safety.jpg` | Sustainability — health & safety (3:4) | Team in protective equipment |
 | `solar.jpg` | Sustainability — full-bleed hero | Solar array on worked-out ground |
+| `award-five-star.jpg` | Mining — recognition section (3:2) | The Ministry of Mines five-star rating being presented |
 | `award-1.jpg` | Mining — recognition section (4:3) | Award presented at Mine Safety Week 2019 |
 | `award-2.jpg` | Mining — recognition section (4:3) | Award presented at Mine Safety Week 2019 |
 | `award-3.jpg` | Mining — recognition section (4:3) | Award presented at Mine Safety Week 2019 |
@@ -63,7 +64,11 @@ displays.
 - One frame (plantation beside water) carries a "GPS Map Camera" watermark burned into
   the middle of the image and was not used for that reason. If a clean copy exists it
   would suit the sustainability page well.
-- Ten award frames were supplied; three are used. All ten are from the same ceremony —
+- `award-five-star.jpg` is the Ministry of Mines five-star rating being presented by
+  Prahlad Joshi, Union Minister of Mines, to Nischal Trivedi and Harsh Trivedi at the
+  Conclave on Mines and Minerals in New Delhi — identified by the client. It is the one
+  photograph that evidences the five-star claim the page makes, so it leads the section.
+- Ten award frames were supplied; three of the Mine Safety Week set are used. All ten are from the same ceremony —
   the banner reads Mine Safety Week 2019, held under the Directorate of Mines Safety,
   Western Zone, Nagpur regions 1 and 2, hosted by MSMC. That is a **safety** award and
   is separate from the Ministry of Mines five-star rating the page also mentions; the
