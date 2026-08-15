@@ -23,7 +23,7 @@ editing. A missing file degrades to a dark graphite placeholder rather than brea
 | `plant-panorama.jpg` | Ferro Alloys — the plant section (27:10) | The works at Sarandi seen from the main gate |
 | `workings.jpg` | Gallery — the mine (3:4) | A cut rock face in the workings, water standing at its foot |
 | `furnace-tap-poster.jpg` | Ferro Alloys — poster frame for the tap video (478x416) | The pour at its fullest, six seconds in |
-| `customer-visit.jpg` | Japanese landing page — quality section (4:3) | A customer delegation at the Sarandi metal yard |
+| `mine-visit.jpg` | Japanese landing page — quality section (4:3) | A customer delegation at the mine, with the sorting crew |
 | `plant-unit-3.jpg` | Ferro Alloys — the plant section (16:7) | The third unit furnace building, added 2024 |
 | `plant-yard.jpg` | Gallery — the works (4:3) | Ore stockpiled in the yard, furnace shed behind |
 | `plant-dusk.jpg` | Gallery — the works (4:3) | The whole works at dusk, tap glow along the bays |
@@ -164,18 +164,24 @@ displays.
   photograph for a careers or team page if that consent is obtained. It is **not** the
   same photograph as `customer-visit.jpg`, which is a different occasion under the metal
   yard shed.
-- `customer-visit.jpg` is published on the Japanese landing page at the client's explicit
-  instruction. It shows a customer delegation, and a welcome banner in frame names four
-  individuals and their employer. Two things were flagged before publishing and the
-  client chose to proceed: the photograph names a trading partner, which the site
-  otherwise never does, and it needs that partner's agreement rather than only the
-  client's; and about seventeen people are recognisable in it. The caption names the
-  company but deliberately **not** the four individuals — the company is what carries
-  weight with the audience, and personal names in indexed text add exposure without
-  adding credibility. If the partner ever objects, removing the photograph is a one-line
-  change in `ja/index.html` plus deleting the file.
-- The banner in `customer-visit.jpg` carries the **old Ramnik mark**, the same
-  inconsistency as the gate in `plant-panorama.jpg`.
+- `mine-visit.jpg` is published on the Japanese landing page at the client's explicit
+  instruction. It shows a customer delegation at the mine — graded ore stacks, the
+  sorting sheds, the sorting crew on the stacks and the visitors and management in front.
+  It replaced a posed frame taken under a welcome banner at the plant, on the client's
+  judgement that this one "feels more natural". It is also the safer of the two to
+  publish, and that was not the reason it was chosen but it is worth recording: the
+  banner in the other frame named four individuals and their employer in text burnt into
+  the image, which no caption decision could undo. This one names nobody.
+- What was flagged before publishing either, and what the client decided: the site
+  otherwise never names a customer, and whether to do so is the trading partner's call as
+  much as ours; and a lot of people are recognisable, including the sorting crew, who are
+  not management and did not choose to be on a website. The client chose to proceed,
+  which is theirs to choose. The caption names the company because that is what carries
+  weight with the audience. Removing the photograph is a one-block change in
+  `ja/index.html` plus deleting the file.
+- The caption says "the mine" rather than naming Ramrama. The group operates one mine and
+  the page names it elsewhere, so the inference is safe, but it is still an inference from
+  a photograph — name it once the client confirms.
 - The solar frame arrived with a decorative rounded border baked in by a photo app. It
   was detected by walking in from each edge until the rows and columns stopped being
   uniformly light — 16px on all four sides — and trimmed before cropping.
