@@ -9,7 +9,7 @@ editing. A missing file degrades to a dark graphite placeholder rather than brea
 | Filename | Where it appears | Subject |
 |---|---|---|
 | `hero-mine.jpg` | Home — full-bleed hero | Furnace tapping at dusk |
-| `ram-rama.jpg` | Home — legacy section (3:4) | Mine headgear at Ram Rama |
+| `ramrama.jpg` | Home — legacy section (3:4) | Mine headgear at Ramrama |
 | `directors.jpg` | Legacy — leadership band; home page | Both directors together |
 | `nischal-trivedi.jpg` | Legacy — leadership bio (4:5) | Nischal Trivedi |
 | `harsh-trivedi.jpg` | Legacy — leadership bio (4:5) | Harsh Trivedi |
@@ -37,7 +37,7 @@ editing. A missing file degrades to a dark graphite placeholder rather than brea
 - **Heroes** (`hero-mine`, `opencast`, `furnace`, `solar`): landscape, 2000px+ wide. They
   sit behind a dark scrim with headline text over the left, so leave the left third free
   of busy detail.
-- **Portrait crops** (`ram-rama`, `plant`, `safety`): 3:4, 1200px+ wide.
+- **Portrait crops** (`ramrama`, `plant`, `safety`): 3:4, 1200px+ wide.
 - **Headshots** (`nischal-trivedi`, `harsh-trivedi`): 4:5, 800px+ wide, anchored to the
   top of the frame so headroom is kept. Both cropped alike or the pair looks mismatched.
 - **Standard slots** (`underground`, `crushing`, `ore-stacks`, `control-room`): 4:3,
