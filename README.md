@@ -9,7 +9,7 @@ dependencies; the repository root is what gets served.
 ```
 index.html              Home — the three businesses, products, markets, assurance
 legacy.html             The discovery of manganese, four generations, milestones, leadership
-mining.html             Ram Rama mine — open cast and underground, ore-to-graded-ore process
+mining.html             Ramrama mine — open cast and underground, ore-to-graded-ore process
 ferro-alloys.html       Plant, product grades, raw material, quality, export markets
 sustainability.html     Solar, environment, health and safety, CSR and community
 contact.html            Contact routes and enquiry form
@@ -27,7 +27,7 @@ robots.txt, sitemap.xml
 All copy is drawn from the recorded briefing with Harsh Trivedi (director), supplied as
 `Notes by Gemini` transcript. Nothing was taken from the web. Facts stated on the site
 and traceable to that briefing include: the British discovery of manganese during
-highway construction; the Ram Rama mine; four generations of family mining; the
+highway construction; the Ramrama mine; four generations of family mining; the
 open cast → underground → shaft → mechanisation progression; the 2005 decision to
 integrate forward; the 2007 plant with its rice-husk power plant; 2009 inauguration;
 2017 second unit; 2024 third unit with three furnaces; five running furnaces;
@@ -103,12 +103,11 @@ These are the outstanding items, each marked with an HTML comment in the source:
    Also outstanding: confirm consent for staff who are recognisable in
    `underground.jpg`, `safety.jpg` and `control-room.jpg`.
 
-2. **Contact details are interim.** `rpaplpower@gmail.com` and `+91 99773 01100`
-   were supplied by the group and are live on the contact page, in every page footer
-   and in the Organization JSON-LD. Switch the mailbox to one on this domain (e.g.
-   `info@theramnikgroup.com`) once it exists, updating all three places together. The
-   landline numbers from the briefing came through the automatic transcript too
-   garbled to publish (`0763224394`, `09730 2683 3`) and are still outstanding.
+2. **Contact details are interim.** `rpaplpower@gmail.com` and the office mobile
+   `+91 99773 02683` are live on the contact page, in every page footer and in the
+   Organization JSON-LD. Switch the mailbox to one on this domain (e.g.
+   `info@theramnikgroup.com`) once it exists, updating all three places together. A
+   landline can be added alongside the mobile when one is confirmed.
 
 3. **Contact form has no backend.** `action="#"` — point it at Formspree, Netlify Forms,
    Basin or a Worker, or submissions go nowhere.
