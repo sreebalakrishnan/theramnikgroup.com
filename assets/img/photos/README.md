@@ -20,6 +20,7 @@ editing. A missing file degrades to a dark graphite placeholder rather than brea
 | `furnace.jpg` | Ferro Alloys — full-bleed hero | Tapping, three furnace bays |
 | `ore-stacks.jpg` | Ferro Alloys — raw material (4:3) | Ore stacked by grade |
 | `control-room.jpg` | Ferro Alloys — quality section (4:3) | Process control room |
+| `plant-panorama.jpg` | Ferro Alloys — the plant section (27:10) | The works at Sarandi seen from the main gate |
 | `pollution-control.jpg` | Sustainability — environment (16:9) | Pollution control plant and stack |
 | `safety.jpg` | Sustainability — health & safety (3:4) | Team in protective equipment |
 | `solar.jpg` | Sustainability — full-bleed hero | Solar array on worked-out ground |
@@ -97,13 +98,23 @@ displays.
   case with the photographer reflected in it, and the visible face names no recipient. It
   is published because the award is real and the client supplied it as theirs, but a
   cleaner photograph would be worth having.
+- `plant-panorama.jpg` is a 2068x760 panorama, trimmed 8px each side to sit exactly in
+  the 27:10 `.photo--pano` slot rather than letting `cover` choose the crop. **The gate in
+  it carries the old Ramnik mark**, not the hexagon now used across the site — the
+  photograph is honest and worth publishing, but the signage and the website no longer
+  agree, and a reshoot would be worth having once the gate is redone.
+  On screens under 640px the slot switches to 16:9 and crops the ends: at 2.7:1 a phone
+  gets a 130px strip in which nothing reads. Anything else put in this slot must be framed
+  centrally for the same reason.
 - The solar frame arrived with a decorative rounded border baked in by a photo app. It
   was detected by walking in from each edge until the rows and columns stopped being
   uniformly light — 16px on all four sides — and trimmed before cropping.
 - Several frames show identifiable staff. Only those where people appear at a working
   distance were used; a close portrait of an individual worker was left out. Confirm
   consent for anyone recognisable before launch — this applies to `underground.jpg`,
-  `safety.jpg`, `control-room.jpg` and the two award photographs in particular.
+  `safety.jpg`, `control-room.jpg` and the two award photographs in particular. One
+  person appears in `plant-panorama.jpg`, turned away and small enough in frame not to
+  be identifiable at any size the site renders.
 
 ## Adding a new slot
 
@@ -115,6 +126,13 @@ displays.
 </figure>
 ```
 
-Add `photo--tall` for 3:4, `photo--16x9`, or `photo--wide` for 16:7. Update the
-`aria-label` to describe what is actually in the picture — that text is what a screen
-reader announces.
+Add `photo--tall` for 3:4, `photo--16x9`, `photo--3x2`, `photo--wide` for 16:7, or
+`photo--pano` for 27:10 panoramas. Update the `aria-label` to describe what is actually in
+the picture — that text is what a screen reader announces.
+
+**If you touch `style.css` to add a slot, bump the `?v=` query in every page** or returning
+visitors keep the old stylesheet and the new aspect ratio never applies:
+
+```bash
+sed -i 's/style\.css?v=3/style.css?v=4/; s/main\.js?v=3/main.js?v=4/' *.html
+```

@@ -907,6 +907,22 @@ td.num {
   aspect-ratio: 3 / 2;
 }
 
+/* For true panoramas. Wider than --wide, and deliberately so: a stitched
+   panorama cropped back to 16:7 loses the sweep that made it worth taking.
+   On a phone that sweep is unreadable anyway — 2.7:1 inside a 350px column is a
+   130px strip — so below 640px the box goes to 16:9 and background-size:cover
+   trims the ends, keeping the middle at a size worth looking at. Frame the
+   subject centrally in anything using this class. */
+.photo--pano {
+  aspect-ratio: 27 / 10;
+}
+
+@media (max-width: 640px) {
+  .photo--pano {
+    aspect-ratio: 16 / 9;
+  }
+}
+
 .photo-caption {
   display: block;
   margin-top: 0.75rem;
