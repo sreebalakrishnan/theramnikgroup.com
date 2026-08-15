@@ -106,13 +106,15 @@ headers. Every block is wrapped in `<IfModule>`, so a module the server does not
 skipped rather than throwing a 500.
 
 **Cache busting.** The pages request the stylesheet and script with a version query —
-`href="/assets/css/style.css?v=4"`. **Bump that number in every page whenever you edit
-`style.css` or `main.js`**, or returning visitors keep the old file:
+currently `href="/assets/css/style.css?v=6"`. **Bump that number in every page whenever
+you edit `style.css` or `main.js`**, or returning visitors keep the old file:
 
 ```bash
-# bump v=4 to v=5 across all pages
-sed -i 's/style\.css?v=4/style.css?v=5/; s/main\.js?v=4/main.js?v=5/' *.html
+# bump v=6 to v=7 across all pages
+sed -i 's/style\.css?v=6/style.css?v=7/; s/main\.js?v=6/main.js?v=7/' *.html
 ```
+
+Check the current number before copying that line — it moves.
 
 Nothing here is content-hashed, so nothing is cached as immutable: the stylesheet and
 script expire after a week and photographs after a month, which means a forgotten bump
