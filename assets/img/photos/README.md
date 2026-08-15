@@ -25,6 +25,9 @@ editing. A missing file degrades to a dark graphite placeholder rather than brea
 | `solar.jpg` | Sustainability — full-bleed hero | Solar array on worked-out ground |
 | `award-five-star.jpg` | Mining — recognition section (3:2) | The Ministry of Mines five-star rating being presented |
 | `award-safety-week.jpg` | Mining — recognition section (3:2) | Award presented at Mine Safety Week 2019 |
+| `award-five-star-trophy.jpg` | Mining — recognition section (3:4) | The Indian Bureau of Mines five-star trophy, 2017–18 |
+| `award-fmpcci.jpg` | Mining — recognition section (3:4) | FMPCCI Outstanding Achievement trophy, 2014 |
+| `award-environment.jpg` | Sustainability — environment (4:3) | Framed Madhya Pradesh environment award citation, 2016–17 |
 | `plantation.jpg` | Sustainability — environment (16:7) | Dense plantation of young saplings on worked ground |
 | `og-card.jpg` | *(in `assets/img/`)* social preview | Typographic brand card |
 
@@ -83,6 +86,17 @@ displays.
   is separate from the Ministry of Mines five-star rating the page also mentions; the
   copy and caption keep the two apart deliberately. Nothing on the trophies themselves
   is legible, so no specific award title is claimed.
+- A further nine frames were supplied later, photographs of the award objects rather
+  than of ceremonies. They are three awards, not nine: the Indian Bureau of Mines
+  five-star trophy (two frames), the Madhya Pradesh state environment award (three of the
+  trophy, three of the framed citation) and the FMPCCI trophy (one). One frame of each
+  is used, chosen by which inscription reads best. The inscriptions were transcribed at
+  magnification, and every date, entity and awarding body on the site comes from that
+  reading — nothing about these awards was looked up.
+- The FMPCCI trophy photograph is the weakest of the set: it is shot through an acrylic
+  case with the photographer reflected in it, and the visible face names no recipient. It
+  is published because the award is real and the client supplied it as theirs, but a
+  cleaner photograph would be worth having.
 - The solar frame arrived with a decorative rounded border baked in by a photo app. It
   was detected by walking in from each edge until the rows and columns stopped being
   uniformly light — 16px on all four sides — and trimmed before cropping.

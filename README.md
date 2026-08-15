@@ -18,14 +18,25 @@ assets/css/style.css    Single stylesheet; design tokens in the :root block at t
 assets/js/main.js       Mobile nav, sticky-header border, scroll reveal
 assets/img/mark.svg     Monogram used as logo and favicon
 assets/img/photos/      Photograph slots — see the README in that directory
+assets/docs/            Documents linked from the site (the ISO 9001 certificate)
 .htaccess               404 page, compression, caching, headers (Apache/LiteSpeed)
 robots.txt, sitemap.xml
 ```
 
 ## Where the content came from
 
-All copy is drawn from the recorded briefing with Harsh Trivedi (director), supplied as
-`Notes by Gemini` transcript. Nothing was taken from the web. Facts stated on the site
+All copy is drawn from material the client supplied directly. **Nothing was taken from
+the web** — not the award names, not the entity names, not the certificate details.
+There are two sources:
+
+1. The recorded briefing with Harsh Trivedi (director), supplied as a `Notes by Gemini`
+   transcript. This is the source for everything below.
+2. Documents and photographs supplied later: the ISO 9001:2015 certificate (a PDF, its
+   text extracted directly) and photographs of the award objects (inscriptions read at
+   magnification). These are the source for the certificate details on the ferro alloys
+   page, the plant's postal address on the contact page, the award years and awarding
+   bodies on the mining page, and the state environment award on the sustainability
+   page. Facts stated on the site
 and traceable to that briefing include: the British discovery of manganese during
 highway construction; the Ramrama mine; four generations of family mining; the
 open cast → underground → shaft → mechanisation progression; the 2005 decision to
@@ -125,10 +136,23 @@ These are the outstanding items, each marked with an HTML comment in the source:
 3. **Contact form has no backend.** `action="#"` — point it at Formspree, Netlify Forms,
    Basin or a Worker, or submissions go nowhere.
 
-4. **Legal entity names.** The briefing implies a separate power-and-ferro-alloys
-   company (the name combining "power" and "ferro alloys") but the transcript does not
-   give it reliably, so the site refers only to "the group". Add the registered entity
-   names and the registered office line in the footer when confirmed.
+4. **Legal entity names — partly resolved, footer still outstanding.** Two entities are
+   now confirmed from documents the client supplied, each named on an official record of
+   its own business:
+
+   - **Ramnik Power and Alloys Pvt. Ltd.** — holder of the ISO 9001:2015 certificate.
+     Registered address: Plot No. 1–11, Industrial Area, Waraseoni–Katangi Road, Sarandi,
+     Balaghat 481331, Madhya Pradesh. (The interim mailbox `rpaplpower@gmail.com` is
+     this company's initials, which corroborates it.)
+   - **A. P. Trivedi & Sons** — the mining business, named on the Indian Bureau of Mines
+     five-star plaque for the Ramrama manganese mine and on the Madhya Pradesh
+     environment award citation.
+
+   Both names now appear on the pages where a document evidences them, but the **footer
+   still says only "the group"** and there is no registered-office line. Before adding
+   one, confirm with the family that these two are the whole list and which is the
+   parent — the site must not imply that "The Ramnik Group" is a single registered
+   company when it is at least two.
 
 5. **Figures worth a second look.** Installed capacity is shown as 34.5 MVA on the stat
    bands (22.5 + 12) while the body text says "33 to 35 MVA in total", matching how it
