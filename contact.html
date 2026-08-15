@@ -23,7 +23,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/style.css?v=4">
+<link rel="stylesheet" href="/assets/css/style.css?v=5">
 
 <script type="application/ld+json">
 {
@@ -135,10 +135,22 @@
       <div class="reveal">
         <h2>Send an enquiry</h2>
 
-        <!-- FORM ENDPOINT REQUIRED: this static site cannot process submissions on its
-             own. Point `action` at a form service (Formspree, Netlify Forms, Basin, a
-             Cloudflare Worker) before going live. As written, the form submits nowhere. -->
-        <form class="form" action="#" method="post">
+        <!-- INTERIM: this form composes an email in the sender's own mail app. A static
+             site cannot receive a submission by itself, and the previous action="#" was
+             worse than no form at all — it reloaded the page and left the buyer believing
+             they had sent an enquiry that never arrived anywhere.
+
+             mailto has a real cost: a visitor with no mail app configured (common on a
+             desktop using webmail) gets nothing, and even when it works the buyer still
+             has to press send in their own client, which some will not. Nothing is
+             recorded on the server either.
+
+             TO UPGRADE: point `action` at a form service (Formspree, Web3Forms, Basin) or
+             at a PHP script — Hostinger runs PHP, so a small mailer using their
+             authenticated SMTP would work without a third party. Then delete the
+             data-mailto attribute below and the mailto branch in main.js. -->
+        <form class="form" action="mailto:rpaplpower@gmail.com" method="post"
+              enctype="text/plain" data-mailto="rpaplpower@gmail.com">
           <div class="field-row">
             <div class="field">
               <label for="name">Name</label>
@@ -189,9 +201,12 @@
             <button class="btn" type="submit">Send enquiry</button>
           </div>
 
-          <p class="note">
-            By sending this form you agree that we may store your details for the purpose
-            of responding to your enquiry. We do not share them with third parties.
+          <p class="note" id="form-note">
+            This opens a message in your own email app with the details filled in &mdash;
+            you still need to press send there. If nothing opens, write to
+            <a href="mailto:rpaplpower@gmail.com">rpaplpower@gmail.com</a> directly.
+            We use your details only to answer your enquiry and do not share them with
+            third parties.
           </p>
         </form>
       </div>
@@ -297,7 +312,7 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js?v=4" defer></script>
+<script src="/assets/js/main.js?v=5" defer></script>
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>

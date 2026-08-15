@@ -173,8 +173,21 @@ These are the outstanding items, each marked with an HTML comment in the source:
    `info@theramnikgroup.com`) once it exists, updating all three places together. A
    landline can be added alongside the mobile when one is confirmed.
 
-3. **Contact form has no backend.** `action="#"` — point it at Formspree, Netlify Forms,
-   Basin or a Worker, or submissions go nowhere.
+3. **Contact form is an interim mailto.** Pressing *Send enquiry* composes the message
+   in the visitor's own email app with the fields filled in; they still have to press
+   send there. This replaced `action="#"`, which reloaded the page and left the buyer
+   believing they had sent something that reached nobody.
+
+   It has real costs: a visitor with no mail app configured — common on a desktop using
+   webmail — gets nothing, some who do get it will not press send, and nothing is
+   recorded server-side, so there is no record of a lost enquiry.
+
+   **To upgrade**, either point the form's `action` at a service (Formspree, Web3Forms
+   and Basin all have free tiers and take about five minutes) or write a small PHP
+   mailer — Hostinger runs PHP, so authenticated SMTP through their mail service would
+   work with no third party and no monthly cost. Then remove the `data-mailto`
+   attribute in `contact.html` and the mailto branch in `assets/js/main.js`, both of
+   which are commented for exactly this.
 
 4. **Legal entity names — partly resolved, footer still outstanding.** Two entities are
    now confirmed from documents the client supplied, each named on an official record of

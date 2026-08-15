@@ -67,6 +67,70 @@
     if (img && !img.complete) img.addEventListener("load", centre);
   });
 
+  /* Enquiry form ---------------------------------------------------------- */
+
+  /* Interim behaviour while the site has no backend: compose the enquiry in the
+     sender's own mail app. The form's own action is a bare mailto, which works
+     without this script but produces an ugly, machine-looking body; this builds
+     a readable one and puts the grade and quantity in the subject line, which is
+     what gets read first. */
+
+  var enquiry = document.querySelector("form[data-mailto]");
+
+  if (enquiry) {
+    enquiry.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      var value = function (name) {
+        var el = enquiry.elements[name];
+        return el && el.value ? el.value.trim() : "";
+      };
+
+      var subject = value("subject") || "Enquiry";
+      var quantity = value("quantity");
+      if (quantity) subject += " — " + quantity;
+
+      var lines = [
+        ["Name", value("name")],
+        ["Company", value("company")],
+        ["Country", value("country")],
+        ["Email", value("email")],
+        ["Enquiry", value("subject")],
+        ["Grade & quantity", quantity],
+      ]
+        .filter(function (pair) {
+          return pair[1];
+        })
+        .map(function (pair) {
+          return pair[0] + ": " + pair[1];
+        });
+
+      var message = value("message");
+      if (message) lines.push("", message);
+
+      var href =
+        "mailto:" +
+        enquiry.getAttribute("data-mailto") +
+        "?subject=" +
+        encodeURIComponent(subject) +
+        "&body=" +
+        encodeURIComponent(lines.join("\n"));
+
+      // Tell the reader what just happened. A mail app opening in another window
+      // is easy to miss, and silence is what made the old form untrustworthy.
+      var note = document.getElementById("form-note");
+      if (note) {
+        note.textContent =
+          "Your email app should now be open with this enquiry ready to send. " +
+          "If nothing happened, write to " +
+          enquiry.getAttribute("data-mailto") +
+          " directly.";
+      }
+
+      window.location.href = href;
+    });
+  }
+
   /* Gallery lightbox ------------------------------------------------------ */
 
   /* Each thumbnail is a real link to the full-size photograph, so with this
