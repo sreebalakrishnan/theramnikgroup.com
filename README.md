@@ -94,13 +94,14 @@ publish directory `.`. `.htaccess` is Apache/LiteSpeed only and is ignored by th
 
 These are the outstanding items, each marked with an HTML comment in the source:
 
-1. **Operations photographs.** The director portraits are in. Ten operations slots
-   remain and currently show a dark placeholder. Drop the files into
-   `assets/img/photos/` using the filenames in that directory's README and they appear
-   automatically — no HTML editing. This is the list Harsh offered to supply: open cast
-   working, underground working, solar farm, plantation, CSR activities, manufacturing,
-   packing, sizing and grading, and the products themselves. The two full-bleed page
-   heroes are the most visible gap — they are currently plain gradients.
+1. **Two photographs still missing.** Everything else is in. The gaps are
+   `solar.jpg` — the sustainability page leads on solar generation and its full-bleed
+   hero is still a plain gradient — and `product.jpg`, finished alloy packed for
+   dispatch. Both are described in `assets/img/photos/README.md`; drop the files in
+   under those names and they appear with no HTML editing.
+
+   Also outstanding: confirm consent for staff who are recognisable in
+   `underground.jpg`, `safety.jpg` and `control-room.jpg`.
 
 2. **Contact details are interim.** `rpaplpower@gmail.com` and `+91 99773 01100`
    were supplied by the group and are live on the contact page, in every page footer
@@ -123,10 +124,12 @@ These are the outstanding items, each marked with an HTML comment in the source:
    both read correctly to the family.
 
 6. **Social preview card.** `assets/img/og-card.jpg` (1200×630) is a typographic
-   brand card, referenced as `og:image` from every page. It is deliberately not a
-   photograph — the only photographs available are portraits, and a portrait is the
-   wrong first impression for a mining and alloys business. Once operations
-   photography arrives, consider swapping it for a mine or furnace shot.
+   brand card, referenced as `og:image` from every page. It was made typographic
+   because the only photographs then available were portraits. Operations photography
+   has since arrived, so a photographic card is now possible — the furnace tapping
+   frame (`hero-mine.jpg` / `furnace.jpg`) is the obvious candidate and would make a
+   far more arresting link preview. Swapping it means re-scraping the social caches,
+   so it is left as a deliberate choice rather than changed silently.
 
    The card is generated from `assets/img/og-card.source.html`, which reuses the site's
    design tokens. To regenerate after a wording change, open that file at a 1200×630
