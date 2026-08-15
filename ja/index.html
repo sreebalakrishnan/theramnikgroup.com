@@ -54,6 +54,11 @@
   }
   body { line-height: 1.85; }
   h1, h2, h3 { line-height: 1.4; }
+  /* The caption tracking is set for Latin small caps. Kana and kanji are already
+     full-width and carry their own spacing, so 0.1em opens gaps between every
+     glyph. Pulled back to a value that still separates the uppercase Latin in
+     the caption without loosening the Japanese around it. */
+  .photo-caption { letter-spacing: 0.04em; }
 </style>
 
 <script type="application/ld+json">
@@ -217,6 +222,21 @@
           限らず、当社が製造するすべての製品に適用しています。
         </p>
       </div>
+
+      <!-- The only photograph on this page, and it is here rather than higher up
+           because it is evidence for the claim directly above it: the quality
+           system came out of dealings with Japanese customers. The banner names
+           four individuals; the caption names only the company, because the
+           company is what carries weight with this audience and personal names
+           in indexed text serve no purpose the company name does not. -->
+      <figure style="max-width:44rem;margin:0 auto clamp(2.5rem,5vw,3.5rem);">
+        <div class="photo" role="img"
+             aria-label="サランディ工場の金属ヤードにて、歓迎の横断幕の下に並ぶ当社社員とAsia Mineralsご一行"
+             style="background-image:url('/assets/img/photos/customer-visit.jpg')"></div>
+        <figcaption class="photo-caption">
+          Asia Minerals（日本・香港・インド）の皆様によるサランディ工場のご視察
+        </figcaption>
+      </figure>
 
       <ul class="certs">
         <li>

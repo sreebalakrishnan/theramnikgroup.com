@@ -23,6 +23,7 @@ editing. A missing file degrades to a dark graphite placeholder rather than brea
 | `plant-panorama.jpg` | Ferro Alloys — the plant section (27:10) | The works at Sarandi seen from the main gate |
 | `workings.jpg` | Gallery — the mine (3:4) | A cut rock face in the workings, water standing at its foot |
 | `furnace-tap-poster.jpg` | Ferro Alloys — poster frame for the tap video (478x416) | The pour at its fullest, six seconds in |
+| `customer-visit.jpg` | Japanese landing page — quality section (4:3) | A customer delegation at the Sarandi metal yard |
 | `plant-unit-3.jpg` | Ferro Alloys — the plant section (16:7) | The third unit furnace building, added 2024 |
 | `plant-yard.jpg` | Gallery — the works (4:3) | Ore stockpiled in the yard, furnace shed behind |
 | `plant-dusk.jpg` | Gallery — the works (4:3) | The whole works at dusk, tap glow along the bays |
@@ -158,9 +159,23 @@ displays.
   view; the better composed one was kept. All three were stripped of EXIF, which is also
   how the GPS tags come off.
 - The eighth frame in that batch is a posed group photograph of about a dozen staff in
-  the yard. It is held back, not lost: people are its subject, so it needs named consent
-  before it can be published. It is a good photograph for a careers or team page if that
-  consent is obtained.
+  the yard, taken outdoors with the hills behind. It is held back, not lost: people are
+  its subject, so it needs named consent before it can be published. It is a good
+  photograph for a careers or team page if that consent is obtained. It is **not** the
+  same photograph as `customer-visit.jpg`, which is a different occasion under the metal
+  yard shed.
+- `customer-visit.jpg` is published on the Japanese landing page at the client's explicit
+  instruction. It shows a customer delegation, and a welcome banner in frame names four
+  individuals and their employer. Two things were flagged before publishing and the
+  client chose to proceed: the photograph names a trading partner, which the site
+  otherwise never does, and it needs that partner's agreement rather than only the
+  client's; and about seventeen people are recognisable in it. The caption names the
+  company but deliberately **not** the four individuals — the company is what carries
+  weight with the audience, and personal names in indexed text add exposure without
+  adding credibility. If the partner ever objects, removing the photograph is a one-line
+  change in `ja/index.html` plus deleting the file.
+- The banner in `customer-visit.jpg` carries the **old Ramnik mark**, the same
+  inconsistency as the gate in `plant-panorama.jpg`.
 - The solar frame arrived with a decorative rounded border baked in by a photo app. It
   was detected by walking in from each edge until the rows and columns stopped being
   uniformly light — 16px on all four sides — and trimmed before cropping.
