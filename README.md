@@ -13,6 +13,8 @@ mining.html             Ramrama mine — open cast and underground, ore-to-grade
 ferro-alloys.html       Plant, product grades, raw material, quality, export markets
 sustainability.html     Solar, environment, health and safety, CSR and community
 gallery.html            Photographs — the album, with a lightbox
+ja/index.html           Japanese summary landing page
+de/index.html           German summary landing page
 contact.html            Contact routes and enquiry form
 404.html                Not-found page
 assets/css/style.css    Single stylesheet; design tokens in the :root block at the top
@@ -24,6 +26,7 @@ assets/img/photos/thumbs/  Gallery thumbnails (tools/make-gallery-thumbs.js)
 assets/docs/            Documents linked from the site (the ISO 9001 certificate)
 .htaccess               404 page, compression, caching, headers (Apache/LiteSpeed)
 site.webmanifest        Name, theme colour and the 192/512 icons
+llms.txt                Plain-text summary of the business for AI crawlers
 robots.txt, sitemap.xml
 ```
 
@@ -114,6 +117,38 @@ self-heals in days rather than persisting for a year.
 
 Any static host works: Netlify, Cloudflare Pages and Vercel need no build command and
 publish directory `.`. `.htaccess` is Apache/LiteSpeed only and is ignored by those.
+
+## Other languages
+
+`ja/` and `de/` are **summary landing pages, not translations of the site.** Each carries
+the company description, the full grade table, scale figures, certification and contact
+details on one page, and links back to the English site. The English pages remain the
+complete and authoritative record; hreflang on the home page ties the three together, with
+English as `x-default`.
+
+**Both were machine-drafted and are not yet reviewed by a native speaker.** That was a
+deliberate client decision, recorded in a comment at the top of each file. The copy is
+plain and factual and every figure matches the English site, but the technical vocabulary
+and business register are unchecked. Have someone read them before relying on them with a
+customer — the alloy grade terms and the Japanese business register are the parts most
+likely to be subtly wrong.
+
+Adding a third language means: a new directory, the hreflang cluster in `index.html`
+extended, the footer language row extended, and two lines in `sitemap.xml`.
+
+## Search and answer engines
+
+`robots.txt` allows everything, and names the AI crawlers explicitly so the decision is on
+the record — `Google-Extended` is the line that governs whether the site can ground Gemini
+and AI Overviews answers. `llms.txt` is a plain-text summary at a stable URL.
+
+The home page carries a JSON-LD graph: Organization with address, both entities, the
+directors, the four awards, the ISO certificate as a `Certification` node, an
+`OfferCatalog` of the product lines, and `Place` nodes for the mine and the works. Inner
+pages carry `BreadcrumbList`.
+
+Run `python3 tools/check-jsonld.py` after editing any of it. Invalid structured data is
+not an error a browser shows — the crawler simply drops the block.
 
 ## Before going live
 
