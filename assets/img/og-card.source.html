@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  /* Tokens copied from the site stylesheet so the card cannot drift from it. */
+  :root {
+    --ink: #15181c;
+    --paper: #faf9f7;
+    --ember: #b4611f;
+    --ember-lit: #e0a04f;
+    --serif: "Charter", "Bitstream Charter", "DejaVu Serif", Georgia, serif;
+    --sans: "Liberation Sans", "DejaVu Sans", Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body { width: 1200px; height: 630px; }
+
+  body {
+    background: var(--ink);
+    font-family: var(--sans);
+    color: var(--paper);
+    position: relative;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Same ember wash as the site hero scrim. */
+  .glow {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(46rem 30rem at 88% -8%, rgba(180, 97, 31, 0.42), transparent 62%),
+      linear-gradient(115deg, #1a1e23 0%, #15181c 55%, #101317 100%);
+  }
+
+  .frame {
+    position: absolute;
+    inset: 34px;
+    border: 1px solid rgba(250, 249, 247, 0.14);
+  }
+
+  .inner {
+    position: relative;
+    height: 100%;
+    padding: 92px 96px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .mark {
+    width: 74px;
+    height: 74px;
+    border-radius: 5px;
+    background: #1e2328;
+    border: 1px solid rgba(224, 160, 79, 0.4);
+    display: grid;
+    place-items: center;
+  }
+
+  .mark svg { width: 46px; height: 46px; display: block; }
+
+  .wordmark {
+    font-family: var(--serif);
+    font-size: 92px;
+    line-height: 1.02;
+    letter-spacing: -0.022em;
+    font-weight: 400;
+  }
+
+  .wordmark .the {
+    display: block;
+    font-size: 40px;
+    letter-spacing: 0.02em;
+    color: rgba(250, 249, 247, 0.62);
+    margin-bottom: 6px;
+  }
+
+  .rule {
+    width: 86px;
+    height: 2px;
+    background: var(--ember-lit);
+    margin: 30px 0 26px;
+  }
+
+  .descriptor {
+    font-size: 25px;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+    color: var(--ember-lit);
+  }
+
+  .foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(250, 249, 247, 0.5);
+  }
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="frame"></div>
+
+  <div class="inner">
+    <div class="mark">
+      <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 46V18h13.5c5.8 0 9.5 3.3 9.5 8.4 0 4-2.3 6.9-6.1 7.9L44 46h-6.3l-6.2-11h-5.9v11H20zm5.6-15.6h7.2c2.8 0 4.5-1.5 4.5-4s-1.7-4-4.5-4h-7.2v8z" fill="#e0a04f"/>
+      </svg>
+    </div>
+
+    <div>
+      <h1 class="wordmark"><span class="the">The</span>Ramnik Group</h1>
+      <div class="rule"></div>
+      <p class="descriptor">Manganese Mining &middot; Ferro Alloys &middot; Solar Power</p>
+    </div>
+
+    <div class="foot">
+      <span>Balaghat, Madhya Pradesh</span>
+      <span>Four generations</span>
+    </div>
+  </div>
+</body>
+</html>

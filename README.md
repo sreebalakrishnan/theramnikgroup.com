@@ -122,7 +122,23 @@ These are the outstanding items, each marked with an HTML comment in the source:
    was described. The "100+ years" claim follows the briefing's own framing. Confirm
    both read correctly to the family.
 
-6. **`og:image`** is unset — add a preview image once photographs are in.
+6. **Social preview card.** `assets/img/og-card.jpg` (1200×630) is a typographic
+   brand card, referenced as `og:image` from every page. It is deliberately not a
+   photograph — the only photographs available are portraits, and a portrait is the
+   wrong first impression for a mining and alloys business. Once operations
+   photography arrives, consider swapping it for a mine or furnace shot.
+
+   The card is generated from `assets/img/og-card.source.html`, which reuses the site's
+   design tokens. To regenerate after a wording change, open that file at a 1200×630
+   viewport and screenshot it, or:
+
+   ```bash
+   npx playwright screenshot --viewport-size=1200,630 \
+     assets/img/og-card.source.html assets/img/og-card.jpg
+   ```
+
+   Social platforms cache aggressively — after changing the card, re-scrape the URL
+   with Facebook's Sharing Debugger or LinkedIn's Post Inspector to force a refresh.
 
 ## Editing
 
