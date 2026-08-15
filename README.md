@@ -23,6 +23,7 @@ assets/img/mark.png     The group mark, used in the header and as the favicon so
 assets/img/favicon.*    Generated icon set (see tools/make-logo-assets.js)
 assets/img/photos/      Photograph slots — see the README in that directory
 assets/img/photos/thumbs/  Gallery thumbnails (tools/make-gallery-thumbs.js)
+assets/video/           Video — the furnace tap on the ferro alloys page
 assets/docs/            Documents linked from the site (the ISO 9001 certificate)
 .htaccess               404 page, compression, caching, headers (Apache/LiteSpeed)
 site.webmanifest        Name, theme colour and the 192/512 icons
@@ -135,6 +136,25 @@ likely to be subtly wrong.
 
 Adding a third language means: a new directory, the hreflang cluster in `index.html`
 extended, the footer language row extended, and two lines in `sitemap.xml`.
+
+## Video
+
+`assets/video/tapping.mp4` is 21 seconds of the furnace being tapped, on the ferro alloys
+page. It was shot on a phone, so it is **portrait and only 478px wide** — which is why it
+sits in one column of a split rather than as a full-bleed band. Stretched across the page
+it would be visibly upscaled.
+
+It is served with `controls`, `preload="metadata"` and no autoplay: the clip carries
+sound, and 2MB should not download itself on a metered connection. A poster frame is set
+so the block is not a black rectangle before play.
+
+The supplied file was 4.0MB; re-encoding at CRF 26 with mono 96kbps audio brought it to
+2.1MB with no visible difference on a still comparison. If it is ever replaced, keep
+`-movflags +faststart` so it begins playing before the whole file arrives.
+
+**The audio has not been reviewed.** If it contains speech rather than plant noise it
+needs a captions track to be accessible; the page does not depend on the audio for
+meaning, so this is a should-fix rather than a blocker.
 
 ## Search and answer engines
 

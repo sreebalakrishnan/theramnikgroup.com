@@ -49,6 +49,7 @@ ErrorDocument 404 /404.html
   ExpiresByType image/png                     "access plus 30 days"
   ExpiresByType image/webp                    "access plus 30 days"
   ExpiresByType image/x-icon                  "access plus 30 days"
+  ExpiresByType video/mp4                     "access plus 30 days"
 
   ExpiresByType text/xml                      "access plus 1 day"
   ExpiresByType application/xml               "access plus 1 day"
@@ -71,7 +72,7 @@ ErrorDocument 404 /404.html
 
   # Photographs can be replaced under the same filename, so they are not
   # immutable either.
-  <FilesMatch "\.(svg|jpg|jpeg|png|webp|ico|woff2)$">
+  <FilesMatch "\.(svg|jpg|jpeg|png|webp|ico|woff2|mp4)$">
     Header set Cache-Control "public, max-age=2592000"
   </FilesMatch>
 
@@ -90,6 +91,7 @@ ErrorDocument 404 /404.html
   AddType image/webp               .webp
   AddType font/woff2               .woff2
   AddType image/x-icon             .ico
+  AddType video/mp4                .mp4
   AddType application/manifest+json .webmanifest
 </IfModule>
 
