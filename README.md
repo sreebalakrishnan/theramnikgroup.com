@@ -51,9 +51,21 @@ python3 -m http.server 8000
 ## Deploying
 
 **GitHub Pages** — the included workflow publishes the repository root on every push to
-`main`. Enable it once under *Settings → Pages → Source: GitHub Actions*. `CNAME` points
-the site at `theramnikgroup.com`; point DNS at GitHub Pages, or delete the file if you
-host elsewhere.
+`main`, but Pages has to be switched on once by hand first:
+
+> *Settings → Pages → Build and deployment → Source: **GitHub Actions***
+
+Until that is done the workflow fails at `configure-pages` with *"Get Pages site failed
+… Not Found"*. This cannot be automated from the workflow: creating the Pages site needs
+admin rights the `GITHUB_TOKEN` does not carry, so `enablement: true` fails with
+*"Resource not accessible by integration"*. After enabling, re-run the workflow from the
+Actions tab, or push any commit.
+
+`CNAME` sets the custom domain to `theramnikgroup.com`. Note that once a custom domain
+is set, the `*.github.io` address redirects to it, so the site is only reachable after
+DNS points at GitHub Pages — an apex `ALIAS`/`ANAME` (or four `A` records to
+`185.199.108–111.153`) plus a `CNAME` on `www`. Delete the `CNAME` file if you want to
+preview at the `github.io` address first, or if you host elsewhere.
 
 **Netlify / Cloudflare Pages / Vercel** — no build command, publish directory `.`.
 
