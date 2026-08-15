@@ -16,8 +16,9 @@ page shows a dark graphite placeholder in its place, so nothing breaks in the me
 | `product.jpg` | Ferro Alloys — raw material section | Finished alloy sized and packed for dispatch |
 | `solar.jpg` | Sustainability — full-bleed hero | The solar farm on former dump / vacant mine land |
 | `safety.jpg` | Sustainability — health & safety (portrait crop) | Protective equipment, training, or a toolbox talk |
-| `nishal-trivedi.jpg` | Legacy — leadership | Headshot of Nishal Trivedi |
-| `harsh-trivedi.jpg` | Legacy — leadership | Headshot of Harsh Trivedi |
+| `nishal-trivedi.jpg` | Legacy — leadership | Headshot of Nishal Trivedi — **supplied** |
+| `harsh-trivedi.jpg` | Legacy — leadership | Headshot of Harsh Trivedi — **supplied** |
+| `directors.jpg` | Legacy — leadership band; home page | Both directors together — **supplied** |
 
 ## Preparing the files
 

@@ -899,6 +899,10 @@ td.num {
   aspect-ratio: 16 / 7;
 }
 
+.photo--16x9 {
+  aspect-ratio: 16 / 9;
+}
+
 .photo-caption {
   display: block;
   margin-top: 0.75rem;
