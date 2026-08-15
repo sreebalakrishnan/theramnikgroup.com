@@ -23,6 +23,9 @@ editing. A missing file degrades to a dark graphite placeholder rather than brea
 | `pollution-control.jpg` | Sustainability — environment (16:9) | Pollution control plant and stack |
 | `safety.jpg` | Sustainability — health & safety (3:4) | Team in protective equipment |
 | `solar.jpg` | Sustainability — full-bleed hero | Solar array on worked-out ground |
+| `award-1.jpg` | Mining — recognition section (4:3) | Award presented at Mine Safety Week 2019 |
+| `award-2.jpg` | Mining — recognition section (4:3) | Award presented at Mine Safety Week 2019 |
+| `award-3.jpg` | Mining — recognition section (4:3) | Award presented at Mine Safety Week 2019 |
 | `og-card.jpg` | *(in `assets/img/`)* social preview | Typographic brand card |
 
 ## Still wanted
@@ -60,6 +63,12 @@ displays.
 - One frame (plantation beside water) carries a "GPS Map Camera" watermark burned into
   the middle of the image and was not used for that reason. If a clean copy exists it
   would suit the sustainability page well.
+- Ten award frames were supplied; three are used. All ten are from the same ceremony —
+  the banner reads Mine Safety Week 2019, held under the Directorate of Mines Safety,
+  Western Zone, Nagpur regions 1 and 2, hosted by MSMC. That is a **safety** award and
+  is separate from the Ministry of Mines five-star rating the page also mentions; the
+  copy and caption keep the two apart deliberately. Nothing on the trophies themselves
+  is legible, so no specific award title is claimed.
 - The solar frame arrived with a decorative rounded border baked in by a photo app. It
   was detected by walking in from each edge until the rows and columns stopped being
   uniformly light — 16px on all four sides — and trimmed before cropping.
