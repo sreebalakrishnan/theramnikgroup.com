@@ -1,0 +1,822 @@
+<title>Ramnik Group Logo Brief</title>
+
+<style>
+  /* ------------------------------------------------------------------ *
+     Tokens lifted from the live site (assets/css/style.css :root) so the
+     brief is set in the identity the logo has to join. Light is the base
+     palette; the dark set only redefines tokens.
+   * ------------------------------------------------------------------ */
+  :root {
+    --ink: #15181c;
+    --ink-2: #333a41;
+    --ink-3: #5b656f;
+    --paper: #faf9f7;
+    --paper-2: #f1efeb;
+    --paper-3: #e6e3dd;
+    --ember: #b4611f;
+    --ember-text: #964f18;
+    --ember-lit: #e0a04f;
+
+    --ground: var(--paper);
+    --surface: #ffffff;
+    --surface-2: var(--paper-2);
+    --text: var(--ink);
+    --text-2: var(--ink-2);
+    --text-3: var(--ink-3);
+    --accent: var(--ember);
+    --accent-type: var(--ember-text);
+    --green-done: #2f6b45;
+    --rule: rgba(21, 24, 28, 0.13);
+    --rule-soft: rgba(21, 24, 28, 0.07);
+    --code-ground: #16191d;
+    --code-text: #e7e4de;
+    --code-accent: var(--ember-lit);
+
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua",
+      Georgia, "Times New Roman", serif;
+    --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+      "Liberation Mono", monospace;
+
+    --measure: 68ch;
+    --gutter: clamp(1.25rem, 5vw, 3rem);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #101317;
+      --surface: #181c21;
+      --surface-2: #1f242a;
+      --text: #f2efea;
+      --text-2: #c3c8ce;
+      --text-3: #949ca5;
+      --accent: var(--ember-lit);
+      --accent-type: var(--ember-lit);
+      --green-done: #8fd4a8;
+      --rule: rgba(250, 249, 247, 0.16);
+      --rule-soft: rgba(250, 249, 247, 0.08);
+      --code-ground: #0a0c0e;
+      --code-text: #e7e4de;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground: #101317;
+    --surface: #181c21;
+    --surface-2: #1f242a;
+    --text: #f2efea;
+    --text-2: #c3c8ce;
+    --text-3: #949ca5;
+    --accent: var(--ember-lit);
+    --accent-type: var(--ember-lit);
+    --green-done: #8fd4a8;
+    --rule: rgba(250, 249, 247, 0.16);
+    --rule-soft: rgba(250, 249, 247, 0.08);
+    --code-ground: #0a0c0e;
+    --code-text: #e7e4de;
+  }
+
+  /* ------------------------------------------------------------------ */
+
+  body {
+    background: var(--ground);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: var(--measure);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+
+  /* --- masthead ----------------------------------------------------- */
+
+  .masthead {
+    background: var(--ink);
+    color: var(--paper);
+    padding-block: clamp(3rem, 8vw, 5.5rem) clamp(2.5rem, 6vw, 4rem);
+    border-bottom: 3px solid var(--ember);
+  }
+
+  .masthead .eyebrow { color: var(--ember-lit); }
+
+  .masthead h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2.4rem, 1.7rem + 3.4vw, 4rem);
+    line-height: 1.04;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+    margin: 0.5rem 0 0;
+  }
+
+  .masthead .standfirst {
+    font-family: var(--serif);
+    font-size: clamp(1.1rem, 1rem + 0.5vw, 1.35rem);
+    line-height: 1.5;
+    color: rgba(250, 249, 247, 0.78);
+    max-width: 46ch;
+    margin: 1.5rem 0 0;
+  }
+
+  .provenance {
+    margin: 2.25rem 0 0;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(250, 249, 247, 0.16);
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: rgba(250, 249, 247, 0.62);
+    max-width: 54ch;
+  }
+
+  /* --- shared type -------------------------------------------------- */
+
+  .eyebrow {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent-type);
+  }
+
+  section { padding-block: clamp(2.75rem, 6vw, 4.25rem); }
+  section + section { border-top: 1px solid var(--rule-soft); }
+
+  h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(1.6rem, 1.35rem + 1.1vw, 2.2rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+    margin: 0.45rem 0 0;
+  }
+
+  h3 {
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    font-weight: 650;
+    letter-spacing: 0.01em;
+    margin: 0;
+  }
+
+  p { margin: 1.05em 0; max-width: 66ch; }
+  section > .wrap > p:first-of-type { margin-top: 1.5rem; }
+
+  .lede {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    line-height: 1.55;
+    color: var(--text);
+  }
+
+  strong { font-weight: 650; }
+  em { font-style: italic; }
+
+  a { color: var(--accent-type); }
+
+  code:not(pre code) {
+    font-family: var(--mono);
+    font-size: 0.87em;
+    background: var(--surface-2);
+    border: 1px solid var(--rule-soft);
+    border-radius: 2px;
+    padding: 0.1em 0.34em;
+  }
+
+  /* --- business table ----------------------------------------------- */
+
+  .divisions {
+    display: grid;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-top: 2rem;
+  }
+  @media (min-width: 720px) {
+    .divisions { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .division {
+    background: var(--surface);
+    padding: 1.4rem 1.35rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+  .division h3 { font-size: 1.02rem; }
+  .division p { margin: 0; font-size: 0.92rem; color: var(--text-2); max-width: none; }
+  .division .figure {
+    margin-top: auto;
+    padding-top: 0.9rem;
+    font-family: var(--mono);
+    font-variant-numeric: tabular-nums;
+    font-size: 0.8rem;
+    color: var(--accent-type);
+    border-top: 1px solid var(--rule-soft);
+  }
+
+  /* --- words for / against ------------------------------------------ */
+
+  .words {
+    display: grid;
+    gap: 1.75rem;
+    margin-top: 2rem;
+  }
+  @media (min-width: 640px) { .words { grid-template-columns: 1fr 1fr; gap: 2.5rem; } }
+
+  .words ul { list-style: none; margin: 0.9rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.45rem; }
+  .words li {
+    font-size: 0.9rem;
+    padding: 0.28rem 0.7rem;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+  }
+  .words--yes li { color: var(--text); border-color: color-mix(in srgb, var(--accent) 45%, transparent); }
+  .words--no li { color: var(--text-3); text-decoration: line-through; text-decoration-thickness: 1px; }
+
+  /* --- numbered constraints ----------------------------------------- */
+  /* Numbered because they are checked in order against every candidate,
+     not for decoration. */
+
+  ol.rules { list-style: none; counter-reset: r; margin: 2rem 0 0; padding: 0; display: grid; gap: 1.15rem; }
+  ol.rules li {
+    counter-increment: r;
+    display: grid;
+    grid-template-columns: 2.1rem 1fr;
+    gap: 0 0.9rem;
+    align-items: baseline;
+  }
+  ol.rules li::before {
+    content: counter(r, decimal-leading-zero);
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--accent-type);
+    padding-top: 0.12em;
+  }
+  ol.rules p { margin: 0; }
+  ol.rules strong { display: block; }
+
+  /* --- palette ------------------------------------------------------ */
+
+  .swatches { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-top: 2rem; }
+  .swatch { background: var(--surface); display: grid; grid-template-columns: 3.5rem 1fr; align-items: stretch; }
+  @media (min-width: 640px) { .swatch { grid-template-columns: 5rem 9rem 1fr; } }
+  .swatch .chip { min-height: 3.5rem; }
+  .swatch .name { font-family: var(--mono); font-size: 0.8rem; padding: 0.85rem 1rem; color: var(--text); align-self: center; }
+  .swatch .role { font-size: 0.88rem; color: var(--text-2); padding: 0.85rem 1rem 0.85rem 0; align-self: center; }
+  @media (max-width: 639px) {
+    .swatch { grid-template-areas: "chip name" "chip role"; grid-template-columns: 3.5rem 1fr; }
+    .swatch .chip { grid-area: chip; }
+    .swatch .name { grid-area: name; padding-bottom: 0; }
+    .swatch .role { grid-area: role; padding: 0 1rem 0.85rem; }
+  }
+
+  /* --- the incumbent mark ------------------------------------------- */
+
+  /* Stacked, not side by side: at the 68ch measure two columns squeeze the header
+     lockup until the wordmark wraps to three lines, which is the opposite of what
+     the demonstration is for. */
+  .mark-study { margin-top: 2rem; display: grid; gap: 2.25rem; }
+
+  .sizes { display: flex; align-items: flex-end; gap: 1.4rem; }
+  .size { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+  .size span {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--text-3);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .header-sim {
+    background: var(--ink);
+    border: 1px solid var(--rule);
+    padding: 0.95rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  /* Without this the flex row shrinks the 34px mark below the size being demonstrated. */
+  .header-sim > svg { flex: 0 0 auto; }
+  .header-sim .brand-sub { white-space: nowrap; }
+  .header-sim .brand-name {
+    font-family: var(--serif);
+    font-size: 1.02rem;
+    color: var(--paper);
+    line-height: 1.15;
+    display: block;
+  }
+  .header-sim .brand-sub {
+    font-size: 0.62rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: rgba(250, 249, 247, 0.62);
+    display: block;
+    margin-top: 0.2rem;
+  }
+
+  .caption { font-size: 0.83rem; color: var(--text-3); margin-top: 0.7rem; max-width: 52ch; }
+
+  /* --- symbol / avoid lists ----------------------------------------- */
+
+  .listing { list-style: none; margin: 1.75rem 0 0; padding: 0; display: grid; gap: 0.95rem; }
+  .listing li { position: relative; padding-left: 1.7rem; color: var(--text-2); }
+  .listing li strong { color: var(--text); }
+  .listing--use li::before {
+    content: "";
+    position: absolute; left: 0; top: 0.6em;
+    width: 0.5rem; height: 0.5rem;
+    background: var(--accent);
+  }
+  .listing--avoid li { color: var(--text-3); }
+  .listing--avoid li::before {
+    content: "";
+    position: absolute; left: 0; top: 0.78em;
+    width: 0.62rem; height: 1px;
+    background: currentColor;
+  }
+
+  /* --- prompts ------------------------------------------------------ */
+
+  .prompt { margin-top: 2.25rem; border: 1px solid var(--rule); background: var(--surface); }
+  .prompt__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.6rem 1rem;
+    padding: 1rem 1.15rem;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .prompt__head h3 { font-size: 1rem; }
+  .prompt__head .tag { font-size: 0.78rem; color: var(--text-3); }
+  .prompt__head .right { display: flex; align-items: center; gap: 0.85rem; }
+
+  .prompt__body { background: var(--code-ground); }
+  .prompt pre {
+    margin: 0;
+    padding: 1.2rem 1.15rem 1.3rem;
+    overflow-x: auto;
+    font-family: var(--mono);
+    font-size: 0.83rem;
+    line-height: 1.7;
+    color: var(--code-text);
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  /* In the header row rather than overlaid on the text: an absolutely positioned
+     button sat on top of the prompt's first line. */
+  .copy {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-type);
+    background: transparent;
+    border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+    border-radius: 2px;
+    padding: 0.36rem 0.7rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.18s ease, color 0.18s ease;
+  }
+  .copy:hover { background: color-mix(in srgb, var(--accent) 12%, transparent); }
+  .copy:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .copy[data-done="1"] { color: var(--green-done); border-color: color-mix(in srgb, var(--green-done) 50%, transparent); }
+
+  .modifiers { margin-top: 2.5rem; }
+  .modifiers dl { margin: 1.25rem 0 0; display: grid; gap: 1rem; }
+  .modifiers dt { font-size: 0.88rem; font-weight: 650; color: var(--text); }
+  .modifiers dd {
+    margin: 0.3rem 0 0;
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: var(--text-2);
+    padding-left: 0.9rem;
+    border-left: 2px solid var(--accent);
+  }
+
+  /* --- checklist ---------------------------------------------------- */
+
+  .checklist { list-style: none; margin: 1.75rem 0 0; padding: 0; display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+  .checklist li { background: var(--surface); padding: 0.95rem 1.15rem; display: grid; gap: 0.2rem; }
+  .checklist .file { font-family: var(--mono); font-size: 0.85rem; color: var(--accent-type); }
+  .checklist .what { font-size: 0.9rem; color: var(--text-2); }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-block: 2.5rem 3.5rem;
+    font-size: 0.85rem;
+    color: var(--text-3);
+  }
+  footer p { max-width: 60ch; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+  }
+</style>
+
+<header class="masthead">
+  <div class="wrap">
+    <span class="eyebrow">The Ramnik Group &middot; Balaghat, Madhya Pradesh</span>
+    <h1>Logo brief</h1>
+    <p class="standfirst">
+      A hundred years of manganese, four generations, three businesses, and a mark that
+      currently says none of it.
+    </p>
+    <p class="provenance">
+      Everything here comes from the recorded briefing with Harsh Trivedi and from documents
+      the family supplied &mdash; the ISO&nbsp;9001 certificate and the award plaques.
+      Nothing is invented and nothing is taken from the web. Figures match the live site.
+    </p>
+  </div>
+</header>
+
+<main>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">The company</span>
+      <h2>What the mark has to stand for.</h2>
+      <p class="lede">
+        The Ramnik Group is a family business in Balaghat district, Madhya Pradesh, that has
+        mined manganese for over a hundred years across four generations. The British found
+        manganese in the district while building a highway; the family has worked it ever
+        since.
+      </p>
+      <p>
+        The group now does three things: it mines manganese ore at Ramrama, it smelts that
+        ore into ferro alloys at its plant at Sarandi, and it generates its own power &mdash;
+        first from rice husk, now increasingly from solar farms built on worked-out mine
+        land. It supplies Indian steel mills and exports, including a long-term agreement
+        with a Japanese buyer.
+      </p>
+
+      <div class="divisions">
+        <div class="division">
+          <h3>Mining</h3>
+          <p>The Ramrama manganese mine, worked both open cast and underground.</p>
+          <span class="figure">100,000 &rarr; 250,000 t/yr</span>
+        </div>
+        <div class="division">
+          <h3>Ferro alloys</h3>
+          <p>The Sarandi plant. Silico manganese and ferro manganese, across five furnaces.</p>
+          <span class="figure">~34.5 MVA installed</span>
+        </div>
+        <div class="division">
+          <h3>Power</h3>
+          <p>Solar on former mine dumps. Began as a rice-husk captive plant in 2007.</p>
+          <span class="figure">5 &rarr; 15&ndash;25 MW</span>
+        </div>
+      </div>
+
+      <p>
+        Two registered entities sit under the group name: <strong>A. P. Trivedi &amp;
+        Sons</strong>, the mining business, and <strong>Ramnik Power and Alloys Pvt.
+        Ltd.</strong>, power and alloys. The logo is for the group, not for either company.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Character</span>
+      <h2>An old firm, not a startup.</h2>
+      <p>
+        The group's credibility comes from duration and from documents: a five-star rating
+        from the Indian Bureau of Mines for the Ramrama mine, a Madhya Pradesh state
+        environment award, ISO&nbsp;9001:2015, mine safety awards, and a Japanese buyer who
+        audits them. The website's entire voice is evidence over adjectives, and the mark
+        has to belong to that rather than to a slide deck.
+      </p>
+
+      <div class="words">
+        <div class="words--yes">
+          <span class="eyebrow">Reads right</span>
+          <ul>
+            <li>durable</li><li>worked</li><li>earned</li><li>precise</li>
+            <li>unshowy</li><li>mineral</li><li>hot</li><li>patient</li>
+          </ul>
+        </div>
+        <div class="words--no">
+          <span class="eyebrow">Reads wrong</span>
+          <ul>
+            <li>disruptive</li><li>dynamic</li><li>global vision</li>
+            <li>synergy</li><li>innovative</li><li>next-generation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Constraints</span>
+      <h2>Five rules every candidate is checked against.</h2>
+      <ol class="rules">
+        <li>
+          <p><strong>It must read at 16&nbsp;px.</strong> The mark is the favicon and it sits
+          at 34&nbsp;&times;&nbsp;34 in the site header. No fine detail, no hairlines, no
+          gradients, no more than two tones. Most generated logos die here.</p>
+        </li>
+        <li>
+          <p><strong>It must work on both grounds.</strong> On near-black
+          <code>#15181c</code> and on warm off-white <code>#faf9f7</code>. Design it so it
+          survives being flattened to one colour in either direction.</p>
+        </li>
+        <li>
+          <p><strong>Roughly square, or a compact vertical.</strong> It sits immediately left
+          of a two-line wordmark and must not fight it.</p>
+        </li>
+        <li>
+          <p><strong>Vector, delivered as SVG.</strong> Flat fill &mdash; no embedded raster,
+          no filters, no effects that do not survive being pasted into a document.</p>
+        </li>
+        <li>
+          <p><strong>One accent colour at most</strong>, plus the dark and the paper.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Palette</span>
+      <h2>Already fixed by the site.</h2>
+      <p>
+        These are live tokens in <code>assets/css/style.css</code>. A mark in ink and ember
+        is on-brand by default; straying from this family means restyling the whole website,
+        so treat it as fixed unless that is a deliberate decision.
+      </p>
+      <div class="swatches">
+        <div class="swatch">
+          <div class="chip" style="background:#15181c"></div>
+          <div class="name">#15181c &middot; ink</div>
+          <div class="role">Near-black. Header, dark sections, the current mark's ground.</div>
+        </div>
+        <div class="swatch">
+          <div class="chip" style="background:#faf9f7"></div>
+          <div class="name">#faf9f7 &middot; paper</div>
+          <div class="role">Warm off-white. The page.</div>
+        </div>
+        <div class="swatch">
+          <div class="chip" style="background:#b4611f"></div>
+          <div class="name">#b4611f &middot; ember</div>
+          <div class="role">The accent. Burnt orange, the colour of hot metal. Decorative use.</div>
+        </div>
+        <div class="swatch">
+          <div class="chip" style="background:#e0a04f"></div>
+          <div class="name">#e0a04f &middot; ember lit</div>
+          <div class="role">Lighter ember, used on dark. The current mark's letterform.</div>
+        </div>
+        <div class="swatch">
+          <div class="chip" style="background:#964f18"></div>
+          <div class="name">#964f18 &middot; ember text</div>
+          <div class="role">Darker ember, for small type on light. Clears WCAG AA.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">The incumbent</span>
+      <h2>What is being replaced.</h2>
+      <p>
+        A dark rounded square holding an ember <strong>R</strong> in a plain geometric face.
+        It is a placeholder: legible, correctly coloured, and doing no work at all. It says
+        nothing about manganese, about a century, or about heat.
+      </p>
+
+      <div class="mark-study">
+        <div>
+          <div class="sizes">
+            <div class="size">
+              <svg width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="The current monogram at 64 pixels">
+                <rect width="64" height="64" rx="4" fill="#15181c"/>
+                <path d="M20 46V18h13.5c5.8 0 9.5 3.3 9.5 8.4 0 4-2.3 6.9-6.1 7.9L44 46h-6.3l-6.2-11h-5.9v11H20zm5.6-15.6h7.2c2.8 0 4.5-1.5 4.5-4s-1.7-4-4.5-4h-7.2v8z" fill="#e0a04f"/>
+              </svg>
+              <span>64</span>
+            </div>
+            <div class="size">
+              <svg width="34" height="34" viewBox="0 0 64 64" role="img" aria-label="The current monogram at 34 pixels, the size used in the site header">
+                <rect width="64" height="64" rx="4" fill="#15181c"/>
+                <path d="M20 46V18h13.5c5.8 0 9.5 3.3 9.5 8.4 0 4-2.3 6.9-6.1 7.9L44 46h-6.3l-6.2-11h-5.9v11H20zm5.6-15.6h7.2c2.8 0 4.5-1.5 4.5-4s-1.7-4-4.5-4h-7.2v8z" fill="#e0a04f"/>
+              </svg>
+              <span>34</span>
+            </div>
+            <div class="size">
+              <svg width="16" height="16" viewBox="0 0 64 64" role="img" aria-label="The current monogram at 16 pixels, favicon size">
+                <rect width="64" height="64" rx="4" fill="#15181c"/>
+                <path d="M20 46V18h13.5c5.8 0 9.5 3.3 9.5 8.4 0 4-2.3 6.9-6.1 7.9L44 46h-6.3l-6.2-11h-5.9v11H20zm5.6-15.6h7.2c2.8 0 4.5-1.5 4.5-4s-1.7-4-4.5-4h-7.2v8z" fill="#e0a04f"/>
+              </svg>
+              <span>16</span>
+            </div>
+          </div>
+          <p class="caption">The three sizes it actually appears at. Test every candidate this way first.</p>
+        </div>
+
+        <div>
+          <div class="header-sim">
+            <svg width="34" height="34" viewBox="0 0 64 64" role="img" aria-label="The current monogram in the site header lockup">
+              <rect width="64" height="64" rx="4" fill="#15181c"/>
+              <path d="M20 46V18h13.5c5.8 0 9.5 3.3 9.5 8.4 0 4-2.3 6.9-6.1 7.9L44 46h-6.3l-6.2-11h-5.9v11H20zm5.6-15.6h7.2c2.8 0 4.5-1.5 4.5-4s-1.7-4-4.5-4h-7.2v8z" fill="#e0a04f"/>
+            </svg>
+            <span>
+              <span class="brand-name">The Ramnik Group</span>
+              <span class="brand-sub">Mining &middot; Ferro Alloys &middot; Power</span>
+            </span>
+          </div>
+          <p class="caption">
+            The lockup it has to live in: serif wordmark above letterspaced caps, on the ink
+            bar. A mark that looks good alone often crowds this.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Raw material</span>
+      <h2>Symbols that are actually true.</h2>
+      <p>Draw from these rather than inventing a story the business cannot support.</p>
+      <ul class="listing listing--use">
+        <li><strong>Manganese ore</strong> &mdash; dark, dense, crystalline; breaks with angular faces.</li>
+        <li><strong>The five-pointed star</strong> &mdash; the mine holds a five-star rating from the Indian Bureau of Mines. Here a star is earned, not decorative.</li>
+        <li><strong>The furnace tap</strong> &mdash; molten alloy running out of a furnace. This is where the ember accent comes from, and it is the most arresting thing the group does.</li>
+        <li><strong>Strata and benches</strong> &mdash; the stepped terraces of an open cast working, which also read as layers of time.</li>
+        <li><strong>Sun over worked ground</strong> &mdash; solar panels laid on former mine dumps. The same land used twice.</li>
+        <li><strong>The letter R</strong> &mdash; the incumbent idea, and the safest.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Out of bounds</span>
+      <h2>What will get rejected.</h2>
+      <ul class="listing listing--avoid">
+        <li>Crossed pickaxes, hard hats, mine carts and the rest of the mining clip-art vocabulary.</li>
+        <li>A globe with a swoosh, or an orbit ring.</li>
+        <li>Gradient meshes, 3D bevels, glassy highlights, drop shadows.</li>
+        <li>A green leaf as the sustainability signal. The environmental case here is a state award and 20,000 trees, not a sticker.</li>
+        <li>Anything that would look at home on a SaaS landing page.</li>
+        <li>Devanagari used decoratively. The group is Indian and does not need to perform it.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Prompts</span>
+      <h2>Three directions, ready to paste.</h2>
+      <p>
+        Run each several times. They are starting points, not specifications &mdash; and the
+        constraints above still decide what survives.
+      </p>
+
+      <article class="prompt">
+        <div class="prompt__head">
+          <h3>A &middot; Monogram</h3>
+          <span class="right">
+            <span class="tag">The safe evolution</span>
+            <button class="copy" type="button">Copy</button>
+          </span>
+        </div>
+        <div class="prompt__body">
+<pre>A minimalist vector logo mark for a hundred-year-old Indian manganese mining and ferro alloys family business. A single letter "R" as a solid geometric monogram, built from angular facets like a broken mineral crystal rather than from smooth curves. The counter of the R reads as a cleaved face. Flat two-tone: burnt ember orange #b4611f on near-black #15181c. Contained in a square with a very slight corner radius. Absolutely flat — no gradient, no bevel, no shadow, no texture. Must remain legible at 16 pixels. Confident, industrial, understated; the mark of an old firm, not a startup. Vector, clean edges, generous negative space.</pre>
+        </div>
+      </article>
+
+      <article class="prompt">
+        <div class="prompt__head">
+          <h3>B &middot; Strata and heat</h3>
+          <span class="right">
+            <span class="tag">Abstract</span>
+            <button class="copy" type="button">Copy</button>
+          </span>
+        </div>
+        <div class="prompt__body">
+<pre>A minimalist abstract vector logo mark for a manganese mining, ferro alloys and solar power group in Madhya Pradesh, India. Horizontal stepped bands suggesting the benches of an open cast mine, stacked like geological strata. The lowest band glows ember orange like molten metal being tapped from a furnace; the bands above are near-black. Four bands, for four generations. Strictly geometric, flat, no gradient, no perspective, no 3D. Square format, high contrast, legible at 16 pixels. Colours: near-black #15181c and burnt ember #b4611f on warm off-white #faf9f7. Restrained and industrial, in the manner of a mid-century mark for a heavy industry company.</pre>
+        </div>
+      </article>
+
+      <article class="prompt">
+        <div class="prompt__head">
+          <h3>C &middot; The earned star</h3>
+          <span class="right">
+            <span class="tag">Institutional</span>
+            <button class="copy" type="button">Copy</button>
+          </span>
+        </div>
+        <div class="prompt__body">
+<pre>A minimalist vector logo mark for an Indian manganese mine that holds a government five-star rating. A single five-pointed star, drawn with hard straight edges as if cut from stone rather than rounded, sitting on or emerging from three stacked horizontal bars that read as mine benches. The star is ember orange #b4611f; the bars are near-black #15181c. Completely flat, no gradient, no outline, no shadow. Square, symmetrical, weighted toward the base so it feels planted rather than floating. Legible at 16 pixels. Serious, institutional, earned — closer to a certification seal than to a consumer brand.</pre>
+        </div>
+      </article>
+
+      <div class="modifiers">
+        <span class="eyebrow">Modifiers</span>
+        <p>Append one of these when a run drifts.</p>
+        <dl>
+          <dt>Force a light ground</dt>
+          <dd>Render on a warm off-white #faf9f7 background, mark in near-black and ember.</dd>
+          <dt>Force a single colour</dt>
+          <dd>Single colour only — solid ember orange on near-black, no second tint.</dd>
+          <dt>Force simplicity</dt>
+          <dd>Extremely reduced. No more than five distinct shapes in the entire mark.</dd>
+          <dt>Force the full lockup</dt>
+          <dd>Beside the mark, set "THE RAMNIK GROUP" in a restrained serif, and beneath it "MINING · FERRO ALLOYS · POWER" in small letterspaced capitals.</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Judging</span>
+      <h2>Four tests, in this order.</h2>
+      <ol class="rules">
+        <li><p><strong>Shrink it to 16&nbsp;px.</strong> Then look at it honestly. This eliminates most candidates and costs nothing.</p></li>
+        <li><p><strong>Fill it solid black, then solid white.</strong> If it stops working, it was relying on colour to do structural work.</p></li>
+        <li><p><strong>Put it in the header lockup.</strong> On the ink bar, wordmark to its right, at 34&nbsp;px.</p></li>
+        <li><p><strong>Ask what it claims.</strong> The group's whole case is that it does not overstate. A mark that promises more than a hundred-year manganese business delivers is off-brand even when it is handsome.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Delivery</span>
+      <h2>What we need back.</h2>
+      <ul class="checklist">
+        <li>
+          <span class="file">mark.svg</span>
+          <span class="what">The mark alone, square. Drops straight into the site header and the favicon.</span>
+        </li>
+        <li>
+          <span class="file">lockup-horizontal.svg</span>
+          <span class="what">Mark plus wordmark, for documents and the social card.</span>
+        </li>
+        <li>
+          <span class="file">mark-mono.svg</span>
+          <span class="what">Single colour, for stamping and for the ore bags.</span>
+        </li>
+        <li>
+          <span class="file">both grounds</span>
+          <span class="what">Ember on ink <em>and</em> ink on paper &mdash; the site uses both on every page.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>
+      Prepared for The Ramnik Group. Sources: the recorded briefing with Harsh Trivedi, the
+      ISO&nbsp;9001:2015 certificate, and photographs of the award plaques. Colour tokens
+      are read from the live stylesheet.
+    </p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll(".copy").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var text = btn.closest(".prompt").querySelector("pre").textContent;
+      var done = function () {
+        btn.textContent = "Copied";
+        btn.dataset.done = "1";
+        setTimeout(function () {
+          btn.textContent = "Copy";
+          delete btn.dataset.done;
+        }, 1800);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () {
+          btn.textContent = "Select it";
+        });
+      } else {
+        // Older engines: select the block so the reader can copy manually.
+        var r = document.createRange();
+        r.selectNodeContents(btn.closest(".prompt").querySelector("pre"));
+        var s = window.getSelection();
+        s.removeAllRanges();
+        s.addRange(r);
+        btn.textContent = "Selected";
+      }
+    });
+  });
+</script>
