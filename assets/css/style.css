@@ -1244,6 +1244,26 @@ figure {
   gap: 1.2rem;
 }
 
+/* --- wide figures ------------------------------------------------------- */
+
+/* The trade map carries labels sized for a desktop reading distance. Rather
+   than let them shrink to illegibility on a phone, it keeps a minimum width and
+   scrolls inside its own box — the same treatment the product table gets. The
+   country lists beneath it hold the same information as text. */
+.figure-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--line-dark);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.figure-scroll img {
+  display: block;
+  width: 100%;
+  min-width: 640px;
+  height: auto;
+}
+
 /* --- map ---------------------------------------------------------------- */
 
 .map {

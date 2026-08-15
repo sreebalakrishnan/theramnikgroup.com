@@ -53,6 +53,20 @@
     }
   }
 
+  /* Centre wide figures that scroll -------------------------------------- */
+
+  /* The trade map is wider than a phone screen and lives in a scroll box. Left-
+     aligned it opens on the Atlantic; the subject is Balaghat, in the middle. */
+  document.querySelectorAll(".figure-scroll").forEach(function (box) {
+    var centre = function () {
+      var over = box.scrollWidth - box.clientWidth;
+      if (over > 0) box.scrollLeft = over / 2;
+    };
+    centre();
+    var img = box.querySelector("img");
+    if (img && !img.complete) img.addEventListener("load", centre);
+  });
+
   /* Reveal on scroll ------------------------------------------------------ */
 
   var revealables = document.querySelectorAll(".reveal");
