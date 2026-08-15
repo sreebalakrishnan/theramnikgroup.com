@@ -16,7 +16,7 @@ page shows a dark graphite placeholder in its place, so nothing breaks in the me
 | `product.jpg` | Ferro Alloys — raw material section | Finished alloy sized and packed for dispatch |
 | `solar.jpg` | Sustainability — full-bleed hero | The solar farm on former dump / vacant mine land |
 | `safety.jpg` | Sustainability — health & safety (portrait crop) | Protective equipment, training, or a toolbox talk |
-| `nishal-trivedi.jpg` | Legacy — leadership | Headshot of Nishal Trivedi — **supplied** |
+| `nischal-trivedi.jpg` | Legacy — leadership | Headshot of Nischal Trivedi — **supplied** |
 | `harsh-trivedi.jpg` | Legacy — leadership | Headshot of Harsh Trivedi — **supplied** |
 | `directors.jpg` | Legacy — leadership band; home page | Both directors together — **supplied** |
 
@@ -29,7 +29,7 @@ page shows a dark graphite placeholder in its place, so nothing breaks in the me
 - **Portrait crops** (`ram-rama`, `plant`, `safety`): roughly 3:4, at least 1200px wide.
 - **Standard slots** (`underground`, `crushing`, `product`): roughly 4:3, at least
   1400px wide.
-- **Headshots** (`nishal-trivedi`, `harsh-trivedi`): 4:5 portrait, at least 800px wide.
+- **Headshots** (`nischal-trivedi`, `harsh-trivedi`): 4:5 portrait, at least 800px wide.
   The slot anchors to the top of the frame, so leave headroom above rather than
   cropping tight to the hairline. Both directors should be shot and cropped the same
   way or the pair looks mismatched.
