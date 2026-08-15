@@ -991,18 +991,24 @@ figure {
   gap: 0.85rem;
 }
 
+/* The marker is positioned rather than made a grid item. As a two-column grid,
+   an <li> containing inline markup (e.g. a leading <strong>) produced a third
+   grid item, which wrapped onto row 2 into the 1.1rem marker column and set the
+   text one word per line. Positioning is indifferent to how many children the
+   item has. */
 .checks li {
-  display: grid;
-  grid-template-columns: 1.1rem minmax(0, 1fr);
-  gap: 0.85rem;
+  position: relative;
+  padding-left: 1.95rem;
   color: var(--ink-2);
 }
 
 .checks li::before {
   content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
   width: 0.55rem;
   height: 0.55rem;
-  margin-top: 0.55rem;
   border-radius: 50%;
   background: var(--ember);
 }
