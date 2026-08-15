@@ -12,13 +12,15 @@ legacy.html             The discovery of manganese, four generations, milestones
 mining.html             Ramrama mine — open cast and underground, ore-to-graded-ore process
 ferro-alloys.html       Plant, product grades, raw material, quality, export markets
 sustainability.html     Solar, environment, health and safety, CSR and community
+gallery.html            Photographs — the album, with a lightbox
 contact.html            Contact routes and enquiry form
 404.html                Not-found page
 assets/css/style.css    Single stylesheet; design tokens in the :root block at the top
-assets/js/main.js       Mobile nav, sticky-header border, scroll reveal
+assets/js/main.js       Mobile nav, sticky-header border, gallery lightbox, scroll reveal
 assets/img/mark.png     The group mark, used in the header and as the favicon source
 assets/img/favicon.*    Generated icon set (see tools/make-logo-assets.js)
 assets/img/photos/      Photograph slots — see the README in that directory
+assets/img/photos/thumbs/  Gallery thumbnails (tools/make-gallery-thumbs.js)
 assets/docs/            Documents linked from the site (the ISO 9001 certificate)
 .htaccess               404 page, compression, caching, headers (Apache/LiteSpeed)
 site.webmanifest        Name, theme colour and the 192/512 icons
@@ -96,12 +98,12 @@ headers. Every block is wrapped in `<IfModule>`, so a module the server does not
 skipped rather than throwing a 500.
 
 **Cache busting.** The pages request the stylesheet and script with a version query —
-`href="/assets/css/style.css?v=3"`. **Bump that number in every page whenever you edit
+`href="/assets/css/style.css?v=4"`. **Bump that number in every page whenever you edit
 `style.css` or `main.js`**, or returning visitors keep the old file:
 
 ```bash
-# bump v=3 to v=4 across all pages
-sed -i 's/style\.css?v=3/style.css?v=4/; s/main\.js?v=3/main.js?v=4/' *.html
+# bump v=4 to v=5 across all pages
+sed -i 's/style\.css?v=4/style.css?v=5/; s/main\.js?v=4/main.js?v=5/' *.html
 ```
 
 Nothing here is content-hashed, so nothing is cached as immutable: the stylesheet and
@@ -209,7 +211,9 @@ small enough to move to Eleventy or Astro with layouts and no other changes.
 
 The JavaScript is progressive enhancement only. With it disabled the site stays fully
 readable and navigable: reveal animations are gated behind a `.js` class so nothing is
-hidden, and the mobile menu falls back to in-flow links.
+hidden, the mobile menu falls back to in-flow links, and every gallery thumbnail is a
+plain link to the full-size photograph, so clicking one still shows the picture — the
+lightbox is built by the script and is simply absent without it.
 
 ## Verified
 

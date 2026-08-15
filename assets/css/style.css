@@ -1357,6 +1357,200 @@ figure {
   justify-content: center;
 }
 
+/* --- gallery ------------------------------------------------------------ */
+
+/* The album carries photographs of five different aspect ratios, from a 27:10
+   panorama to a 3:4 headgear tower. A uniform grid would have to re-crop them
+   all; CSS columns let each keep its own shape. Reading order runs down each
+   column rather than across, which is the right trade for an album. */
+
+.page-hero--plain {
+  padding-block: clamp(3.5rem, 9vw, 6.5rem) clamp(2.75rem, 7vw, 5rem);
+}
+
+.album {
+  columns: 1;
+  column-gap: clamp(0.85rem, 2vw, 1.35rem);
+  margin-top: clamp(1.75rem, 4vw, 2.75rem);
+}
+
+@media (min-width: 600px) {
+  .album {
+    columns: 2;
+  }
+}
+
+@media (min-width: 960px) {
+  .album {
+    columns: 3;
+  }
+}
+
+/* Two frames only, so three columns would leave a hole. */
+.album--pair {
+  columns: 1;
+}
+
+@media (min-width: 600px) {
+  .album--pair {
+    columns: 2;
+  }
+}
+
+.shot {
+  break-inside: avoid;
+  /* Safari still needs the old property to honour the above. */
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  margin: 0 0 clamp(0.85rem, 2vw, 1.35rem);
+}
+
+.shot > a {
+  display: block;
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--paper-3);
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s var(--ease);
+}
+
+.js .shot > a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(21, 24, 28, 0);
+  transition: background 0.35s var(--ease);
+}
+
+.js .shot > a:hover::after,
+.js .shot > a:focus-visible::after {
+  background: rgba(21, 24, 28, 0.14);
+}
+
+.shot > a:hover img {
+  transform: scale(1.03);
+}
+
+.shot figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.83rem;
+  line-height: 1.45;
+  color: var(--ink-3);
+}
+
+.section--ink .shot figcaption {
+  color: rgba(250, 249, 247, 0.6);
+}
+
+.section--ink .shot > a {
+  background: rgba(250, 249, 247, 0.06);
+}
+
+/* --- lightbox ----------------------------------------------------------- */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  /* Above .site-header (100), below .skip (200): the sticky header would
+     otherwise sit over the overlay and cover the close button. */
+  z-index: 150;
+  background: rgba(10, 12, 14, 0.95);
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 4vw, 3rem);
+}
+
+/* Not `display:none` on [hidden] plus `display:flex` here — the flex would win
+   and the shell would sit over the page permanently. */
+.lightbox:not([hidden]) {
+  display: flex;
+}
+
+.lightbox__figure {
+  margin: 0;
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.lightbox__figure img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100vh - 9rem);
+  width: auto;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+.lightbox__figure figcaption {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: rgba(250, 249, 247, 0.72);
+  text-align: center;
+  max-width: 60ch;
+}
+
+.lightbox__close,
+.lightbox__nav {
+  position: absolute;
+  background: rgba(250, 249, 247, 0.08);
+  border: 1px solid rgba(250, 249, 247, 0.22);
+  border-radius: var(--radius);
+  color: var(--paper);
+  cursor: pointer;
+  line-height: 1;
+  transition: background 0.2s var(--ease);
+}
+
+.lightbox__close:hover,
+.lightbox__nav:hover {
+  background: rgba(250, 249, 247, 0.18);
+}
+
+.lightbox__close:focus-visible,
+.lightbox__nav:focus-visible {
+  outline: 2px solid var(--ember-lit);
+  outline-offset: 2px;
+}
+
+.lightbox__close {
+  top: clamp(0.75rem, 2vw, 1.5rem);
+  right: clamp(0.75rem, 2vw, 1.5rem);
+  width: 2.75rem;
+  height: 2.75rem;
+  font-size: 1.6rem;
+}
+
+.lightbox__nav {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.75rem;
+  height: 3.75rem;
+  font-size: 2rem;
+}
+
+.lightbox__nav--prev {
+  left: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+.lightbox__nav--next {
+  right: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+/* Stops the page behind scrolling while the lightbox is open. */
+body.is-lightboxed {
+  overflow: hidden;
+}
+
 /* --- footer ------------------------------------------------------------- */
 
 .site-footer {

@@ -67,6 +67,113 @@
     if (img && !img.complete) img.addEventListener("load", centre);
   });
 
+  /* Gallery lightbox ------------------------------------------------------ */
+
+  /* Each thumbnail is a real link to the full-size photograph, so with this
+     file absent clicking one still shows the picture — it just loads the image
+     on its own instead of opening an overlay. */
+
+  var shots = document.querySelectorAll(".shot > a");
+
+  if (shots.length) {
+    /* Built here rather than shipped as empty markup: an <img> with no src in
+       the document is a broken image until the moment it is opened. */
+    var lightbox = document.createElement("div");
+    lightbox.className = "lightbox";
+    lightbox.id = "lightbox";
+    lightbox.hidden = true;
+    lightbox.setAttribute("role", "dialog");
+    lightbox.setAttribute("aria-modal", "true");
+    lightbox.setAttribute("aria-label", "Photograph");
+    lightbox.innerHTML =
+      '<button class="lightbox__close" type="button" aria-label="Close">×</button>' +
+      '<button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Previous photograph">‹</button>' +
+      '<button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Next photograph">›</button>' +
+      '<figure class="lightbox__figure"><img alt=""><figcaption></figcaption></figure>';
+
+    var lbImg = lightbox.querySelector("img");
+    var lbCaption = lightbox.querySelector("figcaption");
+    var lbClose = lightbox.querySelector(".lightbox__close");
+    var lbPrev = lightbox.querySelector(".lightbox__nav--prev");
+    var lbNext = lightbox.querySelector(".lightbox__nav--next");
+    var links = Array.prototype.slice.call(shots);
+    var current = -1;
+    var lastFocused = null;
+
+    var show = function (index) {
+      current = (index + links.length) % links.length;
+      var link = links[current];
+      var thumb = link.querySelector("img");
+      var caption = link.parentNode.querySelector("figcaption");
+      lbImg.src = link.getAttribute("href");
+      lbImg.alt = thumb ? thumb.getAttribute("alt") || "" : "";
+      lbCaption.textContent = caption ? caption.textContent.trim() : "";
+    };
+
+    var attached = false;
+
+    var open = function (index) {
+      // Kept out of the document until it is wanted, so the page never carries a
+      // srcless <img> around with it.
+      if (!attached) {
+        document.body.appendChild(lightbox);
+        attached = true;
+      }
+      lastFocused = document.activeElement;
+      show(index);
+      lightbox.hidden = false;
+      document.body.classList.add("is-lightboxed");
+      lbClose.focus();
+    };
+
+    var close = function () {
+      lightbox.hidden = true;
+      document.body.classList.remove("is-lightboxed");
+      // Release the full-size image rather than leave it decoded in memory.
+      lbImg.removeAttribute("src");
+      if (lastFocused && lastFocused.focus) lastFocused.focus();
+    };
+
+    links.forEach(function (link, index) {
+      link.addEventListener("click", function (event) {
+        // Leave modified clicks alone so "open in new tab" still works.
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
+        event.preventDefault();
+        open(index);
+      });
+    });
+
+    lbClose.addEventListener("click", close);
+    lbPrev.addEventListener("click", function () {
+      show(current - 1);
+    });
+    lbNext.addEventListener("click", function () {
+      show(current + 1);
+    });
+
+    // Backdrop only: clicks on the picture or the buttons must not dismiss it.
+    lightbox.addEventListener("click", function (event) {
+      if (event.target === lightbox) close();
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (lightbox.hidden) return;
+      if (event.key === "Escape") close();
+      else if (event.key === "ArrowLeft") show(current - 1);
+      else if (event.key === "ArrowRight") show(current + 1);
+      else if (event.key === "Tab") {
+        // Keep focus inside the dialog while it is open.
+        var focusable = [lbClose, lbPrev, lbNext];
+        var at = focusable.indexOf(document.activeElement);
+        var next = event.shiftKey ? at - 1 : at + 1;
+        if (at === -1 || next < 0 || next >= focusable.length) {
+          event.preventDefault();
+          focusable[event.shiftKey ? focusable.length - 1 : 0].focus();
+        }
+      }
+    });
+  }
+
   /* Reveal on scroll ------------------------------------------------------ */
 
   var revealables = document.querySelectorAll(".reveal");
