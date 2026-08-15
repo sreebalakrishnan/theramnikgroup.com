@@ -80,9 +80,13 @@ whatever is on `main` is what gets served.
 - Branch: `main`
 - Directory: `public_html` (leave the path field empty to deploy to the web root)
 
-Deploying is then the **Deploy** button in hPanel. To make pushes deploy automatically,
-copy the webhook URL hPanel shows and add it under *GitHub → Settings → Webhooks* with
-content type `application/json`.
+**Deployment is automatic.** The hPanel webhook is already wired up under *GitHub →
+Settings → Webhooks*, so merging a pull request into `main` deploys it — there is nothing
+to press. The **Deploy** button in hPanel is only needed to force a re-pull if a webhook
+delivery is missed.
+
+Treat merging as publishing: anything merged is live within moments, so do not merge work
+that is not meant to be seen yet.
 
 Two things worth knowing:
 
@@ -102,13 +106,15 @@ headers. Every block is wrapped in `<IfModule>`, so a module the server does not
 skipped rather than throwing a 500.
 
 **Cache busting.** The pages request the stylesheet and script with a version query —
-`href="/assets/css/style.css?v=4"`. **Bump that number in every page whenever you edit
-`style.css` or `main.js`**, or returning visitors keep the old file:
+currently `href="/assets/css/style.css?v=6"`. **Bump that number in every page whenever
+you edit `style.css` or `main.js`**, or returning visitors keep the old file:
 
 ```bash
-# bump v=4 to v=5 across all pages
-sed -i 's/style\.css?v=4/style.css?v=5/; s/main\.js?v=4/main.js?v=5/' *.html
+# bump v=6 to v=7 across all pages
+sed -i 's/style\.css?v=6/style.css?v=7/; s/main\.js?v=6/main.js?v=7/' *.html
 ```
+
+Check the current number before copying that line — it moves.
 
 Nothing here is content-hashed, so nothing is cached as immutable: the stylesheet and
 script expire after a week and photographs after a month, which means a forgotten bump
