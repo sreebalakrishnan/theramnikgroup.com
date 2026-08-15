@@ -24,9 +24,8 @@ editing. A missing file degrades to a dark graphite placeholder rather than brea
 | `safety.jpg` | Sustainability — health & safety (3:4) | Team in protective equipment |
 | `solar.jpg` | Sustainability — full-bleed hero | Solar array on worked-out ground |
 | `award-five-star.jpg` | Mining — recognition section (3:2) | The Ministry of Mines five-star rating being presented |
-| `award-1.jpg` | Mining — recognition section (4:3) | Award presented at Mine Safety Week 2019 |
-| `award-2.jpg` | Mining — recognition section (4:3) | Award presented at Mine Safety Week 2019 |
-| `award-3.jpg` | Mining — recognition section (4:3) | Award presented at Mine Safety Week 2019 |
+| `award-safety-week.jpg` | Mining — recognition section (3:2) | Award presented at Mine Safety Week 2019 |
+| `plantation.jpg` | Sustainability — environment (16:7) | Dense plantation of young saplings on worked ground |
 | `og-card.jpg` | *(in `assets/img/`)* social preview | Typographic brand card |
 
 ## Still wanted
@@ -61,14 +60,24 @@ displays.
   four of the headgear tower, three of the pollution control building, three of the
   furnace tapping, three of the ore stacks — and one of each was chosen. The unused
   frames remain in the source folder if a different pick is preferred.
-- One frame (plantation beside water) carries a "GPS Map Camera" watermark burned into
-  the middle of the image and was not used for that reason. If a clean copy exists it
-  would suit the sustainability page well.
+- `plantation.jpg` is cropped out of a frame carrying a "GPS Map Camera" watermark burned
+  into it. The watermark — logo, then a panel of coordinates — begins at row 507 of the
+  1600×900 original, so the clean area is the top 500 rows; the published band is
+  `extract({left:457, top:0, width:1143, height:500})`, which is exactly 16:7 and frames
+  the embankment rather than the sky-heavy left half. It is therefore only 1143px wide,
+  under the 1120px container at 1× and soft on retina. **If a clean copy of this photo
+  exists, it should replace the crop** — the foreground rows of saplings, the part that
+  actually shows the density, are behind the watermark and are lost here. The original's
+  own stamp reads Waraseoni, Balaghat, 07/05/2022, which is where the caption's place and
+  date come from.
 - `award-five-star.jpg` is the Ministry of Mines five-star rating being presented by
   Prahlad Joshi, Union Minister of Mines, to Nischal Trivedi and Harsh Trivedi at the
   Conclave on Mines and Minerals in New Delhi — identified by the client. It is the one
   photograph that evidences the five-star claim the page makes, so it leads the section.
-- Ten award frames were supplied; three of the Mine Safety Week set are used. All ten are from the same ceremony —
+- Ten award frames were supplied; one of the Mine Safety Week set is used. The three
+  strongest were published at first and cut back to one at the client's request — they
+  record the same presentation from adjacent angles, so the other two added nothing.
+  All ten are from the same ceremony —
   the banner reads Mine Safety Week 2019, held under the Directorate of Mines Safety,
   Western Zone, Nagpur regions 1 and 2, hosted by MSMC. That is a **safety** award and
   is separate from the Ministry of Mines five-star rating the page also mentions; the
@@ -80,7 +89,7 @@ displays.
 - Several frames show identifiable staff. Only those where people appear at a working
   distance were used; a close portrait of an individual worker was left out. Confirm
   consent for anyone recognisable before launch — this applies to `underground.jpg`,
-  `safety.jpg` and `control-room.jpg` in particular.
+  `safety.jpg`, `control-room.jpg` and the two award photographs in particular.
 
 ## Adding a new slot
 

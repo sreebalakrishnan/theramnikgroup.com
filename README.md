@@ -110,7 +110,11 @@ These are the outstanding items, each marked with an HTML comment in the source:
    one in use is 994px wide against a full-bleed hero.
 
    Also outstanding: confirm consent for staff who are recognisable in
-   `underground.jpg`, `safety.jpg` and `control-room.jpg`.
+   `underground.jpg`, `safety.jpg`, `control-room.jpg` and the two award photographs.
+
+   `plantation.jpg` is a band cropped above a GPS Map Camera watermark, so the dense
+   foreground rows are cut off and it is only 1143px wide. A clean copy of that frame
+   would be a straight improvement.
 
 2. **Contact details are interim.** `rpaplpower@gmail.com` and the office mobile
    `+91 99773 02683` are live on the contact page, in every page footer and in the
