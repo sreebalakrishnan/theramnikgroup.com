@@ -24,7 +24,7 @@ assets/img/favicon.*    Generated icon set (see tools/make-logo-assets.js)
 assets/img/photos/      Photograph slots — see the README in that directory
 assets/img/photos/thumbs/  Gallery thumbnails (tools/make-gallery-thumbs.js)
 assets/video/           Video — the furnace tap on the ferro alloys page
-assets/docs/            Documents linked from the site (the ISO 9001 certificate)
+assets/docs/            Documents linked from the site (ISO 9001 and two BIS licences)
 .htaccess               404 page, compression, caching, headers (Apache/LiteSpeed)
 site.webmanifest        Name, theme colour and the 192/512 icons
 llms.txt                Plain-text summary of the business for AI crawlers
@@ -39,12 +39,18 @@ There are two sources:
 
 1. The recorded briefing with Harsh Trivedi (director), supplied as a `Notes by Gemini`
    transcript. This is the source for everything below.
-2. Documents and photographs supplied later: the ISO 9001:2015 certificate (a PDF, its
-   text extracted directly) and photographs of the award objects (inscriptions read at
-   magnification). These are the source for the certificate details on the ferro alloys
-   page, the plant's postal address on the contact page, the award years and awarding
-   bodies on the mining page, and the state environment award on the sustainability
-   page.
+2. Documents and photographs supplied later: the ISO 9001:2015 certificate, the two BIS
+   Standard Mark licences (all PDFs, text extracted directly) and photographs of the
+   award objects (inscriptions read at magnification). These are the source for the
+   certificate details on the ferro alloys page, the plant's postal address on the
+   contact page, the award years and awarding bodies on the mining page, and the state
+   environment award on the sustainability page.
+
+   The BIS PDFs needed decoding rather than reading: the text sits in CID-keyed hex
+   strings against a subset font, so it extracts as mojibake unless the embedded
+   ToUnicode CMap is parsed properly — `bfchar` and `bfrange` are different shapes, and
+   reading a `bfrange` triple as a `bfchar` pair silently corrupts the licence numbers.
+   The numbers below were each confirmed against both occurrences in their own file.
 
 Facts on the site traceable to the **briefing** include: the British discovery of
 manganese during highway construction; the Ramrama mine; four generations of family mining; the
@@ -236,10 +242,18 @@ These are the outstanding items, each marked with an HTML comment in the source:
    now confirmed from documents the client supplied, each named on an official record of
    its own business:
 
-   - **Ramnik Power and Alloys Pvt. Ltd.** — holder of the ISO 9001:2015 certificate.
+   - **Ramnik Power and Alloys Pvt. Ltd.** — holder of the ISO 9001:2015 certificate and
+     of both BIS Standard Mark licences.
      Registered address: Plot No. 1–11, Industrial Area, Waraseoni–Katangi Road, Sarandi,
      Balaghat 481331, Madhya Pradesh. (The interim mailbox `rpaplpower@gmail.com` is
      this company's initials, which corroborates it.)
+
+     **The two document sets disagree on the plot numbers.** The ISO certificate says
+     "Plot No. 1–11"; both BIS licences say "Plot No. 1, 2, 3, 4A, 4B, 5". Road, village,
+     district and pincode match, so it is the same site — but the enumerated plots do
+     not, and one of the two is out of date or partial. The site currently shows neither
+     list, only "Waraseoni–Katangi Road, Sarandi, Balaghat 481331", which is true on both
+     documents. Resolve before publishing a full registered address anywhere.
    - **A. P. Trivedi & Sons** — the mining business, named on the Indian Bureau of Mines
      five-star plaque for the Ramrama manganese mine and on the Madhya Pradesh
      environment award citation.
@@ -281,7 +295,22 @@ These are the outstanding items, each marked with an HTML comment in the source:
    The supplied wordmark reads `RAMNIK`; the company is *The Ramnik Group*, so the site
    header keeps its own serif wordmark and uses only the hexagon.
 
-8. **The map embed is approximate.** The "Get directions" link on the contact page
+8. **No chemical specification — narrowed, not closed.** The product table gives grades
+   (silico manganese 60/15–70/15, ferro manganese 70/72/75) but no typical analysis: no
+   Mn, Si, C, P or S figures, and no sizing. A buyer comparing suppliers looks for that
+   first, and its absence is more conspicuous than any missing photograph.
+
+   The BIS licences narrow the gap usefully, because **IS 1470:2013** and **IS 1171:2011**
+   are the standards that define the composition ranges for these grades — naming them
+   tells a buyer exactly what the material conforms to. Both are now named on the ferro
+   alloys page, in the product table, in the JSON-LD and in `llms.txt`.
+
+   What is still missing is the group's own typical analysis. **Do not fill this in from
+   the standards or from anywhere else** — the numbers must come from the client's own
+   test certificates, the same rule as the rest of the site. A one-page typical-analysis
+   sheet per grade, as a PDF alongside the certificates, would close it properly.
+
+9. **The map embed is approximate.** The "Get directions" link on the contact page
    uses the exact pin supplied by the group and is always correct. The embedded frame
    beside it is built from a place-name query, because the short link could not be
    resolved to coordinates from the build environment. To pin it exactly: Google Maps
