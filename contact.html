@@ -5,13 +5,13 @@
 <script>document.documentElement.classList.add("js");</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contact — The Ramnik Group</title>
-<meta name="description" content="Contact The Ramnik Group about acquisitions, minority investments, partnerships or general enquiries.">
+<meta name="description" content="Contact The Ramnik Group in Balaghat, Madhya Pradesh, for ferro alloy and manganese ore enquiries, quotations and site visits.">
 <link rel="canonical" href="https://theramnikgroup.com/contact.html">
-<meta name="theme-color" content="#12161c">
+<meta name="theme-color" content="#15181c">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Ramnik Group">
 <meta property="og:title" content="Contact — The Ramnik Group">
-<meta property="og:description" content="Every enquiry is read by someone who can act on it.">
+<meta property="og:description" content="Enquiries, quotations and site visits — Balaghat, Madhya Pradesh.">
 <meta property="og:url" content="https://theramnikgroup.com/contact.html">
 <link rel="icon" href="/assets/img/mark.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/css/style.css">
@@ -25,18 +25,19 @@
       <img class="brand__mark" src="/assets/img/mark.svg" alt="" width="34" height="34">
       <span class="brand__text">
         <span class="brand__name">The Ramnik Group</span>
-        <span class="brand__sub">Holdings &amp; Investments</span>
+        <span class="brand__sub">Mining &middot; Ferro Alloys &middot; Power</span>
       </span>
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
       <span></span>
     </button>
     <nav class="nav" id="primary-nav" aria-label="Primary">
-      <a href="/about.html">About</a>
-      <a href="/businesses.html">Businesses</a>
-      <a href="/leadership.html">Leadership</a>
+      <a href="/legacy.html">Legacy</a>
+      <a href="/mining.html">Mining</a>
+      <a href="/ferro-alloys.html">Ferro Alloys</a>
+      <a href="/sustainability.html">Sustainability</a>
       <a href="/contact.html" aria-current="page">Contact</a>
-      <a class="btn btn--ghost" href="/contact.html">Get in touch</a>
+      <a class="btn btn--ghost" href="/contact.html">Enquire</a>
     </nav>
   </div>
 </header>
@@ -44,12 +45,14 @@
 <main id="main">
 
   <section class="page-hero">
-    <div class="wrap">
+    <div class="hero__scrim"></div>
+    <div class="wrap hero__inner">
       <span class="eyebrow">Contact</span>
-      <h1>Start a conversation.</h1>
+      <h1>Talk to us directly.</h1>
       <p class="lede">
-        Enquiries go straight to the group office. Anything you share is treated as
-        confidential from the first message.
+        Ours is a business-to-business trade. The quickest route is an email with the
+        grade, quantity and destination — you will get a straight answer on whether we
+        can serve it.
       </p>
     </div>
   </section>
@@ -57,39 +60,48 @@
   <section class="section">
     <div class="wrap split">
       <div class="reveal">
-        <h2>Enquiry details</h2>
-        <!-- PLACEHOLDER CONTACT DETAILS: replace with the group's real address,
-             phone number and mailboxes before launch. -->
+        <h2>Reach us</h2>
+
+        <!-- CONTACT DETAILS TO CONFIRM before launch.
+             These came from the briefing via an automatic transcript and are not
+             reliable enough to publish as-is:
+               · a second mailbox, transcribed as "rpaplowerthe...@gmail.com"
+               · telephone numbers, transcribed as "0763224394" and "09730 2683 3"
+             Confirm both with the group office, then replace the placeholders below.
+             info@theramnikgroup.com is used here because it matches this domain. -->
         <ul class="contact-list">
           <li>
-            <span class="contact-list__label">General enquiries</span>
-            <a href="mailto:enquiries@theramnikgroup.com">enquiries@theramnikgroup.com</a>
+            <span class="contact-list__label">General &amp; sales enquiries</span>
+            <a href="mailto:info@theramnikgroup.com">info@theramnikgroup.com</a>
           </li>
           <li>
-            <span class="contact-list__label">Acquisitions &amp; investments</span>
-            <a href="mailto:investments@theramnikgroup.com">investments@theramnikgroup.com</a>
+            <span class="contact-list__label">Telephone</span>
+            Numbers to be confirmed
           </li>
           <li>
-            <span class="contact-list__label">Media</span>
-            <a href="mailto:press@theramnikgroup.com">press@theramnikgroup.com</a>
+            <span class="contact-list__label">Ferro alloys plant</span>
+            Balaghat, Madhya Pradesh, India
           </li>
           <li>
-            <span class="contact-list__label">Group office</span>
-            Address to be confirmed
+            <span class="contact-list__label">Mine</span>
+            Ram Rama, Balaghat district, Madhya Pradesh
           </li>
         </ul>
-        <p class="form__note" style="margin-top:1.5rem;">
-          We respond to substantive enquiries within two working days. We do not accept
-          unsolicited sales approaches through these addresses.
+
+        <h3 style="margin-top:2.5rem;">Site visits</h3>
+        <p>
+          Buyers are welcome to see the mine and the plant. Tell us roughly when you would
+          like to come and we will arrange access and someone to walk you through the
+          operation.
         </p>
       </div>
 
       <div class="reveal">
-        <h2>Send a message</h2>
+        <h2>Send an enquiry</h2>
+
         <!-- FORM ENDPOINT REQUIRED: this static site cannot process submissions on its
-             own. Point `action` at a form service (Formspree, Netlify Forms, Basin,
-             Cloudflare Workers, etc.) before going live. As written, the form will not
-             submit anywhere. -->
+             own. Point `action` at a form service (Formspree, Netlify Forms, Basin, a
+             Cloudflare Worker) before going live. As written, the form submits nowhere. -->
         <form class="form" action="#" method="post">
           <div class="field-row">
             <div class="field">
@@ -108,15 +120,27 @@
               <input id="company" name="company" type="text" autocomplete="organization">
             </div>
             <div class="field">
-              <label for="subject">Nature of enquiry</label>
+              <label for="country">Country</label>
+              <input id="country" name="country" type="text" autocomplete="country-name">
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="subject">Enquiry</label>
               <select id="subject" name="subject">
-                <option>Sale of a business</option>
-                <option>Minority investment</option>
-                <option>Partnership or supplier</option>
+                <option>Ferro alloys — quotation</option>
+                <option>Manganese ore</option>
+                <option>Long-term supply agreement</option>
+                <option>Site visit</option>
+                <option>Supplier or vendor</option>
                 <option>Careers</option>
-                <option>Media</option>
                 <option>Other</option>
               </select>
+            </div>
+            <div class="field">
+              <label for="quantity">Grade &amp; quantity</label>
+              <input id="quantity" name="quantity" type="text" placeholder="e.g. SiMn 65/16, 500 t">
             </div>
           </div>
 
@@ -129,7 +153,7 @@
             <button class="btn" type="submit">Send enquiry</button>
           </div>
 
-          <p class="form__note">
+          <p class="note">
             By sending this form you agree that we may store your details for the purpose
             of responding to your enquiry. We do not share them with third parties.
           </p>
@@ -140,11 +164,12 @@
 
   <section class="section section--ink cta">
     <div class="wrap">
-      <span class="eyebrow">Selling a business?</span>
-      <h2>What to expect from us.</h2>
+      <span class="eyebrow">Note for buyers</span>
+      <h2>Trust, built slowly.</h2>
       <p class="lede">
-        A direct answer quickly. If it is not a fit we will say so and explain why,
-        rather than leave the conversation open.
+        This business runs on word of mouth and relationships built over decades — some of
+        our customers have dealt with two generations of the family. We would rather tell
+        you we cannot meet a specification than miss it.
       </p>
     </div>
   </section>
@@ -159,26 +184,28 @@
           <img class="brand__mark" src="/assets/img/mark.svg" alt="" width="34" height="34">
           <span class="brand__text">
             <span class="brand__name">The Ramnik Group</span>
-            <span class="brand__sub">Holdings &amp; Investments</span>
+            <span class="brand__sub">Mining &middot; Ferro Alloys &middot; Power</span>
           </span>
         </a>
-        <p style="margin-top:1.25rem;max-width:34ch;">
-          A privately held group of operating companies, owned and managed for the long term.
+        <p style="margin-top:1.25rem;max-width:36ch;">
+          Manganese mining, ferro alloys and solar generation in Balaghat, Madhya Pradesh.
         </p>
       </div>
       <div>
         <h3>Group</h3>
         <ul>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/businesses.html">Businesses</a></li>
-          <li><a href="/leadership.html">Leadership</a></li>
+          <li><a href="/legacy.html">Legacy</a></li>
+          <li><a href="/mining.html">Mining</a></li>
+          <li><a href="/ferro-alloys.html">Ferro Alloys</a></li>
+          <li><a href="/sustainability.html">Sustainability</a></li>
         </ul>
       </div>
       <div>
         <h3>Contact</h3>
         <ul>
           <li><a href="/contact.html">Enquiries</a></li>
-          <li><a href="mailto:enquiries@theramnikgroup.com">enquiries@theramnikgroup.com</a></li>
+          <li><a href="mailto:info@theramnikgroup.com">info@theramnikgroup.com</a></li>
+          <li>Balaghat, Madhya Pradesh</li>
         </ul>
       </div>
     </div>
