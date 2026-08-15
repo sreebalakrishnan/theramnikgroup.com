@@ -80,9 +80,13 @@ whatever is on `main` is what gets served.
 - Branch: `main`
 - Directory: `public_html` (leave the path field empty to deploy to the web root)
 
-Deploying is then the **Deploy** button in hPanel. To make pushes deploy automatically,
-copy the webhook URL hPanel shows and add it under *GitHub → Settings → Webhooks* with
-content type `application/json`.
+**Deployment is automatic.** The hPanel webhook is already wired up under *GitHub →
+Settings → Webhooks*, so merging a pull request into `main` deploys it — there is nothing
+to press. The **Deploy** button in hPanel is only needed to force a re-pull if a webhook
+delivery is missed.
+
+Treat merging as publishing: anything merged is live within moments, so do not merge work
+that is not meant to be seen yet.
 
 Two things worth knowing:
 
