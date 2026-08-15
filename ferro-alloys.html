@@ -23,7 +23,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/style.css?v=5">
+<link rel="stylesheet" href="/assets/css/style.css?v=6">
 
 <script type="application/ld+json">
 {
@@ -154,6 +154,47 @@
              style="background-image:url('/assets/img/photos/plant-unit-3.jpg')"></div>
         <figcaption class="photo-caption">Unit three &mdash; the furnaces added in 2024</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <!-- Shot on a phone, so it is portrait and only 478px wide. It sits in one
+       column of a split rather than as a full-bleed band: stretched across the
+       page it would be badly upscaled, and the shape would fight the layout.
+       No autoplay — the clip carries sound, and 2MB should not download itself
+       on a metered connection. -->
+  <section class="section section--ink">
+    <div class="wrap split split--even">
+      <figure class="video reveal">
+        <video controls playsinline preload="metadata"
+               poster="/assets/img/photos/tapping-poster.jpg"
+               width="478" height="850">
+          <source src="/assets/video/tapping.mp4" type="video/mp4">
+          <p>
+            Your browser cannot play this video.
+            <a href="/assets/video/tapping.mp4">Download it instead (2&nbsp;MB).</a>
+          </p>
+        </video>
+        <figcaption class="photo-caption">Tapping the furnace, Sarandi &mdash; 21 seconds</figcaption>
+      </figure>
+
+      <div class="reveal">
+        <span class="eyebrow">The tap</span>
+        <h2>What the furnace does, twice a shift.</h2>
+        <p class="lede">
+          When a heat is ready the furnace is tapped, and molten alloy runs out into the
+          casting bed to cool.
+        </p>
+        <p>
+          It is the point everything else is arranged around. The ore has been mined,
+          crushed and graded; the furnace has been charged and run; and this is the minute
+          in which it becomes the product a steel mill buys. The bed is then broken up,
+          crushed, sized and graded to the buyer's specification.
+        </p>
+        <p>
+          Five furnaces run this cycle, at 34.5 MVA of installed capacity.
+        </p>
+        <p><a class="arrow-link" href="/gallery.html">More photographs</a></p>
+      </div>
     </div>
   </section>
 
@@ -403,7 +444,7 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js?v=5" defer></script>
+<script src="/assets/js/main.js?v=6" defer></script>
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
