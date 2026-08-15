@@ -1,0 +1,15 @@
+# Working notes for AI coding assistants — local only, deliberately untracked.
+# Note that Hostinger serves the working tree, so anything committed here is also
+# published; keeping this out of the repository keeps it off the website too.
+CLAUDE.md
+
+# Build-only dependencies. The site itself has none; these are needed just to
+# regenerate assets/img/trade-map.svg (see tools/make-trade-map.js).
+node_modules/
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
