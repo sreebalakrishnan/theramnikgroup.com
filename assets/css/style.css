@@ -1359,9 +1359,10 @@ figure {
 
 /* --- video -------------------------------------------------------------- */
 
-/* Phone footage: 478px wide and portrait. Capped at its own native width so it
-   is never upscaled, and centred in its column because a tall narrow block
-   pinned left looks like a mistake. */
+/* Phone footage, 478px wide. Capped at its own native width so it is never
+   upscaled, and centred in its column so it does not sit oddly against the
+   text beside it. The cap is what matters here, not the shape: the clip in
+   this slot has already changed aspect once, so nothing below assumes one. */
 .video {
   margin: 0;
   max-width: 27rem;

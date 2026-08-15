@@ -22,7 +22,7 @@ editing. A missing file degrades to a dark graphite placeholder rather than brea
 | `control-room.jpg` | Ferro Alloys — quality section (4:3) | Process control room |
 | `plant-panorama.jpg` | Ferro Alloys — the plant section (27:10) | The works at Sarandi seen from the main gate |
 | `workings.jpg` | Gallery — the mine (3:4) | A cut rock face in the workings, water standing at its foot |
-| `tapping-poster.jpg` | Ferro Alloys — poster frame for the tap video | Molten alloy running into the casting bed |
+| `furnace-tap-poster.jpg` | Ferro Alloys — poster frame for the tap video (478x416) | The pour at its fullest, six seconds in |
 | `plant-unit-3.jpg` | Ferro Alloys — the plant section (16:7) | The third unit furnace building, added 2024 |
 | `plant-yard.jpg` | Gallery — the works (4:3) | Ore stockpiled in the yard, furnace shed behind |
 | `plant-dusk.jpg` | Gallery — the works (4:3) | The whole works at dusk, tap glow along the bays |

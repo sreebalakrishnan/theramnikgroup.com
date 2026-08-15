@@ -23,7 +23,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/style.css?v=6">
+<link rel="stylesheet" href="/assets/css/style.css?v=7">
 
 <script type="application/ld+json">
 {
@@ -157,21 +157,24 @@
     </div>
   </section>
 
-  <!-- Shot on a phone, so it is portrait and only 478px wide. It sits in one
-       column of a split rather than as a full-bleed band: stretched across the
-       page it would be badly upscaled, and the shape would fight the layout.
-       No autoplay — the clip carries sound, and 2MB should not download itself
-       on a metered connection. -->
+  <!-- Shot on a phone and only 478px wide, so it sits in one column of a split
+       rather than as a full-bleed band: stretched across the page it would be
+       badly upscaled. No autoplay — the clip carries sound, and it should not
+       download itself on a metered connection.
+       The file is named for its content, not versioned: .htaccess caches mp4
+       for 30 days and there is no query string on it, so replacing this clip
+       means giving it a NEW filename or returning visitors keep the old one
+       for a month. -->
   <section class="section section--ink">
     <div class="wrap split split--even">
       <figure class="video reveal">
         <video controls playsinline preload="metadata"
-               poster="/assets/img/photos/tapping-poster.jpg"
-               width="478" height="850">
-          <source src="/assets/video/tapping.mp4" type="video/mp4">
+               poster="/assets/img/photos/furnace-tap-poster.jpg"
+               width="478" height="416">
+          <source src="/assets/video/furnace-tap.mp4" type="video/mp4">
           <p>
             Your browser cannot play this video.
-            <a href="/assets/video/tapping.mp4">Download it instead (2&nbsp;MB).</a>
+            <a href="/assets/video/furnace-tap.mp4">Download it instead (1.6&nbsp;MB).</a>
           </p>
         </video>
         <figcaption class="photo-caption">Tapping the furnace, Sarandi &mdash; 21 seconds</figcaption>
@@ -444,7 +447,7 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js?v=6" defer></script>
+<script src="/assets/js/main.js?v=7" defer></script>
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
