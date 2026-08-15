@@ -38,9 +38,10 @@ There are two sources:
    magnification). These are the source for the certificate details on the ferro alloys
    page, the plant's postal address on the contact page, the award years and awarding
    bodies on the mining page, and the state environment award on the sustainability
-   page. Facts stated on the site
-and traceable to that briefing include: the British discovery of manganese during
-highway construction; the Ramrama mine; four generations of family mining; the
+   page.
+
+Facts on the site traceable to the **briefing** include: the British discovery of
+manganese during highway construction; the Ramrama mine; four generations of family mining; the
 open cast → underground → shaft → mechanisation progression; the 2005 decision to
 integrate forward; the 2007 plant with its rice-husk power plant; 2009 inauguration;
 2017 second unit; 2024 third unit with three furnaces; five running furnaces;
@@ -95,12 +96,12 @@ headers. Every block is wrapped in `<IfModule>`, so a module the server does not
 skipped rather than throwing a 500.
 
 **Cache busting.** The pages request the stylesheet and script with a version query —
-`href="/assets/css/style.css?v=2"`. **Bump that number in every page whenever you edit
+`href="/assets/css/style.css?v=3"`. **Bump that number in every page whenever you edit
 `style.css` or `main.js`**, or returning visitors keep the old file:
 
 ```bash
-# bump v=2 to v=3 across all pages
-sed -i 's/style\.css?v=2/style.css?v=3/; s/main\.js?v=2/main.js?v=3/' *.html
+# bump v=3 to v=4 across all pages
+sed -i 's/style\.css?v=3/style.css?v=4/; s/main\.js?v=3/main.js?v=4/' *.html
 ```
 
 Nothing here is content-hashed, so nothing is cached as immutable: the stylesheet and
