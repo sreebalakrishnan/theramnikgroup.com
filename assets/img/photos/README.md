@@ -1,46 +1,66 @@
 # Photographs
 
-Drop the files below into this directory using **exactly these filenames** and they
-appear on the site automatically — no HTML editing needed. Until a file is present the
-page shows a dark graphite placeholder in its place, so nothing breaks in the meantime.
+Files here are referenced by literal path from the HTML. Keep the filenames exactly as
+listed — dropping a replacement in under the same name swaps the picture with no HTML
+editing. A missing file degrades to a dark graphite placeholder rather than breaking.
 
-| Filename | Where it appears | What it should show |
+## In use
+
+| Filename | Where it appears | Subject |
 |---|---|---|
-| `hero-mine.jpg` | Home — full-bleed hero | Wide or aerial view of the open cast workings |
-| `ram-rama.jpg` | Home — legacy section (portrait crop) | The Ram Rama mine; a historic frame works well here |
-| `plant.jpg` | Legacy — forward integration (portrait crop) | The ferro alloys plant, exterior or furnace floor |
-| `opencast.jpg` | Mining — full-bleed hero | Open cast working, machinery in frame |
-| `underground.jpg` | Mining — operations pair | Underground working, incline or shaft |
-| `crushing.jpg` | Mining — operations pair | Crushing and sizing, or stacked grade piles |
-| `furnace.jpg` | Ferro Alloys — full-bleed hero | Furnace floor, tapping, or molten metal |
-| `product.jpg` | Ferro Alloys — raw material section | Finished alloy sized and packed for dispatch |
-| `solar.jpg` | Sustainability — full-bleed hero | The solar farm on former dump / vacant mine land |
-| `safety.jpg` | Sustainability — health & safety (portrait crop) | Protective equipment, training, or a toolbox talk |
-| `nischal-trivedi.jpg` | Legacy — leadership | Headshot of Nischal Trivedi — **supplied** |
-| `harsh-trivedi.jpg` | Legacy — leadership | Headshot of Harsh Trivedi — **supplied** |
-| `directors.jpg` | Legacy — leadership band; home page | Both directors together — **supplied** |
+| `hero-mine.jpg` | Home — full-bleed hero | Furnace tapping at dusk |
+| `ram-rama.jpg` | Home — legacy section (3:4) | Mine headgear at Ram Rama |
+| `directors.jpg` | Legacy — leadership band; home page | Both directors together |
+| `nischal-trivedi.jpg` | Legacy — leadership bio (4:5) | Nischal Trivedi |
+| `harsh-trivedi.jpg` | Legacy — leadership bio (4:5) | Harsh Trivedi |
+| `plant.jpg` | Legacy — forward integration (3:4) | Plant structure |
+| `opencast.jpg` | Mining — full-bleed hero | Haul road through the open cast workings |
+| `underground.jpg` | Mining — operations pair (4:3) | Underground working |
+| `crushing.jpg` | Mining — operations pair (4:3) | Graded ore stacks |
+| `furnace.jpg` | Ferro Alloys — full-bleed hero | Tapping, three furnace bays |
+| `ore-stacks.jpg` | Ferro Alloys — raw material (4:3) | Ore stacked by grade |
+| `control-room.jpg` | Ferro Alloys — quality section (4:3) | Process control room |
+| `pollution-control.jpg` | Sustainability — environment (16:9) | Pollution control plant and stack |
+| `safety.jpg` | Sustainability — health & safety (3:4) | Team in protective equipment |
+| `og-card.jpg` | *(in `assets/img/`)* social preview | Typographic brand card |
 
-## Preparing the files
+## Still wanted
 
-- **Format**: JPEG. Keep the `.jpg` extension — the paths in the HTML are literal.
-- **Hero images** (`hero-mine`, `opencast`, `furnace`, `solar`): landscape, at least
-  2000px wide. They sit behind a dark scrim with text over the left side, so leave the
-  left third free of busy detail.
-- **Portrait crops** (`ram-rama`, `plant`, `safety`): roughly 3:4, at least 1200px wide.
-- **Standard slots** (`underground`, `crushing`, `product`): roughly 4:3, at least
-  1400px wide.
-- **Headshots** (`nischal-trivedi`, `harsh-trivedi`): 4:5 portrait, at least 800px wide.
-  The slot anchors to the top of the frame, so leave headroom above rather than
-  cropping tight to the hairline. Both directors should be shot and cropped the same
-  way or the pair looks mismatched.
-- **Weight**: compress to around 200–400 KB each. These load on first paint and the
-  site has no image pipeline to do it for you.
+| Filename | Where it would appear | What it needs to show |
+|---|---|---|
+| `solar.jpg` | **Sustainability — full-bleed hero** | The solar farm on former dump / vacant mine land. This is the most visible gap on the site: the sustainability page leads on solar (5 MW today, 15–25 MW planned) and its hero is currently a plain gradient. Wants a wide landscape frame, 2000px+, left third free of busy detail. |
+| `product.jpg` | Ferro Alloys | Finished alloy sized, bagged and packed for dispatch. The raw-material slot currently carries an ore photograph instead, which is accurate but is not the product. |
 
-Faces of identifiable workers should only be used with their consent.
+## Preparing replacements
 
-## Swapping in more slots
+- **Format**: JPEG, keeping the `.jpg` extension — the paths in the HTML are literal.
+- **Heroes** (`hero-mine`, `opencast`, `furnace`, `solar`): landscape, 2000px+ wide. They
+  sit behind a dark scrim with headline text over the left, so leave the left third free
+  of busy detail.
+- **Portrait crops** (`ram-rama`, `plant`, `safety`): 3:4, 1200px+ wide.
+- **Headshots** (`nischal-trivedi`, `harsh-trivedi`): 4:5, 800px+ wide, anchored to the
+  top of the frame so headroom is kept. Both cropped alike or the pair looks mismatched.
+- **Standard slots** (`underground`, `crushing`, `ore-stacks`, `control-room`): 4:3,
+  1400px+ wide.
+- **Weight**: compress to roughly 150–250 KB. These load on first paint and the site has
+  no image pipeline to do it for you. The originals supplied were 1600px JPEGs of
+  200–560 KB; re-encoding at quality ~80 after cropping lands in the right range.
 
-Each slot in the HTML looks like this, and can be copied:
+## Notes on the supplied set
+
+- Twenty-two frames were supplied. Several were near-duplicates of the same subject —
+  four of the headgear tower, three of the pollution control building, three of the
+  furnace tapping, three of the ore stacks — and one of each was chosen. The unused
+  frames remain in the source folder if a different pick is preferred.
+- One frame (plantation beside water) carries a "GPS Map Camera" watermark burned into
+  the middle of the image and was not used for that reason. If a clean copy exists it
+  would suit the sustainability page well.
+- Several frames show identifiable staff. Only those where people appear at a working
+  distance were used; a close portrait of an individual worker was left out. Confirm
+  consent for anyone recognisable before launch — this applies to `underground.jpg`,
+  `safety.jpg` and `control-room.jpg` in particular.
+
+## Adding a new slot
 
 ```html
 <figure>
@@ -50,5 +70,6 @@ Each slot in the HTML looks like this, and can be copied:
 </figure>
 ```
 
-Add `photo--tall` for a 3:4 crop or `photo--wide` for 16:7. Update the `aria-label` to
-describe what is actually in the picture — that text is what a screen reader announces.
+Add `photo--tall` for 3:4, `photo--16x9`, or `photo--wide` for 16:7. Update the
+`aria-label` to describe what is actually in the picture — that text is what a screen
+reader announces.
