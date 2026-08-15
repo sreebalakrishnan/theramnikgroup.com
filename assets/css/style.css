@@ -1104,6 +1104,27 @@ figure {
 .person {
   border-top: 1px solid var(--line);
   padding-top: 1.4rem;
+  display: grid;
+  grid-template-columns: clamp(6.5rem, 14vw, 9rem) minmax(0, 1fr);
+  gap: clamp(1.1rem, 2.5vw, 1.75rem);
+  align-items: start;
+}
+
+/* Headshot slot. Same approach as .photo — the file is set as an inline
+   background-image, and while it is absent the placeholder shows instead.
+   The text sits in .person__body so the portrait's height stays independent
+   of it; spanning rows instead would stretch the gaps between name and bio. */
+.person__portrait {
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius);
+  background-color: #23272c;
+  background-image: linear-gradient(150deg, #2f343a 0%, #22262b 55%, #1a1e22 100%);
+  background-size: cover;
+  background-position: center top;
+}
+
+.person__body > :last-child {
+  margin-bottom: 0;
 }
 
 .person h3 {
