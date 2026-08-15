@@ -60,7 +60,7 @@ Directors: Nischal Trivedi and Harsh Trivedi.
 - [Mining](https://theramnikgroup.com/mining.html): the Ramrama mine, open cast and underground, ore to graded ore, awards
 - [Ferro Alloys](https://theramnikgroup.com/ferro-alloys.html): the Sarandi plant, full grade table, raw material, quality system and certification
 - [Sustainability](https://theramnikgroup.com/sustainability.html): solar on worked-out ground, pollution control, dense plantation, health and safety
-- [Photographs](https://theramnikgroup.com/gallery.html): the mine, the works, solar and the awards
+- [Gallery](https://theramnikgroup.com/gallery.html): the mine, the works, solar and the awards
 - [Contact](https://theramnikgroup.com/contact.html): enquiries, addresses, site visits
 
 ## Other languages

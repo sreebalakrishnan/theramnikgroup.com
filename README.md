@@ -12,7 +12,7 @@ legacy.html             The discovery of manganese, four generations, milestones
 mining.html             Ramrama mine — open cast and underground, ore-to-graded-ore process
 ferro-alloys.html       Plant, product grades, raw material, quality, export markets
 sustainability.html     Solar, environment, health and safety, CSR and community
-gallery.html            Photographs — the album, with a lightbox
+gallery.html            Gallery — the album, with a lightbox
 ja/index.html           Japanese summary landing page
 de/index.html           German summary landing page
 contact.html            Contact routes and enquiry form
