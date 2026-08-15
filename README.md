@@ -90,24 +90,24 @@ returning visitors keep the old file.
 Any static host works: Netlify, Cloudflare Pages and Vercel need no build command and
 publish directory `.`. `.htaccess` is Apache/LiteSpeed only and is ignored by those.
 
-**Netlify / Cloudflare Pages / Vercel** — no build command, publish directory `.`.
-
 ## Before going live
 
 These are the outstanding items, each marked with an HTML comment in the source:
 
-1. **Photographs.** Ten slots are ready and currently show a dark placeholder. Drop the
-   files into `assets/img/photos/` using the filenames in that directory's README and
-   they appear automatically — no HTML editing. This is the list Harsh offered to
-   supply: open cast working, underground working, solar farm, plantation, CSR
-   activities, manufacturing, packing, sizing and grading, and the products themselves.
+1. **Operations photographs.** The director portraits are in. Ten operations slots
+   remain and currently show a dark placeholder. Drop the files into
+   `assets/img/photos/` using the filenames in that directory's README and they appear
+   automatically — no HTML editing. This is the list Harsh offered to supply: open cast
+   working, underground working, solar farm, plantation, CSR activities, manufacturing,
+   packing, sizing and grading, and the products themselves. The two full-bleed page
+   heroes are the most visible gap — they are currently plain gradients.
 
-2. **Contact details.** `contact.html` publishes `info@theramnikgroup.com` because it
-   matches this domain. The other details in the briefing came through an automatic
-   transcript too garbled to trust — a second mailbox transcribed as
-   `rpaplowerthe...@gmail.com`, and phone numbers as `0763224394` and `09730 2683 3`.
-   Both are left as "to be confirmed" on the page rather than published wrong. Confirm
-   and replace.
+2. **Contact details are interim.** `rpaplpower@gmail.com` and `+91 99773 01100`
+   were supplied by the group and are live on the contact page, in every page footer
+   and in the Organization JSON-LD. Switch the mailbox to one on this domain (e.g.
+   `info@theramnikgroup.com`) once it exists, updating all three places together. The
+   landline numbers from the briefing came through the automatic transcript too
+   garbled to publish (`0763224394`, `09730 2683 3`) and are still outstanding.
 
 3. **Contact form has no backend.** `action="#"` — point it at Formspree, Netlify Forms,
    Basin or a Worker, or submissions go nowhere.
@@ -139,6 +139,14 @@ These are the outstanding items, each marked with an HTML comment in the source:
 
    Social platforms cache aggressively — after changing the card, re-scrape the URL
    with Facebook's Sharing Debugger or LinkedIn's Post Inspector to force a refresh.
+
+7. **The map embed is approximate.** The "Get directions" link on the contact page
+   uses the exact pin supplied by the group and is always correct. The embedded frame
+   beside it is built from a place-name query, because the short link could not be
+   resolved to coordinates from the build environment. To pin it exactly: Google Maps
+   → Share → Embed a map → Copy HTML, then replace the iframe `src` in `contact.html`
+   with the `https://www.google.com/maps/embed?pb=...` URL, keeping `loading="lazy"`
+   and the `title` attribute.
 
 ## Editing
 
