@@ -13,6 +13,7 @@ mining.html             Ramrama mine — open cast and underground, ore-to-grade
 ferro-alloys.html       Plant, product grades, raw material, quality, export markets
 sustainability.html     Solar, environment, health and safety, CSR and community
 gallery.html            Gallery — the album, with a lightbox
+brand.html              Brand basics for designers — unlisted, noindex, shared by link
 ja/index.html           Japanese summary landing page
 de/index.html           German summary landing page
 contact.html            Contact routes and enquiry form
@@ -130,6 +131,29 @@ self-heals in days rather than persisting for a year.
 
 Any static host works: Netlify, Cloudflare Pages and Vercel need no build command and
 publish directory `.`. `.htaccess` is Apache/LiteSpeed only and is ignored by those.
+
+## The brand page
+
+`brand.html` is for designers and agencies producing marketing material. It carries the
+logo files and their size ceiling, the colour tokens with the rule about which ember value
+goes where, the type pairing, photography do's and don'ts, the names that get misspelled,
+and the instruction to take figures from the live site rather than from a search result.
+
+Three deliberate choices:
+
+- **Not in the navigation.** It is for suppliers, not customers, and would only clutter
+  the nav for everyone else. Share the URL directly.
+- **`noindex, follow`.** It should not compete with the real pages in search, and a brand
+  page ranking above the product pages would be actively unhelpful. It is *not* blocked in
+  `robots.txt` — a blocked page cannot be crawled, so the `noindex` would never be read.
+  It is also kept out of `sitemap.xml`.
+- **Built from the live design system.** The swatches are the actual `:root` values and
+  the type samples use the real stacks, so the page cannot drift from the site the way a
+  document does. If you change a token in `style.css`, change it here too.
+
+The page weighs about 900 KB, nearly all of it the two logo PNGs. That is high for this
+site, and deliberate: on this page the files *are* the content, and the audience is a
+designer on a desktop who is about to download them anyway.
 
 ## Other languages
 
