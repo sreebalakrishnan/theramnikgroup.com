@@ -9,6 +9,52 @@ Live reference: the site at `theramnikgroup.com`, whose design tokens are in
 
 ---
 
+## 0. Status — a mark has been delivered
+
+**A logo has since come back and is now live on the site.** Sections 1–8 remain the record
+of what was asked for; sections 9 and 10 are still useful if further variants are
+generated. Section 11 has been rewritten to say what actually arrived.
+
+The delivered mark is a **pointy-top hexagon** containing, top to bottom:
+
+| Element | Business |
+|---|---|
+| Sun with rays, amber | Solar generation |
+| Two silver ingot bars | Ferro alloys |
+| Angular crystalline ore | Manganese mining |
+
+It answers the brief squarely: all three businesses are in one mark, the reading is
+mineral and industrial rather than corporate, and the hexagon gives it a silhouette that
+survives being shrunk. Supplied with a `RAMNIK` wordmark and two alternate treatments
+(solid monochrome, and a reversed knockout on a dark tile).
+
+### How it did against the constraints in section 4
+
+| Rule | Verdict |
+|---|---|
+| Reads at 16 px | **Partly.** The detail dissolves, but the silhouette and the amber-over-dark structure still identify it. The solid and reversed variants fail here — they turn to grey noise below about 24 px, so every icon on the site is generated from the **full-colour** mark. |
+| Works on both grounds | **Yes.** Legible on the ink header and on paper. |
+| Roughly square | **Yes** — 615 × 711, near enough. Padded to a square canvas so the header box is unchanged. |
+| Vector SVG | **No — outstanding.** Delivered as a 1024 × 1536 raster sheet. See section 11. |
+| One accent colour | **Yes**, amber, plus steel greys and charcoal. |
+
+### The delivered palette against the site's
+
+Sampled from the artwork, not guessed:
+
+| | Logo | Site token | Note |
+|---|---|---|---|
+| Accent | `#E18D02` | `--ember` `#B4611F` | The logo's amber is brighter and more yellow than the site's burnt orange. |
+| Dark | `#202A31` | `--ink` `#15181c` | The logo's charcoal is lighter and cooler — blue-grey against near-neutral. |
+| Steel | `#4A555D` – `#9AA3AA` | *(none)* | New to the identity; the site had no metal tone. |
+
+They sit together without clashing, so nothing on the site was restyled. If you want them
+to match exactly, the change to make is `--ember`, which is decorative only and safe to
+move. **Do not** shift `--ember-text` or `--ember-lit` without re-checking contrast — those
+carry small type on five different surfaces.
+
+---
+
 ## 1. The company, in one paragraph
 
 The Ramnik Group is a family business in Balaghat district, Madhya Pradesh, India, that has
@@ -171,9 +217,40 @@ certification seal than to a consumer brand.
    promises more than a hundred-year manganese business delivers is off-brand even if it is
    handsome.
 
-## 11. What we still need on delivery
+## 11. What arrived, and what is still outstanding
 
-- `mark.svg` — the mark alone, square, for the header and favicon.
-- A horizontal lockup (mark + wordmark) for documents and the social card.
-- A single-colour version for stamping and for the ore bags.
-- The mark in ember-on-ink **and** ink-on-paper, since the site uses both.
+### Arrived
+
+One raster sheet, 1024 × 1536 PNG with transparency, holding the full-colour mark
+(615 × 711), the `RAMNIK` wordmark, and three small variants. Kept at
+`tools/logo-source.png`; everything on the site is generated from it by
+`tools/make-logo-assets.js`.
+
+### Generated from it and now live
+
+| File | Use |
+|---|---|
+| `assets/img/mark.png` | 256 px square, transparent. Site header and footer, shown at 34 px. |
+| `assets/img/favicon.ico` | 16 / 32 / 48 in one container, for the browser tab. |
+| `assets/img/favicon-16.png`, `-32.png`, `-48.png` | Explicit sizes for modern browsers. |
+| `assets/img/apple-touch-icon.png` | 180 px, opaque on the logo's own charcoal — iOS composites transparency onto black. |
+| `assets/img/icon-192.png`, `icon-512.png` | Android and installable icons, via `site.webmanifest`. |
+| `assets/img/logo-lockup.png` | Mark over wordmark, transparent. |
+| `assets/img/og-card.jpg` | Social preview, rebuilt with the new mark. |
+
+### Still outstanding
+
+1. **Vector originals.** This is the real gap. Everything above is derived from a raster,
+   which is fine at icon sizes and on screen but will not hold up printed, embroidered,
+   cut for signage, or blown up. Ask for `.svg` (or `.ai` / `.eps`) of:
+   - the mark alone,
+   - the mark-plus-wordmark lockup,
+   - the single-colour version.
+2. **A wordmark that says the full name.** The supplied wordmark reads `RAMNIK`; the
+   company is *The Ramnik Group*. The site header therefore keeps its own serif wordmark
+   and uses only the hexagon. Worth asking whether a full-name lockup exists.
+3. **A purpose-drawn 16 px icon,** if the softness in the tab bothers you. The current
+   favicon is the full mark scaled down; a simplified version — hexagon, sun arc, one bar,
+   ore triangle, nothing else — would be crisper. Optional, not required.
+4. **Re-scrape the social caches.** The OG card changed, so run the URL through Facebook's
+   Sharing Debugger and LinkedIn's Post Inspector or old previews will persist.
