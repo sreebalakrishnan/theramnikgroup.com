@@ -81,9 +81,18 @@ Sets the styled 404 page, gzip compression, cache lifetimes, and a few security
 headers. Every block is wrapped in `<IfModule>`, so a module the server does not load is
 skipped rather than throwing a 500.
 
-CSS and JS are cached for a year. When you edit `style.css` or `main.js`, add or bump a
-query string on the reference in each page — `href="/assets/css/style.css?v=2"` — or
-returning visitors keep the old file.
+**Cache busting.** The pages request the stylesheet and script with a version query —
+`href="/assets/css/style.css?v=2"`. **Bump that number in every page whenever you edit
+`style.css` or `main.js`**, or returning visitors keep the old file:
+
+```bash
+# bump v=2 to v=3 across all pages
+sed -i 's/style\.css?v=2/style.css?v=3/; s/main\.js?v=2/main.js?v=3/' *.html
+```
+
+Nothing here is content-hashed, so nothing is cached as immutable: the stylesheet and
+script expire after a week and photographs after a month, which means a forgotten bump
+self-heals in days rather than persisting for a year.
 
 ### Elsewhere
 
