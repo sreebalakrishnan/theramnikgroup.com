@@ -16,10 +16,12 @@ contact.html            Contact routes and enquiry form
 404.html                Not-found page
 assets/css/style.css    Single stylesheet; design tokens in the :root block at the top
 assets/js/main.js       Mobile nav, sticky-header border, scroll reveal
-assets/img/mark.svg     Monogram used as logo and favicon
+assets/img/mark.png     The group mark, used in the header and as the favicon source
+assets/img/favicon.*    Generated icon set (see tools/make-logo-assets.js)
 assets/img/photos/      Photograph slots — see the README in that directory
 assets/docs/            Documents linked from the site (the ISO 9001 certificate)
 .htaccess               404 page, compression, caching, headers (Apache/LiteSpeed)
+site.webmanifest        Name, theme colour and the 192/512 icons
 robots.txt, sitemap.xml
 ```
 
@@ -159,27 +161,33 @@ These are the outstanding items, each marked with an HTML comment in the source:
    was described. The "100+ years" claim follows the briefing's own framing. Confirm
    both read correctly to the family.
 
-6. **Social preview card.** `assets/img/og-card.jpg` (1200×630) is a typographic
-   brand card, referenced as `og:image` from every page. It was made typographic
-   because the only photographs then available were portraits. Operations photography
-   has since arrived, so a photographic card is now possible — the furnace tapping
-   frame (`hero-mine.jpg` / `furnace.jpg`) is the obvious candidate and would make a
-   far more arresting link preview. Swapping it means re-scraping the social caches,
-   so it is left as a deliberate choice rather than changed silently.
+6. **Re-scrape the social caches.** `assets/img/og-card.jpg` (1200×630) was rebuilt when
+   the new mark landed, so the card that platforms have cached is the old one. Run the
+   URL through Facebook's Sharing Debugger and LinkedIn's Post Inspector once the site is
+   deployed, or old previews persist indefinitely.
 
    The card is generated from `assets/img/og-card.source.html`, which reuses the site's
-   design tokens. To regenerate after a wording change, open that file at a 1200×630
-   viewport and screenshot it, or:
+   design tokens and now embeds `mark.png` by relative path. Regenerate with
+   `node tools/make-og-card.js` (needs a local server on port 8790), or:
 
    ```bash
    npx playwright screenshot --viewport-size=1200,630 \
      assets/img/og-card.source.html assets/img/og-card.jpg
    ```
 
-   Social platforms cache aggressively — after changing the card, re-scrape the URL
-   with Facebook's Sharing Debugger or LinkedIn's Post Inspector to force a refresh.
+   It remains typographic. A photographic card — the furnace tapping frame — is still
+   possible and would make a more arresting preview, but that is a separate decision.
 
-7. **The map embed is approximate.** The "Get directions" link on the contact page
+7. **The logo is raster only.** Every icon on the site is generated from
+   `tools/logo-source.png` by `tools/make-logo-assets.js`. That is fine at icon sizes and
+   on screen, but there are no vector originals, so the mark cannot be printed large,
+   embroidered or cut for signage. Ask the designer for SVG of the mark, the lockup and
+   the single-colour version. See `tools/logo-brief.md`, section 11.
+
+   The supplied wordmark reads `RAMNIK`; the company is *The Ramnik Group*, so the site
+   header keeps its own serif wordmark and uses only the hexagon.
+
+8. **The map embed is approximate.** The "Get directions" link on the contact page
    uses the exact pin supplied by the group and is always correct. The embedded frame
    beside it is built from a place-name query, because the short link could not be
    resolved to coordinates from the build environment. To pin it exactly: Google Maps

@@ -50,17 +50,11 @@
     justify-content: space-between;
   }
 
-  .mark {
-    width: 74px;
-    height: 74px;
-    border-radius: 5px;
-    background: #1e2328;
-    border: 1px solid rgba(224, 160, 79, 0.4);
-    display: grid;
-    place-items: center;
-  }
-
-  .mark svg { width: 46px; height: 46px; display: block; }
+  /* The mark stands on its own here. The old monogram needed a tile to give it
+     an edge; the hexagon has its own silhouette and a box fights it. Relative
+     path so this file screenshots correctly straight off disk — mark.png sits
+     in this directory. */
+  .mark img { height: 104px; width: auto; display: block; }
 
   .wordmark {
     font-family: var(--serif);
@@ -109,9 +103,7 @@
 
   <div class="inner">
     <div class="mark">
-      <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-        <path d="M20 46V18h13.5c5.8 0 9.5 3.3 9.5 8.4 0 4-2.3 6.9-6.1 7.9L44 46h-6.3l-6.2-11h-5.9v11H20zm5.6-15.6h7.2c2.8 0 4.5-1.5 4.5-4s-1.7-4-4.5-4h-7.2v8z" fill="#e0a04f"/>
-      </svg>
+      <img src="mark.png" alt="">
     </div>
 
     <div>
