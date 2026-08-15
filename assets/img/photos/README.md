@@ -21,6 +21,7 @@ editing. A missing file degrades to a dark graphite placeholder rather than brea
 | `ore-stacks.jpg` | Ferro Alloys — raw material (4:3) | Ore stacked by grade |
 | `control-room.jpg` | Ferro Alloys — quality section (4:3) | Process control room |
 | `plant-panorama.jpg` | Ferro Alloys — the plant section (27:10) | The works at Sarandi seen from the main gate |
+| `plant-unit-3.jpg` | Ferro Alloys — the plant section (16:7) | The third unit furnace building, added 2024 |
 | `pollution-control.jpg` | Sustainability — environment (16:9) | Pollution control plant and stack |
 | `safety.jpg` | Sustainability — health & safety (3:4) | Team in protective equipment |
 | `solar.jpg` | Sustainability — full-bleed hero | Solar array on worked-out ground |
@@ -98,6 +99,12 @@ displays.
   case with the photographer reflected in it, and the visible face names no recipient. It
   is published because the award is real and the client supplied it as theirs, but a
   cleaner photograph would be worth having.
+- `plant-unit-3.jpg` is the third unit, identified by the client. Supplied at 1280x522
+  and cropped to 1193x522 for the 16:7 slot, which trims 44px of conveyor structure off
+  the left and a little edge off the right. At 1193px it only just covers the 1120px
+  container, so it is soft on a retina display — a larger frame would be worth having.
+  Three stacks are visible and the third unit has three furnaces; the caption does not
+  claim they correspond, because nothing supplied says they do.
 - `plant-panorama.jpg` is a 2068x760 panorama, trimmed 8px each side to sit exactly in
   the 27:10 `.photo--pano` slot rather than letting `cover` choose the crop. **The gate in
   it carries the old Ramnik mark**, not the hexagon now used across the site — the
