@@ -1,0 +1,97 @@
+# The Ramnik Group — Apache / LiteSpeed configuration for Hostinger.
+#
+# Every block is wrapped in <IfModule> so that a module the server does not
+# load is skipped rather than throwing a 500. Nothing here is required for the
+# site to work; it sets the error page, compression, caching and a few headers.
+#
+# HTTPS and www redirects are deliberately NOT handled here — Hostinger has
+# "Force HTTPS" in hPanel, and duplicating that rule behind their proxy is a
+# common cause of redirect loops. Use the panel toggle instead.
+
+DirectoryIndex index.html
+
+# Serve the styled 404 page instead of the server default.
+ErrorDocument 404 /404.html
+
+# No directory listings for /assets and friends. This is the only directive here
+# that depends on the host allowing "Options" overrides. Hostinger does; if you
+# ever move to a host that does not, the symptom is a 500 on every page and this
+# is the line to delete.
+<IfModule mod_autoindex.c>
+  Options -Indexes
+</IfModule>
+
+# --- Compression ------------------------------------------------------------
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/xml application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/rss+xml application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# --- Caching ----------------------------------------------------------------
+#
+# HTML is kept short so edits go live promptly after a deploy. Assets are given
+# a long life; when style.css or main.js changes, bump the ?v= query on the
+# reference in the pages so browsers pick it up immediately.
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault                              "access plus 1 month"
+
+  ExpiresByType text/html                     "access plus 10 minutes"
+  ExpiresByType text/css                      "access plus 1 year"
+  ExpiresByType application/javascript        "access plus 1 year"
+  ExpiresByType image/svg+xml                 "access plus 1 year"
+  ExpiresByType image/jpeg                    "access plus 1 year"
+  ExpiresByType image/png                     "access plus 1 year"
+  ExpiresByType image/webp                    "access plus 1 year"
+  ExpiresByType image/x-icon                  "access plus 1 year"
+
+  ExpiresByType text/xml                      "access plus 1 day"
+  ExpiresByType application/xml               "access plus 1 day"
+  ExpiresByType text/plain                    "access plus 1 day"
+</IfModule>
+
+# --- Headers ----------------------------------------------------------------
+
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # Long-lived, immutable assets.
+  <FilesMatch "\.(css|js|svg|jpg|jpeg|png|webp|ico|woff2)$">
+    Header set Cache-Control "public, max-age=31536000"
+  </FilesMatch>
+
+  # Pages should revalidate so a deploy is visible without a hard refresh.
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=600, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# --- MIME types -------------------------------------------------------------
+# Set explicitly in case the server's defaults are incomplete.
+
+<IfModule mod_mime.c>
+  AddType image/svg+xml            .svg
+  AddType application/javascript   .js
+  AddType image/webp               .webp
+  AddType font/woff2               .woff2
+</IfModule>
+
+# --- Housekeeping -----------------------------------------------------------
+# The repository is deployed as-is, so keep repo files out of the web root.
+
+<FilesMatch "^(README\.md|\.gitignore|\.git.*)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>

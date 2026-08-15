@@ -18,8 +18,8 @@ assets/css/style.css    Single stylesheet; design tokens in the :root block at t
 assets/js/main.js       Mobile nav, sticky-header border, scroll reveal
 assets/img/mark.svg     Monogram used as logo and favicon
 assets/img/photos/      Photograph slots — see the README in that directory
-CNAME, robots.txt, sitemap.xml, .nojekyll
-.github/workflows/pages.yml   GitHub Pages deployment
+.htaccess               404 page, compression, caching, headers (Apache/LiteSpeed)
+robots.txt, sitemap.xml
 ```
 
 ## Where the content came from
@@ -50,22 +50,45 @@ python3 -m http.server 8000
 
 ## Deploying
 
-**GitHub Pages** — the included workflow publishes the repository root on every push to
-`main`, but Pages has to be switched on once by hand first:
+Deployment is **Hostinger Git deploy**: hPanel pulls this repository and serves it
+directly. There is no build step to configure — the repository root *is* the site, so
+whatever is on `main` is what gets served.
 
-> *Settings → Pages → Build and deployment → Source: **GitHub Actions***
+**Setup in hPanel** — *Websites → your site → Advanced → GIT*:
 
-Until that is done the workflow fails at `configure-pages` with *"Get Pages site failed
-… Not Found"*. This cannot be automated from the workflow: creating the Pages site needs
-admin rights the `GITHUB_TOKEN` does not carry, so `enablement: true` fails with
-*"Resource not accessible by integration"*. After enabling, re-run the workflow from the
-Actions tab, or push any commit.
+- Repository: `https://github.com/sreebalakrishnan/theramnikgroup.com`
+- Branch: `main`
+- Directory: `public_html` (leave the path field empty to deploy to the web root)
 
-`CNAME` sets the custom domain to `theramnikgroup.com`. Note that once a custom domain
-is set, the `*.github.io` address redirects to it, so the site is only reachable after
-DNS points at GitHub Pages — an apex `ALIAS`/`ANAME` (or four `A` records to
-`185.199.108–111.153`) plus a `CNAME` on `www`. Delete the `CNAME` file if you want to
-preview at the `github.io` address first, or if you host elsewhere.
+Deploying is then the **Deploy** button in hPanel. To make pushes deploy automatically,
+copy the webhook URL hPanel shows and add it under *GitHub → Settings → Webhooks* with
+content type `application/json`.
+
+Two things worth knowing:
+
+- The site uses **root-relative paths** (`/assets/…`), so it must be deployed to the
+  web root. In a subdirectory every stylesheet and link would 404.
+- Hostinger deploys the working tree, so `README.md` and `.git` land in the web root
+  too. `.htaccess` denies access to them.
+
+**Force HTTPS** is a toggle in hPanel (*Security → SSL*). It is deliberately not done in
+`.htaccess` — duplicating that redirect behind Hostinger's proxy is a common cause of
+redirect loops.
+
+### `.htaccess`
+
+Sets the styled 404 page, gzip compression, cache lifetimes, and a few security
+headers. Every block is wrapped in `<IfModule>`, so a module the server does not load is
+skipped rather than throwing a 500.
+
+CSS and JS are cached for a year. When you edit `style.css` or `main.js`, add or bump a
+query string on the reference in each page — `href="/assets/css/style.css?v=2"` — or
+returning visitors keep the old file.
+
+### Elsewhere
+
+Any static host works: Netlify, Cloudflare Pages and Vercel need no build command and
+publish directory `.`. `.htaccess` is Apache/LiteSpeed only and is ignored by those.
 
 **Netlify / Cloudflare Pages / Vercel** — no build command, publish directory `.`.
 
