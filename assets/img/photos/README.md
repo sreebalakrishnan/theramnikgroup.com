@@ -13,7 +13,7 @@ editing. A missing file degrades to a dark graphite placeholder rather than brea
 | `directors.jpg` | Legacy — leadership band; home page | Both directors together |
 | `nischal-trivedi.jpg` | Legacy — leadership bio (4:5) | Nischal Trivedi |
 | `harsh-trivedi.jpg` | Legacy — leadership bio (4:5) | Harsh Trivedi |
-| `plant.jpg` | Legacy — forward integration (3:4) | Plant structure |
+| `plant-structure.jpg` | Legacy — forward integration (3:4) | Plant structure, retouched |
 | `opencast.jpg` | Mining — full-bleed hero | Haul road through the open cast workings |
 | `underground.jpg` | Mining — operations pair (4:3) | Underground working |
 | `crushing.jpg` | Mining — operations pair (4:3) | Graded ore stacks |
