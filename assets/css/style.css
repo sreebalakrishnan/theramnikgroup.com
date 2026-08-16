@@ -10,13 +10,14 @@
 
 :root {
   /* The ink family sits on the logo's hue (211) so the two agree. It is a
-     third of the mark's saturation on purpose: at the logo's 77% this reads
-     as corporate blue and tires the eye over a page of text. Lightness is
+     two thirds of the mark's saturation. A third was tried first and was too
+     subtle to read as navy at all on a phone; the full 77% turns a page of
+     body text into corporate blue. Lightness is
      unchanged from the charcoal it replaces, so every contrast pair that was
      checked before still holds. */
-  --ink: #111922;
-  --ink-2: #2e3944;
-  --ink-3: #576573;
+  --ink: #0a1b2e;
+  --ink-2: #25384e;
+  --ink-3: #4a6480;
   --paper: #faf9f7;
   --paper-2: #f1efeb;
   --paper-3: #e6e3dd;
@@ -30,8 +31,8 @@
   --green-text: #2f6b45;
   --green-lit: #8fd4a8;
 
-  --line: rgba(17, 25, 34, 0.13);
-  --line-soft: rgba(17, 25, 34, 0.07);
+  --line: rgba(10, 27, 46, 0.13);
+  --line-soft: rgba(10, 27, 46, 0.07);
   --line-dark: rgba(250, 249, 247, 0.16);
 
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua",
@@ -325,9 +326,10 @@ a:hover {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   /* Small enough that --ink-3 falls under AA against the header's tinted
-     backdrop, so this line is set darker than the other muted labels. Re-based
-     onto the navy hue with the family; measures 7.34:1 there. */
-  color: #3e556c;
+     backdrop, so this line is set darker than the other muted labels. Kept
+     proportional to --ink-3 rather than matching the ground's saturation: a
+     small uppercase label this blue starts to read as a link. 7.33:1 there. */
+  color: #3c556f;
 }
 
 .nav {
@@ -526,9 +528,9 @@ a:hover {
   inset: 0;
   background: linear-gradient(
       100deg,
-      rgba(17, 25, 34, 0.94) 0%,
-      rgba(17, 25, 34, 0.82) 45%,
-      rgba(17, 25, 34, 0.55) 100%
+      rgba(10, 27, 46, 0.94) 0%,
+      rgba(10, 27, 46, 0.82) 45%,
+      rgba(10, 27, 46, 0.55) 100%
     ),
     radial-gradient(60rem 34rem at 88% 6%, rgba(180, 97, 31, 0.28), transparent 62%);
 }
@@ -665,7 +667,7 @@ a:hover {
 .card:hover {
   transform: translateY(-3px);
   border-color: rgba(180, 97, 31, 0.45);
-  box-shadow: 0 18px 40px -28px rgba(17, 25, 34, 0.5);
+  box-shadow: 0 18px 40px -28px rgba(10, 27, 46, 0.5);
 }
 
 .card__tag {
@@ -1455,13 +1457,13 @@ figure {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(17, 25, 34, 0);
+  background: rgba(10, 27, 46, 0);
   transition: background 0.35s var(--ease);
 }
 
 .js .shot > a:hover::after,
 .js .shot > a:focus-visible::after {
-  background: rgba(17, 25, 34, 0.14);
+  background: rgba(10, 27, 46, 0.14);
 }
 
 .shot > a:hover img {
@@ -1736,7 +1738,7 @@ body.is-lightboxed {
     padding: 0.5rem var(--gutter) 1.5rem;
     transform: translateY(-125%);
     transition: transform 0.35s var(--ease);
-    box-shadow: 0 24px 40px -32px rgba(17, 25, 34, 0.6);
+    box-shadow: 0 24px 40px -32px rgba(10, 27, 46, 0.6);
     max-height: calc(100vh - 4.75rem);
     overflow-y: auto;
   }
