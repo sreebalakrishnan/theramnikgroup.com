@@ -363,11 +363,14 @@ These are the outstanding items, each marked with an HTML comment in the source:
      five-star plaque for the Ramrama manganese mine and on the Madhya Pradesh
      environment award citation.
 
-   Both names now appear on the pages where a document evidences them, but the **footer
-   still says only "the group"** and there is no registered-office line. Before adding
-   one, confirm with the family that these two are the whole list and which is the
-   parent — the site must not imply that "The Ramnik Group" is a single registered
-   company when it is at least two.
+   Both names now appear on the pages where a document evidences them. **The registered
+   office is now confirmed by the client** — Main Road (Opposite SBI), Balaghat, Madhya
+   Pradesh 481001 — and appears in every page footer, on the contact page and as the
+   Organization address in the JSON-LD. Note it is a different address from the plant
+   (Sarandi 481331): the footer line is the office, the plant address stays on the ISO
+   certificate's wording. Still open: which entity that office is registered to, and
+   whether the two named companies are the whole list — the footer deliberately says
+   "The Ramnik Group" without an entity name until that is confirmed.
 
 5. **Figures worth a second look.** Installed capacity is shown as 34.5 MVA on the stat
    bands (22.5 + 12) while the body text says "33 to 35 MVA in total", matching how it
