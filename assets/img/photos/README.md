@@ -38,6 +38,7 @@ editing. A missing file degrades to a dark graphite placeholder rather than brea
 | `product.jpg` | Ferro Alloys — product range (3:4) | Finished alloy, crushed and sized |
 | `product-lumps.jpg` | Ferro Alloys — product range (3:4) | Alloy in larger lump |
 | `casting-bed.jpg` | Gallery — the works (3:4) | The casting bed filling, tappers at work |
+| `casting-bed-wide.jpg` | Home — products (16:9), German landing page | The same frame cropped wide |
 | `metal-yard.jpg` | Gallery — the works (4:3) | The metal yard shed, finished alloy bagged inside |
 | `plantation.jpg` | Sustainability — environment (16:7) | Dense plantation of young saplings on worked ground |
 | `og-card.jpg` | *(in `assets/img/`)* social preview | Typographic brand card |
