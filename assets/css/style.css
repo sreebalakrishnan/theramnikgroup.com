@@ -1,7 +1,7 @@
 /* ==========================================================================
    The Ramnik Group — stylesheet
    Single file, no build step. Sections in order:
-   tokens · reset · typography · layout · header · hero · buttons · stats ·
+   tokens · zones · reset · typography · layout · header · hero · buttons · stats ·
    cards · process · specs · photos · lists · quote · timeline · certs ·
    forms · footer · motion · responsive · print
    ========================================================================== */
@@ -31,6 +31,42 @@
   --green-text: #2f6b45;
   --green-lit: #8fd4a8;
 
+  /* Zone accents. The mark is three stacked bands — the sun on top for solar,
+     the ingot in the middle for the alloys, the rock beneath for the mine — so
+     each of those three pages takes its accent from its own band and the page
+     agrees with the logo. Everything decorative points at --zone-*, not at
+     --ember-*, and a page declares which band it belongs to with data-zone on
+     the body. Un-zoned pages (home, legacy, gallery, contact) keep the ember,
+     because they are the whole group rather than one band.
+
+     The literal band colours could not all be used as they are. The sun is
+     2.42:1 on paper and the ingot's silver 1.57:1 — neither can carry type —
+     so each zone's --zone-text is a darkened relative of its band, and its
+     --zone-lit a lightened one for the dark sections. The bands themselves
+     appear undiluted in .bands, which is the one place they are pure colour
+     on a dark ground and so need no adjusting. */
+  --zone: var(--ember);
+  --zone-text: var(--ember-text);
+  --zone-lit: var(--ember-lit);
+  --zone-line: rgba(180, 97, 31, 0.5); /* underlines under body links */
+  --zone-ring: rgba(180, 97, 31, 0.15); /* focus halo on form fields */
+  --zone-glow: rgba(180, 97, 31, 0.28); /* the hero's corner light */
+  --zone-wash: rgba(180, 97, 31, 0.16); /* the light thrown over a photograph */
+  --zone-edge: rgba(180, 97, 31, 0.45); /* a card's border when it is hovered */
+  /* --zone-veil tints the hero photograph itself. It is the bottom layer of
+     the scrim, so the dark gradient still goes over the top of it and the
+     white text keeps every bit of the contrast it had. Un-zoned pages leave
+     it transparent and look exactly as they did. */
+  --zone-veil: transparent;
+
+  /* The three bands, straight off the logo sheet. Only the rock is altered:
+     #0c325c is 1.35:1 on --ink and would vanish, so on dark grounds it is
+     lifted to --band-rock-lit at 5.70:1. */
+  --band-sun: #e58f03;
+  --band-ingot: #c8c9cd;
+  --band-rock: #0c325c;
+  --band-rock-lit: #6296da;
+
   --line: rgba(10, 27, 46, 0.13);
   --line-soft: rgba(10, 27, 46, 0.07);
   --line-dark: rgba(250, 249, 247, 0.16);
@@ -51,6 +87,102 @@
   --step-4: clamp(2.4rem, 1.8rem + 3vw, 4.4rem);
 
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* --- zones -------------------------------------------------------------- */
+
+/* Solar — the sun on the top band. This is the zone nearest the ember the site
+   already used, so the sustainability page changes least; it warms and
+   brightens towards the logo's #E58F03 rather than the earthier ember. */
+[data-zone="solar"] {
+  --zone: #c9760a;
+  --zone-text: #8b550e; /* 5.86:1 on --paper */
+  --zone-lit: #e9a449; /* 8.16:1 on --ink */
+  --zone-line: rgba(201, 118, 10, 0.5);
+  --zone-ring: rgba(201, 118, 10, 0.16);
+  --zone-glow: rgba(229, 143, 3, 0.3);
+  --zone-wash: rgba(229, 143, 3, 0.18);
+  --zone-edge: rgba(201, 118, 10, 0.45);
+  --zone-veil: rgba(229, 143, 3, 0.45);
+}
+
+/* Ferro alloys — the ingot on the middle band. Its silver is 1.57:1 on paper
+   and cannot be used at all as an accent, so the zone takes the colour the
+   metal actually is under the shed lights: a petrol steel. A straight desaturated
+   blue was tried first and came out only ΔE 6 from --ink-3, which made every
+   accent read as ordinary muted text. This one is ΔE 16.7 from it. */
+[data-zone="alloys"] {
+  --zone: #2a7d8c;
+  --zone-text: #20646f; /* 6.41:1 on --paper */
+  --zone-lit: #8cc0cb; /* 8.70:1 on --ink */
+  --zone-line: rgba(42, 125, 140, 0.55);
+  --zone-ring: rgba(42, 125, 140, 0.16);
+  --zone-glow: rgba(42, 125, 140, 0.32);
+  --zone-wash: rgba(140, 192, 203, 0.16);
+  --zone-edge: rgba(42, 125, 140, 0.45);
+  --zone-veil: rgba(42, 125, 140, 0.42);
+}
+
+/* The mine — the rock on the bottom band, the logo's own navy. It is the one
+   zone whose band colour is close to the body ink, so the accents are pushed
+   brighter than the band to stay legible as accents: ΔE 24 from --ink-3. */
+[data-zone="mine"] {
+  --zone: #3272b8;
+  --zone-text: #184681; /* 8.94:1 on --paper */
+  --zone-lit: #6296da; /* 5.70:1 on --ink */
+  --zone-line: rgba(50, 114, 184, 0.55);
+  --zone-ring: rgba(50, 114, 184, 0.18);
+  --zone-glow: rgba(50, 114, 184, 0.3);
+  --zone-wash: rgba(98, 150, 218, 0.16);
+  --zone-edge: rgba(50, 114, 184, 0.45);
+  --zone-veil: rgba(50, 114, 184, 0.45);
+}
+
+/* The three bands themselves, laid across the foot of a hero in the order they
+   appear in the mark: sun, ingot, rock. On a zoned page the page's own band is
+   thicker and at full strength and the other two step back, so the strip says
+   both "these are the three parts of the group" and "you are in this one". On
+   the home page nothing is dimmed — that page is all three. */
+.bands {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  height: 5px;
+}
+
+.bands span {
+  flex: 1;
+  transition: opacity 0.4s var(--ease), flex-grow 0.4s var(--ease);
+}
+
+.bands span:nth-child(1) {
+  background: var(--band-sun);
+}
+.bands span:nth-child(2) {
+  background: var(--band-ingot);
+}
+.bands span:nth-child(3) {
+  background: var(--band-rock-lit);
+}
+
+[data-zone] .bands span {
+  opacity: 0.3;
+}
+
+[data-zone="solar"] .bands span:nth-child(1),
+[data-zone="alloys"] .bands span:nth-child(2),
+[data-zone="mine"] .bands span:nth-child(3) {
+  opacity: 1;
+  flex-grow: 2.4;
+}
+
+/* A second, quieter echo of the same idea: on a zoned page the dark sections
+   carry a hairline of the zone's band along their top edge, so the colour
+   returns down the page instead of appearing once in the hero and vanishing. */
+[data-zone] .section--ink {
+  border-top: 2px solid var(--zone-lit);
 }
 
 /* --- reset -------------------------------------------------------------- */
@@ -126,18 +258,18 @@ p {
 
 a {
   color: inherit;
-  text-decoration-color: rgba(180, 97, 31, 0.5);
+  text-decoration-color: var(--zone-line);
   text-underline-offset: 0.25em;
   transition: color 0.2s var(--ease), text-decoration-color 0.2s var(--ease);
 }
 
 a:hover {
-  color: var(--ember-text);
+  color: var(--zone-text);
   text-decoration-color: currentColor;
 }
 
 :focus-visible {
-  outline: 2px solid var(--ember);
+  outline: 2px solid var(--zone);
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -149,7 +281,7 @@ a:hover {
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--ember-text);
+  color: var(--zone-text);
   margin: 0 0 1.25rem;
 }
 
@@ -204,11 +336,11 @@ a:hover {
 }
 
 .section--ink .eyebrow {
-  color: var(--ember-lit);
+  color: var(--zone-lit);
 }
 
 .section--ink a:hover {
-  color: var(--ember-lit);
+  color: var(--zone-lit);
 }
 
 .section--alt {
@@ -355,7 +487,7 @@ a:hover {
   bottom: 0;
   width: 100%;
   height: 1px;
-  background: var(--ember);
+  background: var(--zone);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.28s var(--ease);
@@ -444,8 +576,8 @@ a:hover {
 }
 
 .btn:hover {
-  background: var(--ember-text);
-  border-color: var(--ember-text);
+  background: var(--zone-text);
+  border-color: var(--zone-text);
   color: #fff;
   transform: translateY(-1px);
 }
@@ -488,7 +620,7 @@ a:hover {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
-  color: var(--ember-text);
+  color: var(--zone-text);
 }
 
 .arrow-link::after {
@@ -501,7 +633,7 @@ a:hover {
 }
 
 .section--ink .arrow-link {
-  color: var(--ember-lit);
+  color: var(--zone-lit);
 }
 
 /* --- hero --------------------------------------------------------------- */
@@ -532,7 +664,8 @@ a:hover {
       rgba(10, 27, 46, 0.82) 45%,
       rgba(10, 27, 46, 0.55) 100%
     ),
-    radial-gradient(60rem 34rem at 88% 6%, rgba(180, 97, 31, 0.28), transparent 62%);
+    radial-gradient(60rem 34rem at 88% 6%, var(--zone-glow), transparent 62%),
+    linear-gradient(0deg, var(--zone-veil), var(--zone-veil));
 }
 
 .hero__inner {
@@ -548,11 +681,11 @@ a:hover {
 
 .hero h1 em {
   font-style: italic;
-  color: var(--ember-lit);
+  color: var(--zone-lit);
 }
 
 .hero .eyebrow {
-  color: var(--ember-lit);
+  color: var(--zone-lit);
 }
 
 .hero .lede {
@@ -589,7 +722,7 @@ a:hover {
 }
 
 .page-hero .eyebrow {
-  color: var(--ember-lit);
+  color: var(--zone-lit);
 }
 
 .page-hero .lede {
@@ -666,7 +799,7 @@ a:hover {
 
 .card:hover {
   transform: translateY(-3px);
-  border-color: rgba(180, 97, 31, 0.45);
+  border-color: var(--zone-edge);
   box-shadow: 0 18px 40px -28px rgba(10, 27, 46, 0.5);
 }
 
@@ -674,7 +807,7 @@ a:hover {
   font-size: 0.67rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--ember-text);
+  color: var(--zone-text);
   margin-bottom: 0.9rem;
 }
 
@@ -708,7 +841,7 @@ a:hover {
 }
 
 .section--ink .card__tag {
-  color: var(--ember-lit);
+  color: var(--zone-lit);
 }
 
 .section--ink .card__foot {
@@ -741,7 +874,7 @@ a:hover {
   content: counter(principle, decimal-leading-zero);
   font-family: var(--serif);
   font-size: 1.05rem;
-  color: var(--ember-text);
+  color: var(--zone-text);
   padding-top: 0.3rem;
 }
 
@@ -762,7 +895,7 @@ a:hover {
 }
 
 .section--ink .principles li::before {
-  color: var(--ember-lit);
+  color: var(--zone-lit);
 }
 
 .section--ink .principles p {
@@ -795,7 +928,7 @@ a:hover {
   display: block;
   font-size: 0.68rem;
   letter-spacing: 0.18em;
-  color: var(--ember-text);
+  color: var(--zone-text);
   margin-bottom: 0.85rem;
 }
 
@@ -894,7 +1027,7 @@ td.num {
   inset: 0;
   background: radial-gradient(
     18rem 18rem at 50% 45%,
-    rgba(180, 97, 31, 0.16),
+    var(--zone-wash),
     transparent 70%
   );
 }
@@ -1056,7 +1189,7 @@ figure {
   width: 0.55rem;
   height: 0.55rem;
   border-radius: 50%;
-  background: var(--ember);
+  background: var(--zone);
 }
 
 .checks--green li::before {
@@ -1068,7 +1201,7 @@ figure {
 }
 
 .section--ink .checks li::before {
-  background: var(--ember-lit);
+  background: var(--zone-lit);
 }
 
 /* --- quote -------------------------------------------------------------- */
@@ -1077,7 +1210,7 @@ figure {
   margin: 0;
   padding: clamp(1.6rem, 3.5vw, 2.5rem);
   background: var(--paper-2);
-  border-left: 2px solid var(--ember);
+  border-left: 2px solid var(--zone);
   border-radius: 0 var(--radius) var(--radius) 0;
 }
 
@@ -1097,7 +1230,7 @@ figure {
 
 .section--ink .quote {
   background: rgba(255, 255, 255, 0.045);
-  border-left-color: var(--ember-lit);
+  border-left-color: var(--zone-lit);
 }
 
 .section--ink .quote footer {
@@ -1127,7 +1260,7 @@ figure {
 .timeline__year {
   font-family: var(--serif);
   font-size: 1.2rem;
-  color: var(--ember-text);
+  color: var(--zone-text);
 }
 
 .timeline h3 {
@@ -1148,7 +1281,7 @@ figure {
 }
 
 .section--ink .timeline__year {
-  color: var(--ember-lit);
+  color: var(--zone-lit);
 }
 
 .section--ink .timeline p {
@@ -1192,7 +1325,7 @@ figure {
   font-size: 0.74rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ember-text);
+  color: var(--zone-text);
   margin-bottom: 1rem;
 }
 
@@ -1275,8 +1408,8 @@ figure {
 .field select:focus,
 .field textarea:focus {
   outline: none;
-  border-color: var(--ember);
-  box-shadow: 0 0 0 3px rgba(180, 97, 31, 0.15);
+  border-color: var(--zone);
+  box-shadow: 0 0 0 3px var(--zone-ring);
 }
 
 .field textarea {
@@ -1556,14 +1689,14 @@ figure {
   font-family: var(--sans);
   font-size: 0.82rem;
   letter-spacing: 0.06em;
-  color: var(--ember-lit);
+  color: var(--zone-lit);
   text-decoration: none;
   border-bottom: 1px solid rgba(224, 160, 79, 0.45);
   padding-bottom: 1px;
 }
 
 .lightbox__download:hover {
-  border-bottom-color: var(--ember-lit);
+  border-bottom-color: var(--zone-lit);
 }
 
 .lightbox__close,
@@ -1585,7 +1718,7 @@ figure {
 
 .lightbox__close:focus-visible,
 .lightbox__nav:focus-visible {
-  outline: 2px solid var(--ember-lit);
+  outline: 2px solid var(--zone-lit);
   outline-offset: 2px;
 }
 
@@ -1633,7 +1766,7 @@ body.is-lightboxed {
 }
 
 .site-footer a:hover {
-  color: var(--ember-lit);
+  color: var(--zone-lit);
 }
 
 .site-footer .brand__name,
