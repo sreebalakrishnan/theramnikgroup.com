@@ -931,6 +931,24 @@ td.num {
   }
 }
 
+/* A wide crop of a portrait original. On a desktop the 16:9 band is right; on a
+   phone it collapses to a ~200px strip and the picture stops registering. So
+   below 640px the slot takes the uncropped frame instead and goes portrait.
+   Both files are passed in as custom properties rather than as an inline
+   background-image, because an inline value cannot be overridden by a media
+   query without !important. A missing file still degrades to the graphite
+   placeholder, which is the reason the slots work this way at all. */
+.photo--phone-tall {
+  background-image: var(--wide);
+}
+
+@media (max-width: 640px) {
+  .photo--phone-tall {
+    background-image: var(--tall);
+    aspect-ratio: 3 / 4;
+  }
+}
+
 .photo-caption {
   display: block;
   margin-top: 0.75rem;

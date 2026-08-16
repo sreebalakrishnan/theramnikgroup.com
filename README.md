@@ -133,6 +133,21 @@ self-heals in days rather than persisting for a year.
 Any static host works: Netlify, Cloudflare Pages and Vercel need no build command and
 publish directory `.`. `.htaccess` is Apache/LiteSpeed only and is ignored by those.
 
+## Wide crops on narrow screens
+
+A 16:9 band that reads well on a desktop collapses to a ~200px strip on a phone, and a
+picture that small stops registering as a picture. `.photo--phone-tall` handles the case
+where the wide image is a crop of a taller original: it takes the wide file above 640px
+and the uncropped one below, switching aspect ratio with it.
+
+Both files go in as CSS custom properties — `--wide` and `--tall` — rather than as an
+inline `background-image`, because a media query cannot override an inline style without
+`!important`. A missing file still falls back to the graphite placeholder, which is the
+reason the photo slots work this way at all.
+
+Used on the home page and the German landing page for the casting bed. Worth reaching for
+any time a landscape crop is doing the work of a portrait original.
+
 ## The palette and the logo
 
 The 2026 mark is navy. The site's dark was pulled onto the same hue so the two agree,
