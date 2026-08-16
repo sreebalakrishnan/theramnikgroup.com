@@ -114,12 +114,12 @@ headers. Every block is wrapped in `<IfModule>`, so a module the server does not
 skipped rather than throwing a 500.
 
 **Cache busting.** The pages request the stylesheet and script with a version query —
-currently `href="/assets/css/style.css?v=8"`. **Bump that number in every page whenever
+currently `href="/assets/css/style.css?v=10"`. **Bump that number in every page whenever
 you edit `style.css` or `main.js`**, or returning visitors keep the old file:
 
 ```bash
-# bump v=8 to v=9 across all pages, including the translated ones
-sed -i 's/style\.css?v=8/style.css?v=9/; s/main\.js?v=8/main.js?v=9/' *.html ja/*.html de/*.html
+# bump v=10 to v=11 across all pages, including the translated ones
+sed -i 's/style\.css?v=10/style.css?v=11/; s/main\.js?v=10/main.js?v=11/' *.html ja/*.html de/*.html
 ```
 
 Check the current number before copying that line — it moves.
@@ -139,20 +139,26 @@ The 2026 mark is navy. The site's dark was pulled onto the same hue so the two a
 rather than sitting next to each other at slightly different temperatures.
 
 The move was **saturation, not hue**: the ink family was already at hue 210–214, just
-almost fully desaturated. It now sits at 211 with roughly a third of the mark's
-saturation — `--ink #111922`, `--ink-2 #2E3944`, `--ink-3 #576573`. At the logo's own 77%
-saturation a page of body text reads as corporate blue and tires the eye; at a third it
-reads as near-black that happens to agree with the mark.
+almost fully desaturated. It now sits at 211 with roughly two thirds of the mark's
+saturation — `--ink #0A1B2E`, `--ink-2 #25384E`, `--ink-3 #4A6480`.
+
+**A third was tried first and was wrong.** On a desktop A/B it read as a clear change; on
+a phone, alone, it was indistinguishable from the charcoal it replaced. If a palette
+change is only visible side by side, it has not happened. Two thirds is visibly navy
+without becoming the corporate blue that the mark's own 77% produces across a page of
+body text.
 
 **Lightness was held constant**, which is what makes this safe: every contrast pair that
 was checked when the palette was built still holds, within a hundredth. Paper on ink is
-16.83:1 where it was 16.92:1.
+16.51:1 where it was 16.92:1.
 
 Things that had to move with it, and are easy to miss:
 
 - Nine `rgba(21, 24, 28, …)` values derived from the old ink, now `rgba(17, 25, 34, …)`.
 - `.brand__sub`, a hand-picked `#4C565F` set darker than `--ink-3` for AA against the
-  header's tinted backdrop. Re-based to `#3E556C`; measures 7.34:1 there.
+  header's tinted backdrop. Re-based to `#3C556F`, kept proportional to `--ink-3` rather
+  than to the ground: a small uppercase label at the ground's saturation starts to read as
+  a link. Measures 7.33:1 there.
 - `theme-color` in all eleven pages and `theme_color` in `site.webmanifest`.
 - `assets/img/trade-map.svg` — the country stroke matched the old ground, and the land
   fills were greys from the old family. Re-based. The two series colours were **not**
