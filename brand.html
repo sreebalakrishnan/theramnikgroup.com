@@ -23,7 +23,7 @@
 <link rel="icon" href="/assets/img/favicon.ico?v=2" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png?v=2">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png?v=2">
-<link rel="stylesheet" href="/assets/css/style.css?v=11">
+<link rel="stylesheet" href="/assets/css/style.css?v=12">
 
 <style>
   /* Page-scoped: these patterns exist only here, so they stay out of the
@@ -77,6 +77,7 @@
 
   <section class="page-hero page-hero--plain">
     <div class="hero__scrim"></div>
+    <div class="bands" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="wrap hero__inner">
       <span class="eyebrow">For designers</span>
       <h1>Brand basics.</h1>
@@ -270,11 +271,49 @@
         </li>
       </ul>
 
+      <h3 class="reveal" style="margin-top:clamp(2.25rem,4.5vw,3rem);">One band per page</h3>
+      <p class="reveal" style="max-width:62ch;">
+        The mark is three stacked bands and each stands for one part of the group: the sun
+        for solar, the ingot for the ferro alloys, the rock for the mine. The three pages
+        that are about one of those things take their accent colour from their own band, so
+        the page and the logo agree. The strip across the foot of every hero shows all three
+        in the order they appear in the mark, with the page's own band widened and the other
+        two stepped back. The home page leaves all three at full strength, because it is the
+        whole group and not one part of it.
+      </p>
+      <ul class="swatches reveal">
+        <li class="swatch">
+          <div class="swatch__chip" style="background:linear-gradient(90deg,#8b550e 50%,#e9a449 50%)"></div>
+          <div class="swatch__body">
+            <span class="swatch__name">Solar &mdash; the sun</span>
+            <span class="swatch__hex">#8B550E / #E9A449</span>
+            <span class="swatch__use">Sustainability. Text value on the left, dark-ground value on the right.</span>
+          </div>
+        </li>
+        <li class="swatch">
+          <div class="swatch__chip" style="background:linear-gradient(90deg,#20646f 50%,#8cc0cb 50%)"></div>
+          <div class="swatch__body">
+            <span class="swatch__name">Alloys &mdash; the ingot</span>
+            <span class="swatch__hex">#20646F / #8CC0CB</span>
+            <span class="swatch__use">Ferro alloys. The band's own silver is far too pale to set type in, so this is the colour the metal is under the shed lights.</span>
+          </div>
+        </li>
+        <li class="swatch">
+          <div class="swatch__chip" style="background:linear-gradient(90deg,#184681 50%,#6296da 50%)"></div>
+          <div class="swatch__body">
+            <span class="swatch__name">Mine &mdash; the rock</span>
+            <span class="swatch__hex">#184681 / #6296DA</span>
+            <span class="swatch__use">Mining. Pushed brighter than the logo's navy so it reads as an accent and not as body text.</span>
+          </div>
+        </li>
+      </ul>
+
       <p class="note reveal" style="margin-top:1.75rem;max-width:60ch;">
         <strong>The logo's navy is not the site's ink, and the logo's amber is not the site's
         ember.</strong> They are close enough to look like mistakes for each other and far
-        enough apart to look wrong side by side. Use the logo colours in the logo, and the
-        site colours everywhere else.
+        enough apart to look wrong side by side. The band colours appear undiluted in one
+        place only &mdash; the three-part strip under a hero, where they sit on a dark ground
+        and need no adjusting. Everywhere else a page uses the zone values above.
       </p>
       <p class="note reveal" style="max-width:60ch;">
         The three ember values are not interchangeable. #B4611F is bright enough to catch the
@@ -452,6 +491,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js?v=11" defer></script>
+<script src="/assets/js/main.js?v=12" defer></script>
 </body>
 </html>
