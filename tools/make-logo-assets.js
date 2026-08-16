@@ -6,8 +6,12 @@
  *
  * The sheet is a 1024x1536 RGBA PNG holding, top to bottom: the full-colour
  * mark, the RAMNIK wordmark, a rule, and three small variants (colour, solid,
- * reversed tile). Regions below were measured off the file, not eyeballed — see
- * tools/probe-logo.js and tools/probe-variants.js.
+ * reversed tile). Regions below were measured off the file, not eyeballed.
+ *
+ * The 2026 artwork arrived flat on white with no alpha. It was flood-filled in
+ * from the border to clear only the background, because the white gaps between
+ * the sun rays and around the ingot reach the hexagon edge and are meant to be
+ * transparent — the first sheet treated them the same way.
  *
  * Everything is generated from the FULL-COLOUR mark, which is the highest
  * resolution copy on the sheet and the only variant that survives being shrunk
@@ -20,13 +24,16 @@ const path = require("path");
 const SRC = "tools/logo-source.png";
 const OUT = "assets/img";
 
-const MARK = { left: 204, top: 88, width: 615, height: 711 };
-const WORDMARK = { left: 73, top: 842, width: 879, height: 122 };
+// Re-measured on the 2026 artwork by walking rows for non-background pixels;
+// the bands land within a pixel or two of the first sheet.
+const MARK = { left: 205, top: 90, width: 613, height: 709 };
+const WORDMARK = { left: 73, top: 842, width: 878, height: 122 };
 
-// Sampled from the artwork. The logo's charcoal is a cooler, lighter grey than
-// the site's --ink (#15181c); it is used here so the icon tiles match the mark
-// rather than the page behind it.
-const LOGO_CHARCOAL = "#232e34";
+// Sampled from the artwork as the modal colour of the wordmark: the 2026 logo
+// is navy, where the first version was a charcoal grey. Icon tiles use it so
+// they match the mark rather than the page behind it. It is NOT the site's
+// --ink (#15181c) and must not be conflated with it.
+const LOGO_NAVY = "#0c325c";
 
 // The alpha channel tops out at 254 rather than 255 across the whole sheet, an
 // artefact of whatever exported it. Harmless on screen, but it makes every
@@ -131,12 +138,12 @@ function ico(images) {
   // transparent icon there composites onto black.
   fs.writeFileSync(
     path.join(OUT, "apple-touch-icon.png"),
-    await tile(mark, 180, 18, LOGO_CHARCOAL)
+    await tile(mark, 180, 18, LOGO_NAVY)
   );
 
   // Android / installable icons.
-  fs.writeFileSync(path.join(OUT, "icon-192.png"), await tile(mark, 192, 20, LOGO_CHARCOAL));
-  fs.writeFileSync(path.join(OUT, "icon-512.png"), await tile(mark, 512, 54, LOGO_CHARCOAL));
+  fs.writeFileSync(path.join(OUT, "icon-192.png"), await tile(mark, 192, 20, LOGO_NAVY));
+  fs.writeFileSync(path.join(OUT, "icon-512.png"), await tile(mark, 512, 54, LOGO_NAVY));
 
   // Mark plus wordmark, for the social card and anywhere the full lockup is
   // wanted. Kept transparent so it can go on either ground.

@@ -207,12 +207,17 @@ It is served with `controls`, `preload="metadata"` and no autoplay: the clip car
 sound, and it should not download itself on a metered connection. A poster frame is set
 so the block is not a black rectangle before play.
 
-**Replacing the clip means renaming the file.** `.htaccess` caches `video/mp4` for 30
-days and there is no version query on media the way there is on CSS and JS, so reusing a
-filename leaves returning visitors on the old clip for up to a month. Name the new file
-for its content and update the three references in `ferro-alloys.html` (the `poster`, the
-`<source>` and the fallback download link). The same applies to photographs, cached 30
-days on the same rule.
+**Replacing the clip means busting its cache.** `.htaccess` caches `video/mp4` and
+images for 30 days, so reusing a filename unchanged leaves returning visitors on the old
+file for up to a month. Two ways to avoid that, and which one is right depends on the
+file:
+
+- **Rename** content files — photographs, video. The name describes what is in them, so a
+  new picture wants a new name anyway. Update every reference and delete the old file.
+- **Add a version query** to files whose names are fixed by convention — the favicons,
+  `mark.png`, `og-card.jpg`, the manifest icons. These are all referenced as
+  `…/mark.png?v=2`; bump the number when the artwork changes. Renaming those would mean
+  fighting browsers and platforms that look for the conventional path.
 
 The supplied file was 11.3MB of HEVC; re-encoding to H.264 at CRF 26 with mono 96kbps
 audio brought it to 1.5MB with no visible difference on a still comparison against the
