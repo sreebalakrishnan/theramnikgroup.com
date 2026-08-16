@@ -35,6 +35,10 @@ editing. A missing file degrades to a dark graphite placeholder rather than brea
 | `award-five-star-trophy.jpg` | Mining — recognition section (3:4) | The Indian Bureau of Mines five-star trophy, 2017–18 |
 | `award-fmpcci.jpg` | Mining — recognition section (3:4) | FMPCCI Outstanding Achievement trophy, 2014 |
 | `award-environment.jpg` | Sustainability — environment (4:3) | Framed Madhya Pradesh environment award citation, 2016–17 |
+| `product.jpg` | Ferro Alloys — product range (3:4) | Finished alloy, crushed and sized |
+| `product-lumps.jpg` | Ferro Alloys — product range (3:4) | Alloy in larger lump |
+| `casting-bed.jpg` | Gallery — the works (3:4) | The casting bed filling, tappers at work |
+| `metal-yard.jpg` | Gallery — the works (4:3) | The metal yard shed, finished alloy bagged inside |
 | `plantation.jpg` | Sustainability — environment (16:7) | Dense plantation of young saplings on worked ground |
 | `og-card.jpg` | *(in `assets/img/`)* social preview | Typographic brand card |
 
@@ -197,6 +201,13 @@ displays.
   nothing in any other file says where it was taken either. If one frame from that venture
   reached the supplied set, others may have. Worth asking the client to look through the
   album once with that specifically in mind.
+- **The product photographs carry no grade in their captions, deliberately.** Two piles
+  arrived: one bright and lustrous, one matte with larger slabbier pieces. Silico manganese
+  and ferro manganese do look different from each other, but which pile is which has not
+  been confirmed by anyone, and a wrong grade on the page buyers read would be worse than
+  saying nothing. The captions describe only what is visible. Name the grades once the
+  client confirms them — and if they do, the `Product` rows in the table on
+  `ferro-alloys.html` are where they belong too.
 - The solar frame arrived with a decorative rounded border baked in by a photo app. It
   was detected by walking in from each edge until the rows and columns stopped being
   uniformly light — 16px on all four sides — and trimmed before cropping.
