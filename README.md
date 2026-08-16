@@ -248,11 +248,13 @@ not an error a browser shows — the crawler simply drops the block.
 
 These are the outstanding items, each marked with an HTML comment in the source:
 
-1. **One photograph still missing:** `product.jpg`, finished alloy packed for dispatch.
-   The raw-material slot carries an ore photograph instead — accurate, but not the
-   product. See `assets/img/photos/README.md`; drop the file in under that name and it
-   appears with no HTML editing. A higher-resolution solar frame would also help; the
-   one in use is 994px wide against a full-bleed hero.
+1. **Photographs — the product gap is closed.** `product.jpg` and `product-lumps.jpg`
+   now show the finished alloy on the ferro alloys page, and the metal yard and the
+   casting bed are in the album. What is still not shown is alloy *packed and loaded for
+   dispatch*, which would complete the sequence from ore to shipment.
+
+   A higher-resolution solar frame would also help; the one in use is 994px wide against
+   a full-bleed hero.
 
    Also outstanding: confirm consent for staff who are recognisable in
    `underground.jpg`, `safety.jpg`, `control-room.jpg` and the two award photographs.
