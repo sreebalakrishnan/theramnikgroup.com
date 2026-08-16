@@ -1524,6 +1524,22 @@ figure {
   max-width: 60ch;
 }
 
+/* Shown only for certificates: the overlay holds a picture of the document, so
+   there has to be a way through to the document itself. */
+.lightbox__download {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  color: var(--ember-lit);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(224, 160, 79, 0.45);
+  padding-bottom: 1px;
+}
+
+.lightbox__download:hover {
+  border-bottom-color: var(--ember-lit);
+}
+
 .lightbox__close,
 .lightbox__nav {
   position: absolute;

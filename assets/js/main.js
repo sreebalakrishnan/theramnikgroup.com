@@ -131,15 +131,47 @@
     });
   }
 
-  /* Gallery lightbox ------------------------------------------------------ */
+  /* Lightbox --------------------------------------------------------------- */
 
-  /* Each thumbnail is a real link to the full-size photograph, so with this
-     file absent clicking one still shows the picture — it just loads the image
-     on its own instead of opening an overlay. */
+  /* Two kinds of thing open in here, and both degrade to a plain link when this
+     file is absent or fails:
+       - gallery thumbnails, whose href is the full-size photograph;
+       - certificates, whose href is the PDF and whose data-cert is a rendered
+         image of its first page. Without JS the PDF opens as it always did.
+     Only one kind appears on any given page, so a single list is enough and the
+     arrows step through whichever it is. */
 
   var shots = document.querySelectorAll(".shot > a");
+  var certs = document.querySelectorAll("a[data-cert]");
 
+  var items = [];
   if (shots.length) {
+    Array.prototype.forEach.call(shots, function (a) {
+      var thumb = a.querySelector("img");
+      var cap = a.parentNode.querySelector("figcaption");
+      items.push({
+        el: a,
+        src: a.getAttribute("href"),
+        alt: thumb ? thumb.getAttribute("alt") || "" : "",
+        caption: cap ? cap.textContent.trim() : "",
+        download: null,
+      });
+    });
+  } else if (certs.length) {
+    Array.prototype.forEach.call(certs, function (a) {
+      items.push({
+        el: a,
+        src: a.getAttribute("data-cert"),
+        alt: a.getAttribute("data-cert-alt") || "",
+        caption: a.getAttribute("data-cert-caption") || "",
+        download: a.getAttribute("href"),
+      });
+    });
+  }
+
+  var isCert = !shots.length && certs.length > 0;
+
+  if (items.length) {
     /* Built here rather than shipped as empty markup: an <img> with no src in
        the document is a broken image until the moment it is opened. */
     var lightbox = document.createElement("div");
@@ -148,30 +180,40 @@
     lightbox.hidden = true;
     lightbox.setAttribute("role", "dialog");
     lightbox.setAttribute("aria-modal", "true");
-    lightbox.setAttribute("aria-label", "Photograph");
+    var noun = isCert ? "certificate" : "photograph";
+    lightbox.setAttribute("aria-label", isCert ? "Certificate" : "Photograph");
     lightbox.innerHTML =
       '<button class="lightbox__close" type="button" aria-label="Close">×</button>' +
-      '<button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Previous photograph">‹</button>' +
-      '<button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Next photograph">›</button>' +
-      '<figure class="lightbox__figure"><img alt=""><figcaption></figcaption></figure>';
+      '<button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Previous ' + noun + '">‹</button>' +
+      '<button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Next ' + noun + '">›</button>' +
+      '<figure class="lightbox__figure"><img alt=""><figcaption></figcaption>' +
+      '<a class="lightbox__download" hidden target="_blank" rel="noopener">Open the PDF</a></figure>';
 
     var lbImg = lightbox.querySelector("img");
     var lbCaption = lightbox.querySelector("figcaption");
     var lbClose = lightbox.querySelector(".lightbox__close");
     var lbPrev = lightbox.querySelector(".lightbox__nav--prev");
     var lbNext = lightbox.querySelector(".lightbox__nav--next");
-    var links = Array.prototype.slice.call(shots);
+    var lbDownload = lightbox.querySelector(".lightbox__download");
+    var links = items.map(function (i) { return i.el; });
     var current = -1;
     var lastFocused = null;
 
     var show = function (index) {
-      current = (index + links.length) % links.length;
-      var link = links[current];
-      var thumb = link.querySelector("img");
-      var caption = link.parentNode.querySelector("figcaption");
-      lbImg.src = link.getAttribute("href");
-      lbImg.alt = thumb ? thumb.getAttribute("alt") || "" : "";
-      lbCaption.textContent = caption ? caption.textContent.trim() : "";
+      current = (index + items.length) % items.length;
+      var item = items[current];
+      lbImg.src = item.src;
+      lbImg.alt = item.alt;
+      lbCaption.textContent = item.caption;
+      // A picture of a certificate is not the certificate: always leave a route
+      // to the signed PDF itself.
+      if (item.download) {
+        lbDownload.setAttribute("href", item.download);
+        lbDownload.hidden = false;
+      } else {
+        lbDownload.removeAttribute("href");
+        lbDownload.hidden = true;
+      }
     };
 
     var attached = false;
@@ -207,6 +249,11 @@
       });
     });
 
+    if (items.length < 2) {
+      lbPrev.hidden = true;
+      lbNext.hidden = true;
+    }
+
     lbClose.addEventListener("click", close);
     lbPrev.addEventListener("click", function () {
       show(current - 1);
@@ -228,6 +275,7 @@
       else if (event.key === "Tab") {
         // Keep focus inside the dialog while it is open.
         var focusable = [lbClose, lbPrev, lbNext];
+        if (!lbDownload.hidden) focusable.push(lbDownload);
         var at = focusable.indexOf(document.activeElement);
         var next = event.shiftKey ? at - 1 : at + 1;
         if (at === -1 || next < 0 || next >= focusable.length) {

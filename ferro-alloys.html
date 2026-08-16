@@ -23,7 +23,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/style.css?v=7">
+<link rel="stylesheet" href="/assets/css/style.css?v=8">
 
 <script type="application/ld+json">
 {
@@ -328,14 +328,18 @@
                 Quality management, certified across mining, renewable energy, and the
                 production, export and import of silico manganese, ferro manganese and
                 manganese ore. Held by Ramnik Power and Alloys Pvt. Ltd., certificate
-                250528012, valid to 27 May 2028.
+                IN250528012, valid to 27 May 2028.
               </p>
               <p style="margin-top:0.6rem;">
-                <!-- Short label deliberately: .arrow-link is an inline-flex whose arrow
-                     is a second flex item, so wrapped label text leaves the arrow
-                     stranded beside the block. This fits the card column on one line. -->
+                <!-- href stays the PDF so this still works with JavaScript off; the
+                     script intercepts the click and shows data-cert in the overlay.
+                     Short label deliberately: .arrow-link is an inline-flex whose arrow
+                     is a second flex item, so wrapped label text strands the arrow. -->
                 <a class="arrow-link" href="/assets/docs/iso-9001-certificate.pdf"
-                   target="_blank" rel="noopener">Certificate (PDF)</a>
+                   target="_blank" rel="noopener"
+                   data-cert="/assets/img/docs/iso-9001.jpg"
+                   data-cert-alt="ISO 9001:2015 certificate issued to Ramnik Power and Alloys Pvt. Ltd., certificate IN250528012"
+                   data-cert-caption="ISO 9001:2015 — certificate IN250528012, valid to 27 May 2028">View certificate</a>
               </p>
             </li>
             <li>
@@ -353,11 +357,17 @@
                      inline-flex whose arrow is a second flex item, so a label that
                      wraps strands the arrow beside the block. -->
                 <a class="arrow-link" href="/assets/docs/bis-silico-manganese-licence.pdf"
-                   target="_blank" rel="noopener">IS 1470 (PDF)</a>
+                   target="_blank" rel="noopener"
+                   data-cert="/assets/img/docs/bis-silico-manganese.jpg"
+                   data-cert-alt="Bureau of Indian Standards licence CM/L-7400062009 for silico manganese to IS 1470:2013"
+                   data-cert-caption="BIS licence CM/L-7400062009 — silico manganese to IS 1470:2013">View IS 1470</a>
               </p>
               <p style="margin-top:0.4rem;">
                 <a class="arrow-link" href="/assets/docs/bis-ferro-manganese-licence.pdf"
-                   target="_blank" rel="noopener">IS 1171 (PDF)</a>
+                   target="_blank" rel="noopener"
+                   data-cert="/assets/img/docs/bis-ferro-manganese.jpg"
+                   data-cert-alt="Bureau of Indian Standards licence CM/L-7400061908 for ferro manganese to IS 1171:2011"
+                   data-cert-caption="BIS licence CM/L-7400061908 — ferro manganese to IS 1171:2011">View IS 1171</a>
               </p>
             </li>
           </ul>
@@ -465,7 +475,7 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js?v=7" defer></script>
+<script src="/assets/js/main.js?v=8" defer></script>
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>

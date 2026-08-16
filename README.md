@@ -19,13 +19,14 @@ de/index.html           German summary landing page
 contact.html            Contact routes and enquiry form
 404.html                Not-found page
 assets/css/style.css    Single stylesheet; design tokens in the :root block at the top
-assets/js/main.js       Mobile nav, sticky-header border, gallery lightbox, scroll reveal
+assets/js/main.js       Mobile nav, sticky header, lightbox, enquiry mailto, scroll reveal
 assets/img/mark.png     The group mark, used in the header and as the favicon source
 assets/img/favicon.*    Generated icon set (see tools/make-logo-assets.js)
 assets/img/photos/      Photograph slots — see the README in that directory
 assets/img/photos/thumbs/  Gallery thumbnails (tools/make-gallery-thumbs.js)
 assets/video/           Video — the furnace tap on the ferro alloys page
 assets/docs/            Documents linked from the site (ISO 9001 and two BIS licences)
+assets/img/docs/        First pages of those documents, rendered for the lightbox
 .htaccess               404 page, compression, caching, headers (Apache/LiteSpeed)
 site.webmanifest        Name, theme colour and the 192/512 icons
 llms.txt                Plain-text summary of the business for AI crawlers
@@ -113,12 +114,12 @@ headers. Every block is wrapped in `<IfModule>`, so a module the server does not
 skipped rather than throwing a 500.
 
 **Cache busting.** The pages request the stylesheet and script with a version query —
-currently `href="/assets/css/style.css?v=6"`. **Bump that number in every page whenever
+currently `href="/assets/css/style.css?v=8"`. **Bump that number in every page whenever
 you edit `style.css` or `main.js`**, or returning visitors keep the old file:
 
 ```bash
-# bump v=6 to v=7 across all pages
-sed -i 's/style\.css?v=6/style.css?v=7/; s/main\.js?v=6/main.js?v=7/' *.html
+# bump v=8 to v=9 across all pages, including the translated ones
+sed -i 's/style\.css?v=8/style.css?v=9/; s/main\.js?v=8/main.js?v=9/' *.html ja/*.html de/*.html
 ```
 
 Check the current number before copying that line — it moves.
@@ -131,6 +132,26 @@ self-heals in days rather than persisting for a year.
 
 Any static host works: Netlify, Cloudflare Pages and Vercel need no build command and
 publish directory `.`. `.htaccess` is Apache/LiteSpeed only and is ignored by those.
+
+## Certificates
+
+The three certificates on the ferro alloys page open in the lightbox as an image of
+the document rather than navigating away to the PDF. Each link keeps the PDF as its
+`href` and carries the image on `data-cert`, so with JavaScript off the click opens the
+PDF exactly as it used to — and the overlay always shows an **Open the PDF** link, because
+a picture of a certificate is not the certificate.
+
+The images in `assets/img/docs/` are rendered from the PDFs at 2× (about 150 dpi) with
+`pdfjs-dist` driven inside Chromium — there is no poppler, Ghostscript or ImageMagick in
+this environment, and Chromium cannot screenshot its own PDF viewer headlessly. Re-render
+them if a certificate is ever replaced, or the picture and the document will disagree.
+
+**The certificate number was wrong until now.** The ISO certificate reads
+`IN250528012`; the site said `250528012`. The prefix was lost when the PDF's text was
+first extracted, and it only came to light when the page was rendered as an image and
+could actually be read. It is corrected on the ferro alloys page, in `llms.txt`, in the
+Organization JSON-LD and on both translated pages. Worth remembering when reading any of
+these documents: extracted text from them is not trustworthy without a look at the page.
 
 ## The brand page
 
