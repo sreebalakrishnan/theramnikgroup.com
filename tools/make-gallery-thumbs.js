@@ -39,7 +39,7 @@ const FRAMES = [
   "hero-mine.jpg",
   "furnace.jpg",
   "tap-hole.jpg",
-  "casting-bed.jpg",
+  "casting-runners.jpg",
   "product.jpg",
   "product-lumps.jpg",
   "metal-yard.jpg",
