@@ -30,7 +30,6 @@ const FRAMES = [
   "underground.jpg",
   "workings.jpg",
   "crushing.jpg",
-  "ore-stacks.jpg",
   "safety.jpg",
   "plant-panorama.jpg",
   "plant-unit-3.jpg",

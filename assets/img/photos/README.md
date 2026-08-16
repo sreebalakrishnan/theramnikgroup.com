@@ -18,7 +18,6 @@ editing. A missing file degrades to a dark graphite placeholder rather than brea
 | `underground.jpg` | Mining — operations pair (4:3) | Underground working |
 | `crushing.jpg` | Mining — operations pair (4:3) | Graded ore stacks |
 | `furnace.jpg` | Ferro Alloys — full-bleed hero | Tapping, three furnace bays |
-| `ore-stacks.jpg` | Ferro Alloys — raw material (4:3) | Ore stacked by grade |
 | `control-room.jpg` | Ferro Alloys — quality section (4:3) | Process control room |
 | `plant-panorama.jpg` | Ferro Alloys — the plant section (27:10) | The works at Sarandi seen from the main gate |
 | `workings.jpg` | Gallery — the mine (3:4) | A cut rock face in the workings, water standing at its foot |
@@ -83,7 +82,7 @@ displays.
 - **Portrait crops** (`ramrama`, `plant`, `safety`): 3:4, 1200px+ wide.
 - **Headshots** (`nischal-trivedi`, `harsh-trivedi`): 4:5, 800px+ wide, anchored to the
   top of the frame so headroom is kept. Both cropped alike or the pair looks mismatched.
-- **Standard slots** (`underground`, `crushing`, `ore-stacks`, `control-room`): 4:3,
+- **Standard slots** (`underground`, `crushing`, `control-room`): 4:3,
   1400px+ wide.
 - **Weight**: compress to roughly 150–250 KB. These load on first paint and the site has
   no image pipeline to do it for you. The originals supplied were 1600px JPEGs of
@@ -181,6 +180,23 @@ displays.
   `ja/index.html` plus deleting the file.
 - The caption names Ramrama. It said only "the mine" until the client confirmed that
   Ramrama is the place name and that the mine itself is called Ramrama.
+- **`ore-stacks.jpg` was deleted, and the reason matters more than the file.** The client
+  identified it as a photograph from a past joint venture in **Kenya**, not from Ramrama.
+  The site had been presenting it as theirs in two places: the alt text on the ferro
+  alloys raw-material slot said "at the mine", and in the album it sat inside the section
+  headed *Ramrama* on a page whose opening line is "Every photograph here was taken on
+  site". Both of those were false while it was published. It was removed the moment the
+  client said so, ahead of any replacement arriving, because a wrong claim is worse than a
+  missing picture.
+
+  The ferro alloys slot now shows `plant-yard.jpg` — ore stockpiled in the yard at
+  Sarandi. That is on subject for a raw-material section and is verified recent Sarandi
+  material. The album entry was removed rather than substituted.
+
+  **Provenance is not checkable from a photograph.** Nothing in the file said Kenya, and
+  nothing in any other file says where it was taken either. If one frame from that venture
+  reached the supplied set, others may have. Worth asking the client to look through the
+  album once with that specifically in mind.
 - The solar frame arrived with a decorative rounded border baked in by a photo app. It
   was detected by walking in from each edge until the rows and columns stopped being
   uniformly light — 16px on all four sides — and trimmed before cropping.
