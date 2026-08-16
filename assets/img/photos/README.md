@@ -13,7 +13,7 @@ editing. A missing file degrades to a dark graphite placeholder rather than brea
 | `directors.jpg` | Legacy — leadership band; home page | Both directors together |
 | `nischal-trivedi.jpg` | Legacy — leadership bio (4:5) | Nischal Trivedi |
 | `harsh-trivedi.jpg` | Legacy — leadership bio (4:5) | Harsh Trivedi |
-| `r-shaft.jpg` | Legacy (3:4), Gallery — the mine | R shaft at Ramrama, retouched |
+| `r-shaft.jpg` | Gallery — the mine (3:4) | R shaft at Ramrama, retouched |
 | `opencast.jpg` | Mining — full-bleed hero | Haul road through the open cast workings |
 | `underground.jpg` | Mining — operations pair (4:3) | Underground working |
 | `crushing.jpg` | Mining — operations pair (4:3) | Graded ore stacks |
@@ -192,10 +192,11 @@ displays.
   photographs. All three are corrected and the file is renamed, because a mine photograph
   called `plant-structure.jpg` will mislead the next person to touch this directory.
 
-  It still illustrates the legacy page's *forward integration* section — the one about
-  building the alloy plant — which now reads oddly with a mine photograph beside it. The
-  client asked only for the caption, so the photograph stays put; `plant-dusk.jpg` is the
-  obvious candidate if they would rather that section showed the works.
+  It no longer illustrates the legacy page's *forward integration* section. That section
+  is about deciding to build the alloy plant, and once the photograph was known to be the
+  mine it was showing the wrong end of the business; the client agreed and it now carries
+  `plant-dusk.jpg`, the works running at dusk. `r-shaft.jpg` remains in the album under
+  Ramrama, which is where it belongs.
 
   This is the second provenance correction after the Kenya frame. Both came from the
   client, neither was detectable from the file. Treat every caption naming a place as
