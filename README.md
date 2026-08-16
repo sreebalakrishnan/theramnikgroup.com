@@ -133,6 +133,38 @@ self-heals in days rather than persisting for a year.
 Any static host works: Netlify, Cloudflare Pages and Vercel need no build command and
 publish directory `.`. `.htaccess` is Apache/LiteSpeed only and is ignored by those.
 
+## The palette and the logo
+
+The 2026 mark is navy. The site's dark was pulled onto the same hue so the two agree,
+rather than sitting next to each other at slightly different temperatures.
+
+The move was **saturation, not hue**: the ink family was already at hue 210–214, just
+almost fully desaturated. It now sits at 211 with roughly a third of the mark's
+saturation — `--ink #111922`, `--ink-2 #2E3944`, `--ink-3 #576573`. At the logo's own 77%
+saturation a page of body text reads as corporate blue and tires the eye; at a third it
+reads as near-black that happens to agree with the mark.
+
+**Lightness was held constant**, which is what makes this safe: every contrast pair that
+was checked when the palette was built still holds, within a hundredth. Paper on ink is
+16.83:1 where it was 16.92:1.
+
+Things that had to move with it, and are easy to miss:
+
+- Nine `rgba(21, 24, 28, …)` values derived from the old ink, now `rgba(17, 25, 34, …)`.
+- `.brand__sub`, a hand-picked `#4C565F` set darker than `--ink-3` for AA against the
+  header's tinted backdrop. Re-based to `#3E556C`; measures 7.34:1 there.
+- `theme-color` in all eleven pages and `theme_color` in `site.webmanifest`.
+- `assets/img/trade-map.svg` — the country stroke matched the old ground, and the land
+  fills were greys from the old family. Re-based. The two series colours were **not**
+  touched: they were validated with a colour-vision-deficiency checker, and the pair that
+  matters is series-against-series, which is unchanged at ΔE 93.
+- `assets/img/og-card.source.html` and the card regenerated from it.
+- `brand.html`, whose swatches are necessarily literal hex.
+
+`tools/logo-brief.source.html` still quotes the old values. That is deliberate: it is the
+brief that produced the first mark, and rewriting it would falsify a record of what was
+asked for.
+
 ## Certificates
 
 The three certificates on the ferro alloys page open in the lightbox as an image of
