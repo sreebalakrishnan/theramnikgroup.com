@@ -27,6 +27,7 @@ const WIDTH = 760;
 const FRAMES = [
   "opencast.jpg",
   "ramrama.jpg",
+  "r-shaft.jpg",
   "underground.jpg",
   "workings.jpg",
   "crushing.jpg",
@@ -42,7 +43,6 @@ const FRAMES = [
   "product.jpg",
   "product-lumps.jpg",
   "metal-yard.jpg",
-  "plant-structure.jpg",
   "control-room.jpg",
   "pollution-control.jpg",
   "solar.jpg",

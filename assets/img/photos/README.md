@@ -13,7 +13,7 @@ editing. A missing file degrades to a dark graphite placeholder rather than brea
 | `directors.jpg` | Legacy — leadership band; home page | Both directors together |
 | `nischal-trivedi.jpg` | Legacy — leadership bio (4:5) | Nischal Trivedi |
 | `harsh-trivedi.jpg` | Legacy — leadership bio (4:5) | Harsh Trivedi |
-| `plant-structure.jpg` | Legacy — forward integration (3:4) | Plant structure, retouched |
+| `r-shaft.jpg` | Legacy (3:4), Gallery — the mine | R shaft at Ramrama, retouched |
 | `opencast.jpg` | Mining — full-bleed hero | Haul road through the open cast workings |
 | `underground.jpg` | Mining — operations pair (4:3) | Underground working |
 | `crushing.jpg` | Mining — operations pair (4:3) | Graded ore stacks |
@@ -184,6 +184,21 @@ displays.
   `ja/index.html` plus deleting the file.
 - The caption names Ramrama. It said only "the mine" until the client confirmed that
   Ramrama is the place name and that the mine itself is called Ramrama.
+- **`r-shaft.jpg` was called `plant-structure.jpg` and captioned as the works at
+  Sarandi.** The client identified it as R shaft at Ramrama — the mine, not the plant.
+  That made three things wrong at once: the caption on the legacy page, the alt text
+  behind it, and its placement in the album, where it sat under *Sarandi* among the works
+  photographs. All three are corrected and the file is renamed, because a mine photograph
+  called `plant-structure.jpg` will mislead the next person to touch this directory.
+
+  It still illustrates the legacy page's *forward integration* section — the one about
+  building the alloy plant — which now reads oddly with a mine photograph beside it. The
+  client asked only for the caption, so the photograph stays put; `plant-dusk.jpg` is the
+  obvious candidate if they would rather that section showed the works.
+
+  This is the second provenance correction after the Kenya frame. Both came from the
+  client, neither was detectable from the file. Treat every caption naming a place as
+  unverified until someone who was there has read it.
 - **`ore-stacks.jpg` was deleted, and the reason matters more than the file.** The client
   identified it as a photograph from a past joint venture in **Kenya**, not from Ramrama.
   The site had been presenting it as theirs in two places: the alt text on the ferro
