@@ -13,7 +13,9 @@ metric. "t/yr" is tonnes per year.
 - **Silico manganese**, grades 60/15 to 70/15
 - **Ferro manganese**, grades 70, 72 and 75
 - **Low-carbon silico manganese**, to specification
-- **Special grades**: low boron, low phosphorus, low sulphur
+- **Silico manganese, low boron**: made to a stated boron maximum, for steels where boron
+  is limited
+- **Special grades**: low phosphorus and low sulphur, each made to a stated maximum
 - **Manganese ore**, graded and sized
 
 Material is crushed, sized and graded to the buyer's specification before packing and
