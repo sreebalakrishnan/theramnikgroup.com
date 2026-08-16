@@ -410,6 +410,20 @@ These are the outstanding items, each marked with an HTML comment in the source:
    tells a buyer exactly what the material conforms to. Both are now named on the ferro
    alloys page, in the product table, in the JSON-LD and in `llms.txt`.
 
+   **A Japanese partner independently asked for the same thing.** Their feedback, in
+   August 2026: silico manganese **65/16** should be named distinctly, in both standard
+   and low-boron form, "to draw attention of Japan and other countries with LB
+   requirement"; and a phosphorus figure such as **0.10% max** should be shown "if
+   possible".
+
+   The table was restructured in response — low boron is now its own row directly under
+   silico manganese, and low phosphorus and low sulphur each have their own row instead of
+   being three letters inside "Special grades". **The two numbers were deliberately not
+   added.** 65/16 sits inside the stated 60/15–70/15 range but naming a specific grade is
+   a product claim, and the partner's own wording on phosphorus — "if possible" — is a
+   request, not a statement of what the plant achieves. Both need the client to confirm
+   before they go on a page buyers read.
+
    What is still missing is the group's own typical analysis. **Do not fill this in from
    the standards or from anywhere else** — the numbers must come from the client's own
    test certificates, the same rule as the rest of the site. A one-page typical-analysis
